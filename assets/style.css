@@ -85,8 +85,10 @@ section{padding:76px 0;}
 .price-card .amount{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;margin:8px 0;}
 .price-card .amount sup{font-size:20px;top:-20px;}
 .price-card ul{list-style:none;padding:0;margin:20px 0;text-align:left;font-size:14px;color:var(--text-dim);}
-.price-card li{padding:8px 0;border-bottom:1px solid var(--line);}
+.price-card li{padding:8px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px;}
 .price-card li:last-child{border-bottom:none;}
+.price-card li::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0;}
+.price-card .save-badge{display:inline-block;background:rgba(255,196,61,0.14);color:var(--gold);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-top:6px;}
 
 .faq-list details{border-bottom:1px solid var(--line);padding:18px 0;}
 .faq-list summary{cursor:pointer;font-size:17px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;}
