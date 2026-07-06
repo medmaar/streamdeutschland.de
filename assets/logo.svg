@@ -1,0 +1,7 @@
+<svg width="240" height="40" viewBox="0 0 240 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="StreamDeutschland">
+  <rect x="0" y="4" width="32" height="32" rx="7" fill="#0F0F0F"/>
+  <rect x="7" y="10" width="18" height="4.5" rx="1.8" fill="#141414"/>
+  <rect x="7" y="17.7" width="18" height="4.5" rx="1.8" fill="#DE2A37"/>
+  <rect x="7" y="25.4" width="18" height="4.5" rx="1.8" fill="#FFC43D"/>
+  <text x="42" y="27" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="22" letter-spacing="0.3" fill="#FFFFFF" text-transform="uppercase">Stream<tspan fill="#DE2A37">Deutschland</tspan></text>
+</svg>
