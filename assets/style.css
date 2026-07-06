@@ -41,10 +41,11 @@ header.scrolled{background:rgba(18,18,18,0.96);backdrop-filter:blur(10px);border
 
 .hero{position:relative;min-height:86vh;display:flex;align-items:center;padding-top:80px;
   background:
-    linear-gradient(180deg, rgba(18,18,18,0.15) 0%, rgba(18,18,18,0.55) 55%, var(--bg) 100%),
-    radial-gradient(ellipse at 75% 15%, rgba(223,173,5,0.14), transparent 55%),
-    radial-gradient(ellipse at 15% 85%, rgba(223,173,5,0.06), transparent 50%),
-    var(--bg-alt);
+    linear-gradient(180deg, rgba(18,18,18,0.35) 0%, rgba(18,18,18,0.75) 55%, var(--bg) 100%),
+    radial-gradient(ellipse at 75% 15%, rgba(223,173,5,0.10), transparent 55%),
+    url('hero.jpg');
+  background-size: cover;
+  background-position: center 30%;
 }
 .hero-inner{max-width:700px;}
 .hero h1{font-size:clamp(38px,6vw,62px);}
