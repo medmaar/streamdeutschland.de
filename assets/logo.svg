@@ -1,7 +1,22 @@
-<svg width="240" height="40" viewBox="0 0 240 40" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="StreamDeutschland">
-  <rect x="0" y="4" width="32" height="32" rx="7" fill="#0F0F0F"/>
-  <rect x="7" y="10" width="18" height="4.5" rx="1.8" fill="#141414"/>
-  <rect x="7" y="17.7" width="18" height="4.5" rx="1.8" fill="#DE2A37"/>
-  <rect x="7" y="25.4" width="18" height="4.5" rx="1.8" fill="#FFC43D"/>
-  <text x="42" y="27" font-family="'Open Sans', sans-serif" font-weight="800" font-size="21" letter-spacing="0.2" fill="#FFFFFF">Stream<tspan fill="#DFAD05">Deutschland</tspan></text>
+<svg width="252" height="44" viewBox="0 0 252 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="StreamDeutschland">
+  <style>
+    .sd-ring{transform-origin:22px 22px; animation: sd-spin 7s linear infinite;}
+    .sd-tri{animation: sd-pulse 2.4s ease-in-out infinite;}
+    @keyframes sd-spin{ to{ transform: rotate(360deg);} }
+    @keyframes sd-pulse{ 0%,100%{opacity:.85; transform:scale(1);} 50%{opacity:1; transform:scale(1.06);} }
+    @media (prefers-reduced-motion: reduce){ .sd-ring, .sd-tri{ animation: none; } }
+  </style>
+  <defs>
+    <linearGradient id="sdBadge" x1="0" y1="0" x2="44" y2="44">
+      <stop offset="0" stop-color="#F6D054"/>
+      <stop offset="1" stop-color="#B8860B"/>
+    </linearGradient>
+  </defs>
+  <g transform="rotate(-7 22 22)">
+    <circle cx="22" cy="22" r="20" fill="url(#sdBadge)"/>
+    <circle class="sd-ring" cx="22" cy="22" r="20" fill="none" stroke="#FFEFC2" stroke-width="2" stroke-dasharray="5 9" opacity="0.85"/>
+    <path class="sd-tri" d="M17 12.5 L33 22 L17 31.5 Z" fill="#161200" style="transform-origin:22px 22px"/>
+  </g>
+  <text x="53" y="20" font-family="'Open Sans', sans-serif" font-weight="800" font-size="17" letter-spacing="0.2" fill="#FFFFFF">Stream</text>
+  <text x="53" y="37" font-family="'Open Sans', sans-serif" font-weight="800" font-size="17" letter-spacing="0.2" fill="#DFAD05">Deutschland</text>
 </svg>

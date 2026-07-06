@@ -5,6 +5,56 @@ window.addEventListener('scroll', function(){
   else { h.classList.remove('scrolled'); }
 });
 
+// Scroll-reveal for any element with class "reveal"
+document.addEventListener('DOMContentLoaded', function(){
+  var revealEls = document.querySelectorAll('.reveal');
+  if(revealEls.length && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  // Animated counters: <span data-count-to="20000" data-count-suffix="+">
+  var counters = document.querySelectorAll('[data-count-to]');
+  if(counters.length && 'IntersectionObserver' in window){
+    var counted = new WeakSet();
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !counted.has(entry.target)){
+          counted.add(entry.target);
+          animateCount(entry.target);
+        }
+      });
+    }, {threshold:0.4});
+    counters.forEach(function(el){ cio.observe(el); });
+  }
+
+  function animateCount(el){
+    var to = parseFloat(el.getAttribute('data-count-to'));
+    var suffix = el.getAttribute('data-count-suffix') || '';
+    var decimals = el.getAttribute('data-count-decimals') ? parseInt(el.getAttribute('data-count-decimals')) : 0;
+    var duration = 1400;
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var val = to * eased;
+      el.textContent = (decimals ? val.toFixed(decimals).replace('.', ',') : Math.round(val).toLocaleString('de-DE')) + suffix;
+      if(progress < 1){ requestAnimationFrame(step); }
+    }
+    requestAnimationFrame(step);
+  }
+});
+
 // Device-tier pricing table
 var PRICES = {
   '1-1':'9', '1-3':'29', '1-6':'39', '1-12':'49',
