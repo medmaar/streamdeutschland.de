@@ -3,5 +3,5 @@
   <rect x="7" y="10" width="18" height="4.5" rx="1.8" fill="#141414"/>
   <rect x="7" y="17.7" width="18" height="4.5" rx="1.8" fill="#DE2A37"/>
   <rect x="7" y="25.4" width="18" height="4.5" rx="1.8" fill="#FFC43D"/>
-  <text x="42" y="27" font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="22" letter-spacing="0.3" fill="#FFFFFF" text-transform="uppercase">Stream<tspan fill="#DE2A37">Deutschland</tspan></text>
+  <text x="42" y="27" font-family="'Open Sans', sans-serif" font-weight="800" font-size="21" letter-spacing="0.2" fill="#FFFFFF">Stream<tspan fill="#DFAD05">Deutschland</tspan></text>
 </svg>

@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
 {
@@ -119,26 +119,39 @@
     <div class="section-head">
       <div class="eyebrow" style="justify-content:center;">IPTV Abo</div>
       <h2>IPTV Deutschland 2026 zum fairen Preis</h2>
-      <p>Transparente Preise nach Laufzeit, keine versteckten Kosten.</p>
+      <p>Wählen Sie zuerst die Anzahl der Geräte, dann die passende Laufzeit.</p>
     </div>
-    <div class="grid-3">
+    <div class="device-tabs">
+      <button class="device-tab active" data-devices="1">1 Gerät</button>
+      <button class="device-tab" data-devices="2">2 Geräte</button>
+      <button class="device-tab" data-devices="3">3 Geräte</button>
+      <button class="device-tab" data-devices="4">4 Geräte</button>
+      <button class="device-tab" data-devices="5">5 Geräte</button>
+    </div>
+    <div class="grid-4">
       <div class="price-card">
         <div class="period">1 Monat</div>
-        <div class="amount">15<sup>€</sup></div>
+        <div class="amount"><span data-price data-period="1">9</span><sup>€</sup></div>
+        <ul><li>20.000+ Kanäle &amp; VOD</li><li>4K / HD Bildqualität</li><li>Deutscher Support</li></ul>
+        <a class="btn btn-ghost btn-block" href="#kontakt">Auswählen</a>
+      </div>
+      <div class="price-card">
+        <div class="period">3 Monate</div>
+        <div class="amount"><span data-price data-period="3">29</span><sup>€</sup></div>
         <ul><li>20.000+ Kanäle &amp; VOD</li><li>4K / HD Bildqualität</li><li>Deutscher Support</li></ul>
         <a class="btn btn-ghost btn-block" href="#kontakt">Auswählen</a>
       </div>
       <div class="price-card featured">
         <div class="badge">Beliebt</div>
         <div class="period">6 Monate</div>
-        <div class="amount">60<sup>€</sup></div>
+        <div class="amount"><span data-price data-period="6">39</span><sup>€</sup></div>
         <ul><li>20.000+ Kanäle &amp; VOD</li><li>4K / HD Bildqualität</li><li>Priorisierter Support</li></ul>
         <a class="btn btn-primary btn-block" href="#kontakt">Auswählen</a>
       </div>
       <div class="price-card">
-        <div class="period">12 Monate</div>
-        <div class="amount">99<sup>€</sup></div>
-        <div class="save-badge">Spare 46% ggü. Monatspreis</div>
+        <div class="period">1 Jahr</div>
+        <div class="amount"><span data-price data-period="12">49</span><sup>€</sup></div>
+        <div class="save-badge">Bester Preis pro Monat</div>
         <ul><li>20.000+ Kanäle &amp; VOD</li><li>4K / HD Bildqualität</li><li>Bester Preis pro Monat</li></ul>
         <a class="btn btn-ghost btn-block" href="#kontakt">Auswählen</a>
       </div>
