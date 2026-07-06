@@ -5,6 +5,18 @@ window.addEventListener('scroll', function(){
   else { h.classList.remove('scrolled'); }
 });
 
+// Subtle parallax on hero background image
+var heroEl = document.querySelector('.hero');
+if(heroEl && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY;
+    if(y < window.innerHeight){
+      var pos = 30 + (y * 0.04);
+      heroEl.style.backgroundPosition = 'center ' + pos + '%';
+    }
+  }, {passive:true});
+}
+
 // Scroll-reveal for any element with class "reveal"
 document.addEventListener('DOMContentLoaded', function(){
   var revealEls = document.querySelectorAll('.reveal');

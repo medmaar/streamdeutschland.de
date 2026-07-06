@@ -1,6 +1,6 @@
 <svg width="252" height="44" viewBox="0 0 252 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="StreamDeutschland">
   <style>
-    .sd-ring{transform-origin:22px 22px; animation: sd-spin 7s linear infinite;}
+    .sd-ring{transform-origin:22px 22px; animation: sd-spin 4.5s linear infinite;}
     .sd-tri{animation: sd-pulse 2.4s ease-in-out infinite;}
     @keyframes sd-spin{ to{ transform: rotate(360deg);} }
     @keyframes sd-pulse{ 0%,100%{opacity:.85; transform:scale(1);} 50%{opacity:1; transform:scale(1.06);} }
