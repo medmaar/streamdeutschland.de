@@ -97,6 +97,7 @@ var PRICES = {
 document.addEventListener('DOMContentLoaded', function(){
   var tabs = document.querySelectorAll('.device-tab');
   var priceEls = document.querySelectorAll('[data-price]');
+  var origPriceEls = document.querySelectorAll('[data-orig-price]');
   if(!tabs.length) return;
 
   function applyDevices(devices){
@@ -104,6 +105,11 @@ document.addEventListener('DOMContentLoaded', function(){
       var period = el.getAttribute('data-period');
       var key = devices + '-' + period;
       if(PRICES[key]){ el.textContent = PRICES[key]; }
+    });
+    origPriceEls.forEach(function(el){
+      var period = el.getAttribute('data-period');
+      var key = devices + '-' + period;
+      if(PRICES[key]){ el.textContent = Math.round(parseFloat(PRICES[key]) * 2); }
     });
   }
 

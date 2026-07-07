@@ -168,7 +168,7 @@ section{padding:76px 0;}
 .price-card:hover{transform:translateY(-4px);border-color:rgba(222,42,55,0.4);}
 .price-card.featured{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;}
 .price-card .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;padding:4px 14px;border-radius:999px;text-transform:uppercase;}
-.price-card .period{font-size:14.5px;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.08em;}
+.price-card .period{font-size:20px;font-weight:700;color:var(--text);text-transform:uppercase;letter-spacing:0.06em;}
 .price-card .amount{font-family:'Barlow Condensed',sans-serif;font-size:48px;font-weight:800;margin:8px 0;}
 .price-card .amount sup{font-size:20px;top:-20px;}
 .price-card ul{list-style:none;padding:0;margin:20px 0;text-align:left;font-size:14px;color:var(--text-dim);}
@@ -176,6 +176,15 @@ section{padding:76px 0;}
 .price-card li:last-child{border-bottom:none;}
 .price-card li::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0;}
 .price-card .save-badge{display:inline-block;background:rgba(255,196,61,0.14);color:var(--gold);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-top:6px;}
+.discount-row{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:2px 0 4px;}
+.discount-percent{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:22px;font-weight:800;
+  color:#FF5A4E;
+  line-height:1;
+}
+.discount-original{font-size:14px;color:var(--text-faint);}
+.discount-original s{opacity:0.85;}
 
 .faq-list details{border-bottom:1px solid var(--line);padding:18px 0;}
 .faq-list summary{cursor:pointer;font-size:17px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;}
@@ -265,6 +274,19 @@ section > .wrap{position:relative;z-index:1;}
   background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+
+/* Fix: badge previously protruded above the card and got clipped by overflow:hidden.
+   Now it sits flush as a top ribbon, fully inside the card. */
+.price-card .badge{
+  position:absolute;
+  top:0;left:0;right:0;
+  transform:none;
+  border-radius:13px 13px 0 0;
+  padding:9px 0;
+  font-size:12px;
+  letter-spacing:0.04em;
+}
+.price-card.featured{padding-top:58px;}
 
 /* IBO Player Pro bonus box on the featured (1 Jahr) card */
 .bonus-box{
