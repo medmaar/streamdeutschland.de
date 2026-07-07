@@ -351,37 +351,38 @@ header img.brand-mark{animation:sd-logo-breathe 3.6s ease-in-out infinite;}
   .whatsapp-float{width:52px;height:52px;right:16px;bottom:16px;}
 }
 
-/* ---- Sales alert banner (bottom-left) ---- */
+/* ---- Sales alert banner (bottom-left, gold theme) ---- */
 .sales-banner{
   position:fixed;
-  left:22px;
-  bottom:22px;
+  left:18px;
+  bottom:18px;
   z-index:79;
-  max-width:320px;
+  max-width:270px;
   display:flex;
   align-items:flex-start;
-  gap:12px;
-  padding:16px 40px 16px 16px;
-  border-radius:14px;
-  background:linear-gradient(160deg, var(--card-hover), var(--card));
-  border:1px solid rgba(223,173,5,0.4);
-  box-shadow:0 14px 30px -10px rgba(0,0,0,0.6);
+  gap:10px;
+  padding:12px 30px 12px 12px;
+  border-radius:12px;
+  background:linear-gradient(135deg, #FFE9A8 0%, var(--accent) 55%, var(--accent-dark) 100%);
+  border:1px solid rgba(255,255,255,0.35);
+  box-shadow:0 14px 30px -10px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,0,0,0.05) inset;
   transform:translateY(140%);
   opacity:0;
   transition:transform .5s var(--ease), opacity .5s var(--ease);
 }
 .sales-banner.show{transform:translateY(0);opacity:1;}
-.sales-banner-icon{font-size:22px;line-height:1;}
-.sales-banner-title{font-weight:700;font-size:14.5px;color:var(--text);margin-bottom:4px;}
-.sales-banner-text{font-size:13px;color:var(--text-dim);margin-bottom:8px;}
-.sales-banner-cta{font-size:13px;font-weight:700;color:var(--accent);}
+.sales-banner-icon{font-size:18px;line-height:1;}
+.sales-banner-title{font-weight:800;font-size:13px;color:#1A1400;margin-bottom:2px;}
+.sales-banner-text{font-size:12px;color:#2A2200;margin-bottom:6px;opacity:0.85;}
+.sales-banner-cta{font-size:12px;font-weight:700;color:#1A1400;text-decoration:underline;}
 .sales-banner-close{
-  position:absolute;top:8px;right:10px;
-  background:none;border:none;color:var(--text-faint);
-  font-size:18px;line-height:1;cursor:pointer;padding:4px;
+  position:absolute;top:6px;right:8px;
+  background:none;border:none;color:#1A1400;
+  opacity:0.55;
+  font-size:16px;line-height:1;cursor:pointer;padding:4px;
 }
-.sales-banner-close:hover{color:var(--text);}
+.sales-banner-close:hover{opacity:1;}
 @media (max-width:600px){
-  .sales-banner{left:12px;right:12px;max-width:none;bottom:12px;}
+  .sales-banner{left:12px;bottom:12px;max-width:calc(100% - 96px);padding:10px 26px 10px 10px;}
   .whatsapp-float{bottom:16px;}
 }

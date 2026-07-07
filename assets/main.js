@@ -119,19 +119,65 @@ document.addEventListener('DOMContentLoaded', function(){
   applyDevices(activeTab.getAttribute('data-devices'));
 });
 
-// Sales alert banner: show after a short delay, dismissible for the session
+// Sales alert banner: rotating "recent purchase" notifications
 document.addEventListener('DOMContentLoaded', function(){
   var banner = document.getElementById('salesBanner');
   var closeBtn = document.getElementById('salesBannerClose');
-  if(!banner) return;
+  var titleEl = document.getElementById('salesBannerTitle');
+  var textEl = document.getElementById('salesBannerText');
+  if(!banner || !titleEl || !textEl) return;
   if(sessionStorage.getItem('sd_sales_banner_dismissed') === '1') return;
 
-  setTimeout(function(){ banner.classList.add('show'); }, 2500);
+  var names = [
+    'Alex','Lukas','Max','Jonas','Felix','Niklas','Tim','Leon','Julian','Finn',
+    'Sarah','Lena','Julia','Laura','Anna','Nina','Sophie','Marie','Lisa','Katrin'
+  ];
+  var cities = [
+    'München','Berlin','Hamburg','Köln','Frankfurt','Stuttgart','Düsseldorf',
+    'Leipzig','Dortmund','Essen','Bremen','Dresden','Hannover','Nürnberg',
+    'Duisburg','Bochum','Wuppertal','Mannheim','Karlsruhe','Münster'
+  ];
+  // Weighted plans: mostly 1 Jahr, a smaller share of shorter terms
+  var plans = [
+    '1-Jahres-Abo','1-Jahres-Abo','1-Jahres-Abo','1-Jahres-Abo','1-Jahres-Abo',
+    '1-Jahres-Abo','1-Jahres-Abo',
+    '6-Monats-Abo','6-Monats-Abo',
+    '3-Monats-Abo',
+    '1-Monats-Abo'
+  ];
+  var timeAgo = ['gerade eben','vor 2 Minuten','vor 5 Minuten','vor 9 Minuten','vor 14 Minuten'];
+
+  function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function nextNotification(){
+    var name = pick(names);
+    var city = pick(cities);
+    var plan = pick(plans);
+    titleEl.textContent = name + ' aus ' + city + ' hat gerade ein ' + plan + ' gekauft';
+    textEl.textContent = pick(timeAgo);
+  }
+
+  function showBanner(){
+    nextNotification();
+    banner.classList.add('show');
+  }
+
+  function cycle(){
+    banner.classList.remove('show');
+    setTimeout(function(){
+      if(sessionStorage.getItem('sd_sales_banner_dismissed') === '1') return;
+      showBanner();
+    }, 450);
+  }
+
+  setTimeout(showBanner, 2500);
+  var intervalId = setInterval(cycle, 7000);
 
   if(closeBtn){
     closeBtn.addEventListener('click', function(){
       banner.classList.remove('show');
       sessionStorage.setItem('sd_sales_banner_dismissed', '1');
+      clearInterval(intervalId);
     });
   }
 });
