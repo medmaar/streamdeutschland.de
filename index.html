@@ -42,14 +42,19 @@
 
 <header>
   <div class="wrap nav">
-    <a href="index.html"><img class="brand-mark" src="assets/logo.svg" alt="StreamDeutschland" height="34" style="height:34px;width:auto;"></a>
-    <nav class="nav-links">
+    <a href="index.html"><img class="brand-mark" src="assets/logo.svg" alt="StreamDeutschland" height="34" style="width:auto;"></a>
+    <nav class="nav-links" id="navLinks">
       <a href="#kanaele">Kanäle</a>
       <a href="#preise">IPTV Abo</a>
       <a href="#test">Kostenloser Test</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary" href="#preise">IPTV kaufen</a>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="#preise">IPTV kaufen</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
