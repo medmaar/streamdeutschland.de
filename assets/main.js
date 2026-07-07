@@ -118,3 +118,20 @@ document.addEventListener('DOMContentLoaded', function(){
   var activeTab = document.querySelector('.device-tab.active') || tabs[0];
   applyDevices(activeTab.getAttribute('data-devices'));
 });
+
+// Sales alert banner: show after a short delay, dismissible for the session
+document.addEventListener('DOMContentLoaded', function(){
+  var banner = document.getElementById('salesBanner');
+  var closeBtn = document.getElementById('salesBannerClose');
+  if(!banner) return;
+  if(sessionStorage.getItem('sd_sales_banner_dismissed') === '1') return;
+
+  setTimeout(function(){ banner.classList.add('show'); }, 2500);
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      banner.classList.remove('show');
+      sessionStorage.setItem('sd_sales_banner_dismissed', '1');
+    });
+  }
+});

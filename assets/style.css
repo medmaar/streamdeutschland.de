@@ -220,6 +220,66 @@ section > .wrap{position:relative;z-index:1;}
 }
 @keyframes sd-grad{ to{ background-position:300% center; } }
 
+/* ---- Glossy, unique-looking pricing cards ---- */
+.price-card{
+  overflow:hidden;
+  background:linear-gradient(160deg, var(--card-hover) 0%, var(--card) 55%, #171717 100%);
+  box-shadow:0 1px 0 rgba(255,255,255,0.06) inset, 0 18px 30px -18px rgba(0,0,0,0.6);
+}
+.price-card::before{
+  content:"";
+  position:absolute;
+  top:0;left:-60%;
+  width:60%;height:100%;
+  background:linear-gradient(115deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.10) 45%, rgba(255,255,255,0) 100%);
+  transform:skewX(-18deg);
+  pointer-events:none;
+  transition:left .9s var(--ease);
+}
+.price-card:hover::before{left:130%;}
+.price-card::after{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+.price-card .amount{
+  background:linear-gradient(180deg, #fff 0%, #cfcfcf 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+/* Subtle unique top-accent stripe per tier */
+.price-card.gloss-1{border-top:3px solid rgba(223,173,5,0.35);border-radius:14px;}
+.price-card.gloss-2{border-top:3px solid rgba(223,173,5,0.55);border-radius:14px;}
+.price-card.gloss-3{border-top:3px solid rgba(223,173,5,0.75);border-radius:14px;}
+.price-card.gloss-gold{
+  border-top:3px solid var(--accent);
+  border-radius:14px;
+  background:linear-gradient(160deg, #2a2210 0%, #1F1B10 45%, #171717 100%);
+}
+.price-card.gloss-gold .amount{
+  background:linear-gradient(180deg, #FFE9A8 0%, var(--accent) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* IBO Player Pro bonus box on the featured (1 Jahr) card */
+.bonus-box{
+  display:flex;align-items:center;gap:10px;
+  text-align:left;
+  margin:16px 0;
+  padding:12px 14px;
+  border-radius:10px;
+  background:linear-gradient(135deg, rgba(223,173,5,0.16), rgba(223,173,5,0.05));
+  border:1px solid rgba(223,173,5,0.4);
+}
+.bonus-star{color:var(--accent);font-size:20px;flex-shrink:0;}
+.bonus-title{font-size:14px;font-weight:700;color:var(--text);}
+.bonus-sub{font-size:12.5px;color:var(--text-dim);}
+
 /* Glowing pulse on the featured pricing card */
 .price-card.featured{animation:sd-glow-pulse 2.6s ease-in-out infinite;}
 @keyframes sd-glow-pulse{
@@ -266,4 +326,62 @@ header img.brand-mark{animation:sd-logo-breathe 3.6s ease-in-out infinite;}
 
 @media (max-width:700px){
   .orb{display:none;}
+}
+
+/* ---- Floating WhatsApp button ---- */
+.whatsapp-float{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:80;
+  width:58px;height:58px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(0,0,0,0.45), 0 0 0 rgba(37,211,102,0.6);
+  animation:sd-wa-pulse 2.6s ease-in-out infinite;
+  transition:transform .2s var(--ease);
+}
+.whatsapp-float:hover{transform:scale(1.08);}
+@keyframes sd-wa-pulse{
+  0%,100%{box-shadow:0 8px 22px rgba(0,0,0,0.45), 0 0 0 0 rgba(37,211,102,0.55);}
+  50%{box-shadow:0 8px 22px rgba(0,0,0,0.45), 0 0 0 10px rgba(37,211,102,0);}
+}
+@media (max-width:600px){
+  .whatsapp-float{width:52px;height:52px;right:16px;bottom:16px;}
+}
+
+/* ---- Sales alert banner (bottom-left) ---- */
+.sales-banner{
+  position:fixed;
+  left:22px;
+  bottom:22px;
+  z-index:79;
+  max-width:320px;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:16px 40px 16px 16px;
+  border-radius:14px;
+  background:linear-gradient(160deg, var(--card-hover), var(--card));
+  border:1px solid rgba(223,173,5,0.4);
+  box-shadow:0 14px 30px -10px rgba(0,0,0,0.6);
+  transform:translateY(140%);
+  opacity:0;
+  transition:transform .5s var(--ease), opacity .5s var(--ease);
+}
+.sales-banner.show{transform:translateY(0);opacity:1;}
+.sales-banner-icon{font-size:22px;line-height:1;}
+.sales-banner-title{font-weight:700;font-size:14.5px;color:var(--text);margin-bottom:4px;}
+.sales-banner-text{font-size:13px;color:var(--text-dim);margin-bottom:8px;}
+.sales-banner-cta{font-size:13px;font-weight:700;color:var(--accent);}
+.sales-banner-close{
+  position:absolute;top:8px;right:10px;
+  background:none;border:none;color:var(--text-faint);
+  font-size:18px;line-height:1;cursor:pointer;padding:4px;
+}
+.sales-banner-close:hover{color:var(--text);}
+@media (max-width:600px){
+  .sales-banner{left:12px;right:12px;max-width:none;bottom:12px;}
+  .whatsapp-float{bottom:16px;}
 }
