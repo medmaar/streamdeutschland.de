@@ -172,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function(){
     setT(function(){
       if(dismissed) return;
       banner.classList.remove('show');
-      setT(cycle, 5000);
-    }, 3000);
+      setT(cycle, 3000);
+    }, 5000);
   }
 
   // Randomized initial delay so the first name isn't predictable across visits/refreshes
