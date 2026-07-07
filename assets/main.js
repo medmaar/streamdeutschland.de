@@ -145,39 +145,46 @@ document.addEventListener('DOMContentLoaded', function(){
     '3-Monats-Abo',
     '1-Monats-Abo'
   ];
-  var timeAgo = ['gerade eben','vor 2 Minuten','vor 5 Minuten','vor 9 Minuten','vor 14 Minuten'];
+  var timeAgo = ['gerade eben','vor 2 Minuten','vor 5 Minuten','vor 9 Minuten'];
 
   function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
 
+  var dismissed = false;
+  var lastName = null;
+  var timers = [];
+  function setT(fn, ms){ var id = setTimeout(fn, ms); timers.push(id); return id; }
+
   function nextNotification(){
     var name = pick(names);
+    // avoid showing the same name twice back-to-back
+    while(name === lastName){ name = pick(names); }
+    lastName = name;
     var city = pick(cities);
     var plan = pick(plans);
     titleEl.textContent = name + ' aus ' + city + ' hat gerade ein ' + plan + ' gekauft';
     textEl.textContent = pick(timeAgo);
   }
 
-  function showBanner(){
+  function cycle(){
+    if(dismissed) return;
     nextNotification();
     banner.classList.add('show');
+    setT(function(){
+      if(dismissed) return;
+      banner.classList.remove('show');
+      setT(cycle, 5000);
+    }, 3000);
   }
 
-  function cycle(){
-    banner.classList.remove('show');
-    setTimeout(function(){
-      if(sessionStorage.getItem('sd_sales_banner_dismissed') === '1') return;
-      showBanner();
-    }, 450);
-  }
-
-  setTimeout(showBanner, 2500);
-  var intervalId = setInterval(cycle, 7000);
+  // Randomized initial delay so the first name isn't predictable across visits/refreshes
+  setT(cycle, 2000 + Math.floor(Math.random() * 2000));
 
   if(closeBtn){
     closeBtn.addEventListener('click', function(){
+      dismissed = true;
       banner.classList.remove('show');
       sessionStorage.setItem('sd_sales_banner_dismissed', '1');
-      clearInterval(intervalId);
+      timers.forEach(clearTimeout);
     });
   }
 });
