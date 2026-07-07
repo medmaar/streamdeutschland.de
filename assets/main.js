@@ -123,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function(){
 document.addEventListener('DOMContentLoaded', function(){
   var banner = document.getElementById('salesBanner');
   var closeBtn = document.getElementById('salesBannerClose');
-  var avatarEl = document.getElementById('salesBannerAvatar');
   var titleEl = document.getElementById('salesBannerTitle');
   var textEl = document.getElementById('salesBannerText');
   if(!banner || !titleEl || !textEl) return;
@@ -162,7 +161,6 @@ document.addEventListener('DOMContentLoaded', function(){
     lastName = name;
     var city = pick(cities);
     var plan = pick(plans);
-    if(avatarEl){ avatarEl.textContent = name.charAt(0); }
     titleEl.innerHTML = '<b>' + name + '</b> aus ' + city + ' hat ein ' + plan + ' gekauft';
     textEl.textContent = pick(timeAgo);
   }
