@@ -176,15 +176,39 @@ section{padding:76px 0;}
 .price-card li:last-child{border-bottom:none;}
 .price-card li::before{content:"✓";color:var(--accent);font-weight:700;flex-shrink:0;}
 .price-card .save-badge{display:inline-block;background:rgba(255,196,61,0.14);color:var(--gold);font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;margin-top:6px;}
-.discount-row{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:2px 0 4px;}
-.discount-percent{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:22px;font-weight:800;
-  color:#FF5A4E;
-  line-height:1;
+
+/* Discount presentation: strikethrough original price + tilted -50% ribbon next to the price */
+.price-original{
+  font-size:13px;
+  color:var(--text-faint);
+  margin-bottom:2px;
 }
-.discount-original{font-size:14px;color:var(--text-faint);}
-.discount-original s{opacity:0.85;}
+.price-original s{
+  color:var(--text-dim);
+  text-decoration-color:#FF5A4E;
+  text-decoration-thickness:1.5px;
+  opacity:0.9;
+}
+.amount-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:2px 0 4px;
+}
+.discount-badge{
+  flex-shrink:0;
+  background:linear-gradient(135deg, #FF7A6B 0%, #E8283A 100%);
+  color:#fff;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:0.02em;
+  padding:5px 10px;
+  border-radius:8px;
+  transform:rotate(-7deg);
+  box-shadow:0 6px 14px -4px rgba(232,40,58,0.55), 0 0 0 1px rgba(255,255,255,0.15) inset;
+}
 
 .faq-list details{border-bottom:1px solid var(--line);padding:18px 0;}
 .faq-list summary{cursor:pointer;font-size:17px;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;}
