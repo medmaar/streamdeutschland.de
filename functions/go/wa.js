@@ -21,7 +21,7 @@ function buildMessage(raw) {
   if (!raw) return BRAND_GREETING;
   // Strip any greeting the page already had baked in (e.g. "Hallo!",
   // "Hallo StreamDeutschland!", "Hallo,") so we never end up with two.
-  let rest = raw.replace(/^Hallo[^!.,]*[!,.]?\s*/i, '').trim();
+  let rest = raw.replace(/^Hallo[^!.,]{0,40}[!,.]\s*/i, '').trim();
   if (rest) {
     rest = rest.charAt(0).toUpperCase() + rest.slice(1);
     return `${BRAND_GREETING} ${rest}`;
