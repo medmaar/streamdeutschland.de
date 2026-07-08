@@ -98,7 +98,13 @@ document.addEventListener('DOMContentLoaded', function(){
   var tabs = document.querySelectorAll('.device-tab');
   var priceEls = document.querySelectorAll('[data-price]');
   var origPriceEls = document.querySelectorAll('[data-orig-price]');
+  var linkEls = document.querySelectorAll('[data-plan-link]');
   if(!tabs.length) return;
+
+  var PERIOD_SLUG = { '1':'1-monat', '3':'3-monate', '6':'6-monate', '12':'1-jahr' };
+  function deviceSlug(devices){
+    return devices === '1' ? '1-geraet' : devices + '-geraete';
+  }
 
   function applyDevices(devices){
     priceEls.forEach(function(el){
@@ -110,6 +116,11 @@ document.addEventListener('DOMContentLoaded', function(){
       var period = el.getAttribute('data-period');
       var key = devices + '-' + period;
       if(PRICES[key]){ el.textContent = Math.round(parseFloat(PRICES[key]) * 2); }
+    });
+    linkEls.forEach(function(el){
+      var period = el.getAttribute('data-period');
+      var slug = PERIOD_SLUG[period];
+      if(slug){ el.setAttribute('href', 'iptv-kaufen-' + deviceSlug(devices) + '-' + slug + '.html'); }
     });
   }
 
