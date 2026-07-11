@@ -1,0 +1,10 @@
+name = "iptv-trial-streamdeutschland"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "TRIALS"
+id = "5dfc9e7a50564e3aaec17738095a4565"
+
+[triggers]
+crons = ["0 * * * *"]

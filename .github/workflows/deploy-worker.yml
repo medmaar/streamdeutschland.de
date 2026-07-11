@@ -1,0 +1,54 @@
+name: Deploy Worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'worker/worker.js'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve Cloudflare Account ID
+        run: |
+          ACCOUNT_ID=$(curl -s -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            "https://api.cloudflare.com/client/v4/accounts" | python3 -c "
+          import sys,json
+          d=json.load(sys.stdin)
+          print(d['result'][0]['id'])
+          ")
+          echo "CF_ACCOUNT_ID=$ACCOUNT_ID" >> "$GITHUB_ENV"
+
+      - name: Deploy to Cloudflare Workers
+        run: |
+          RESULT=$(curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/workers/scripts/iptv-trial-streamdeutschland" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -F 'metadata={"main_module":"worker.js","compatibility_date":"2024-01-01","bindings":[{"type":"kv_namespace","name":"TRIALS","namespace_id":"5dfc9e7a50564e3aaec17738095a4565"}]};type=application/json' \
+            -F "worker.js=@worker/worker.js;type=application/javascript+module")
+          echo "$RESULT" | python3 -c "
+          import sys,json
+          d=json.load(sys.stdin)
+          if d.get('success'): print('Deployed: iptv-trial-streamdeutschland')
+          else: print('Error:', d.get('errors')); exit(1)
+          "
+
+      - name: Enable workers.dev subdomain
+        run: |
+          curl -s -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/workers/scripts/iptv-trial-streamdeutschland/subdomain" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"enabled":true}' | python3 -c "import sys,json; print('Subdomain:', json.load(sys.stdin).get('success'))"
+
+      - name: Add cron trigger
+        run: |
+          curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/workers/scripts/iptv-trial-streamdeutschland/schedules" \
+            -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '[{"cron":"0 * * * *"}]' | python3 -c "import sys,json; print('Cron:', json.load(sys.stdin).get('success'))"

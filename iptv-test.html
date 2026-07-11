@@ -127,9 +127,9 @@
         <div class="trial-success-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
         </div>
-        <h3>Anfrage erfolgreich gesendet!</h3>
-        <p>Vielen Dank! Wir öffnen WhatsApp mit Ihrer Anfrage – bitte senden Sie die Nachricht dort ab, damit unser Support sie sofort sieht.</p>
-        <p><a href="/go/wa?msg=Hallo!%20Ich%20interessiere%20mich%20f%C3%BCr%20den%20kostenlosen%20IPTV%20Test." target="_blank" rel="noopener" style="color:var(--accent);">Nochmal per WhatsApp öffnen</a></p>
+        <h3>Ihr Testzugang ist unterwegs!</h3>
+        <p>Vielen Dank! Ihre Zugangsdaten wurden soeben per E-Mail an Sie gesendet. Bitte prüfen Sie auch Ihren Spam-Ordner, falls die Nachricht nicht innerhalb weniger Minuten ankommt.</p>
+        <p>Fragen zur Einrichtung? Schreiben Sie uns jederzeit auf <a href="/go/wa?msg=Hallo!%20Ich%20habe%20eine%20Frage%20zu%20meinem%20kostenlosen%20IPTV%20Test." target="_blank" rel="noopener" style="color:var(--accent);">WhatsApp</a>.</p>
       </div>
     </div>
   </div>
@@ -237,7 +237,7 @@
     var formHeader = document.getElementById('formHeader');
     var formSuccessPanel = document.getElementById('formSuccessPanel');
 
-    leadForm.addEventListener('submit', function(e){
+    leadForm.addEventListener('submit', async function(e){
       e.preventDefault();
       var email = document.getElementById('email').value.trim();
       if(!email){
@@ -254,20 +254,31 @@
       var whatsapp = updatePreview();
       var notes = document.getElementById('notes').value.trim();
 
-      var lines = ['Hallo! Ich interessiere mich für den kostenlosen IPTV Test.'];
-      if(name) lines.push('Name: ' + name);
-      lines.push('E-Mail: ' + email);
-      if(whatsapp) lines.push('WhatsApp: ' + whatsapp);
-      if(notes) lines.push('Anmerkungen: ' + notes);
-      var msg = encodeURIComponent(lines.join('\n'));
+      try {
+        var res = await fetch('https://iptv-trial-streamdeutschland.medmaar.workers.dev', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            whatsapp: whatsapp,
+            device: '',
+            notes: notes
+          })
+        });
+        var data = await res.json();
+        if (!res.ok || !data.success) throw new Error(data.error || 'Fehler');
 
-      // NOTE: this currently opens WhatsApp with the request pre-filled.
-      // Swap this for a fetch() call to the trial-automation endpoint once it's live.
-      window.open('/go/wa?msg=' + msg, '_blank', 'noopener');
-
-      formHeader.style.display = 'none';
-      leadForm.style.display = 'none';
-      formSuccessPanel.style.display = 'block';
+        formHeader.style.display = 'none';
+        leadForm.style.display = 'none';
+        formSuccessPanel.style.display = 'block';
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Anfrage senden';
+        formStatus.textContent = 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns auf WhatsApp.';
+        formStatus.classList.add('error');
+        console.error(err);
+      }
     });
   })();
 </script>
