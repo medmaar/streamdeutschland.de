@@ -504,3 +504,30 @@ header img.brand-mark{animation:sd-logo-breathe 3.6s ease-in-out infinite;}
   .step-item{padding:0;}
   .step-item::before{display:none;}
 }
+
+/* Sport highlight section */
+.sport-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;max-width:480px;}
+.sport-tags span{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:13px;font-weight:600;color:var(--text-dim);}
+.sport-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.sport-icon{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 10px;text-align:center;transition:background .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease);}
+.sport-icon:hover{background:var(--card-hover);border-color:var(--accent);transform:translateY(-3px);}
+.sport-icon svg{width:26px;height:26px;color:var(--text-faint);margin-bottom:8px;transition:color .25s var(--ease);}
+.sport-icon:hover svg{color:var(--accent);}
+.sport-icon span{display:block;font-size:12px;font-weight:700;letter-spacing:.03em;color:var(--text-dim);text-transform:uppercase;}
+@media (max-width:700px){.sport-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* Device compatibility strip */
+.device-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;max-width:900px;margin:0 auto;}
+.device-item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 10px;text-align:center;transition:background .25s var(--ease),transform .25s var(--ease);}
+.device-item:hover{background:var(--card-hover);transform:translateY(-3px);}
+.device-item svg{width:24px;height:24px;color:var(--accent);margin-bottom:10px;}
+.device-item span{display:block;font-size:12.5px;font-weight:600;color:var(--text-dim);}
+@media (max-width:760px){.device-strip{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:420px){.device-strip{grid-template-columns:repeat(2,1fr);}}
+
+/* Scroll-to-top button */
+#scrollTop{position:fixed;bottom:24px;right:96px;z-index:60;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .2s var(--ease),background .2s var(--ease);}
+#scrollTop.visible{opacity:1;pointer-events:all;}
+#scrollTop:hover{background:var(--card-hover);transform:translateY(-2px);}
+#scrollTop svg{width:18px;height:18px;color:var(--accent);}
+@media (max-width:600px){#scrollTop{right:16px;bottom:80px;width:40px;height:40px;}}

@@ -340,3 +340,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
   startAuto();
 });
+
+// Scroll-to-top button
+document.addEventListener('DOMContentLoaded', function(){
+  var btn = document.getElementById('scrollTop');
+  if(!btn) return;
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('visible', window.scrollY > 500);
+  });
+  btn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
