@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
   }
 
-  // Animated counters: <span data-count-to="20000" data-count-suffix="+">
+  // Animated counters: <span data-count-to="50000" data-count-suffix="+">
   var counters = document.querySelectorAll('[data-count-to]');
   if(counters.length && 'IntersectionObserver' in window){
     var counted = new WeakSet();
