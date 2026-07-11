@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /go/
 
-Sitemap: https://www.streamdeutschland.de/sitemap.xml
+Sitemap: https://streamdeutschland.de/sitemap.xml

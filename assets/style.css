@@ -563,3 +563,9 @@ header img.brand-mark{animation:sd-logo-breathe 3.6s ease-in-out infinite;}
 .trial-success-icon svg{width:32px;height:32px;color:var(--accent);}
 .trial-success h3{font-size:22px;margin-bottom:12px;}
 .trial-success p{color:var(--text-dim);max-width:440px;margin:0 auto 12px;}
+
+/* Footer inline link rows (cities & devices) */
+.foot-inline{border-top:1px solid var(--line);padding:14px 0;font-size:13px;color:var(--text-faint);line-height:2;}
+.foot-inline span{font-weight:700;margin-right:6px;}
+.foot-inline a{color:var(--text-dim);}
+.foot-inline a:hover{color:var(--text);}
