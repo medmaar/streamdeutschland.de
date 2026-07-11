@@ -435,3 +435,40 @@ header img.brand-mark{animation:sd-logo-breathe 3.6s ease-in-out infinite;}
   .sales-banner{left:12px;bottom:12px;max-width:calc(100% - 96px);padding:10px 26px 10px 10px;}
   .whatsapp-float{bottom:16px;}
 }
+
+/* Reviews / testimonials section */
+.overflow-hidden{overflow:hidden;}
+.review-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px;}
+.review-stat-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:10px 20px;text-align:center;min-width:100px;}
+.review-stat-num{font-size:19px;font-weight:800;}
+.review-stat-lbl{font-size:11.5px;color:var(--text-faint);margin-top:2px;}
+
+.review-source-head{display:flex;align-items:center;justify-content:center;gap:8px;margin:56px 0 24px;}
+.review-source-head:first-of-type{margin-top:0;}
+.review-source-badge{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.review-source-name{font-weight:800;font-size:17px;}
+
+.review-slide{transition:opacity .3s var(--ease),transform .3s var(--ease);}
+.review-slide.sliding{opacity:0;transform:translateY(8px);}
+
+.review-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+.review-card .stars{display:flex;gap:3px;margin-bottom:14px;}
+.review-card .stars svg{display:block;}
+.review-card h4{font-size:16px;margin-bottom:8px;}
+.review-card p{color:var(--text-dim);font-size:14.5px;line-height:1.6;margin:0 0 14px;}
+.review-card .auth{font-size:13px;color:var(--text-faint);font-weight:700;}
+
+.review-grid{display:grid;gap:16px;}
+.review-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+.review-grid.cols-4{grid-template-columns:repeat(4,1fr);}
+@media (max-width:760px){
+  .review-grid.cols-2{grid-template-columns:1fr;}
+  .review-grid.cols-4{grid-template-columns:repeat(2,1fr);}
+}
+.review-grid .review-card{padding:20px;}
+.review-grid .review-card .stars{margin-bottom:10px;}
+.review-grid .review-card p{font-size:13.5px;margin-bottom:10px;}
+
+.review-dots{display:flex;justify-content:center;gap:6px;margin-top:20px;}
+.review-dot{width:8px;height:8px;border-radius:50%;border:none;background:var(--line);cursor:pointer;padding:0;transition:background .2s var(--ease),transform .2s var(--ease);}
+.review-dot.on{background:var(--accent);transform:scale(1.2);}

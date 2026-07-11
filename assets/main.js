@@ -205,3 +205,101 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 });
+
+// ===== Customer reviews slider (Trustpilot / WhatsApp / Google) =====
+document.addEventListener('DOMContentLoaded', function(){
+  var tpEl = document.getElementById('tpSlide');
+  if(!tpEl) return;
+
+  var tpR = [{"t": "Bester IPTV-Service – endlich ohne Aussetzer", "x": "Ich habe mindestens vier IPTV-Anbieter getestet und keiner kam an StreamDeutschland heran. Aktivierung war schnell, Support antwortete sofort, Live-Sport läuft endlich flüssig.", "n": "Thomas R."}, {"t": "Support der wirklich hilft", "x": "Der Kundenservice hat mich bei StreamDeutschland gehalten. Ich kam von einem Anbieter, der bei Problemen verschwand. Hier hört der Support wirklich zu und antwortet schnell.", "n": "Julian M."}, {"t": "Stabil seit dem ersten Tag", "x": "Ich war skeptisch, weil IPTV-Dienste mich bereits enttäuscht haben. Der Service ist seit dem ersten Tag stabil. Live-Matches getestet – keinerlei Probleme.", "n": "Anton B."}, {"t": "Qualität weit über den anderen", "x": "Nach dem Vergleich mit zwei Anbietern war der Unterschied offensichtlich. Die anderen waren unzuverlässig. StreamDeutschland hat mir bei der Einrichtung geholfen und nachgehakt.", "n": "Peter L."}, {"t": "Meine Verbindung war nie das Problem", "x": "Mein alter Anbieter schob Einfrieren immer auf meine Verbindung. Mit diesem Service merkte ich: die Verbindung war nie das Problem. Stabile Streams, konstante HD-Qualität.", "n": "Niklas D."}, {"t": "Transparent – liefert genau was versprochen", "x": "Vor dem Abo hatte ich viele Fragen. Der Support gab ehrliche Antworten ohne zu übertreiben. Nach dem Abo stimmte alles überein.", "n": "Roman C."}, {"t": "Schnelle Aktivierung und echter Support", "x": "Ich wechselte zu streamdeutschland.de nachdem mein alter Service während eines Spiels abstürzte. Der Service aktivierte schnell und begleitete mich geduldig bei der Einrichtung.", "n": "Max P."}, {"t": "Bessere Stabilität und deutlich besserer Support", "x": "StreamDeutschland bietet bessere Stabilität als andere. Bei anderen waren Antworten langsam oder generisch. Hier liest der Support wirklich Ihre Nachricht und hilft gezielt.", "n": "Lukas F."}, {"t": "Optimiert und zuverlässig", "x": "Ich schreibe selten Bewertungen, aber dieser Service verdient es. Der Service scheint wirklich optimiert zu sein und gibt hilfreiche statt kopierte Ratschläge.", "n": "Sebastian K."}, {"t": "Beständigkeit die andere nicht erreichen", "x": "Der größte Unterschied ist die Beständigkeit. Frühere Anbieter waren unberechenbar. StreamDeutschland ist seit dem ersten Tag stabil und meldete sich nach Aktivierung von selbst.", "n": "Matthias C."}, {"t": "Der Vergleich war nicht mal knapp", "x": "StreamDeutschland eine Woche parallel zum alten Anbieter getestet – nicht mal knapp. Bessere Bildqualität, schnellerer Kanalwechsel, keine zufälligen Unterbrechungen.", "n": "Florian D."}, {"t": "Stabilster IPTV-Service den ich je hatte", "x": "Ich nutze streamdeutschland.de seit Monaten – der stabilste Service den ich je hatte. Live-Sport einwandfrei, VOD lädt schnell, Support reaktionsschnell und freundlich.", "n": "Vincent L."}, {"t": "Solide Leistung und echter Kundensupport", "x": "Nach Vergleich günstigerer Alternativen wechselte ich. Bei denen gab es immer Abstriche. Der Anbieter liefert gute Leistung und echten Kundendienst.", "n": "Alex R."}, {"t": "Hat mein Vertrauen in IPTV zurückgegeben", "x": "Nach mehreren schlechten Erfahrungen war ich bereit, IPTV aufzugeben. StreamDeutschland hat bewiesen, dass ein Service stabil, ehrlich und von echten Menschen unterstützt sein kann.", "n": "Chris A."}, {"t": "Premium und zuverlässig", "x": "Die Servicequalität ist klar überlegen. Kanäle stabil, VOD-Auswahl exzellent, Support erklärt Dinge korrekt. Das ist Premium und zuverlässig.", "n": "Stefan B."}];
+  var waR = [{"x": "Hallo, wollte nur sagen, der Service funktioniert super. Sport läuft flüssig und bisher keine Unterbrechung. Danke für die schnelle Hilfe gestern.", "n": "Thomas W."}, {"x": "Danke für den Support. Die Installation war einfach. Viel besser als mein alter IPTV der ständig eingefroren ist.", "n": "Julian C."}, {"x": "Bei mir läuft alles gut. Streams sind stabil, auch bei Spielen. Großer Unterschied zum alten Anbieter.", "n": "Peter F."}, {"x": "Funktioniert jetzt einwandfrei. Kundenservice war sehr geduldig, danke. Die Qualität stimmt.", "n": "Roman M."}, {"x": "Bestätigung: alles läuft gut. Live-Sender sind flüssig, VOD lädt schnell. Bisher sehr zufrieden.", "n": "Niklas T."}, {"x": "Danke für die schnelle Antwort. Ich hätte nicht erwartet, dass der Support so schnell reagiert. Der Service ist top.", "n": "Max A."}, {"x": "Nochmals danke für die Hilfe vorhin. Viel stabiler als das IPTV das ich vorher genutzt habe.", "n": "Lukas R."}, {"x": "Alles gut jetzt. Während des Spiels getestet – absolut kein Puffern. Wirklich beeindruckt.", "n": "Anton W."}, {"x": "Der Service läuft gut. Hatte Probleme mit dem alten Anbieter aber hier bisher nichts.", "n": "Sebastian B."}, {"x": "Installation erledigt und alles funktioniert. Danke, dass ihr mich Schritt für Schritt begleitet habt.", "n": "Matthias M."}, {"x": "Wollte euch wissen lassen: alles einwandfrei. Sender laden schnell, die Qualität ist gut.", "n": "Florian H."}, {"x": "Viel besser als vorher. Der Support reagiert wirklich und hilft – das ist selten bei IPTV.", "n": "Vincent P."}, {"x": "Keine Probleme heute. Sport und Filme ohne Probleme geschaut. Guter Service.", "n": "Alex C."}, {"x": "Läuft immer noch gut. Zufrieden mit dem Abo.", "n": "Chris G."}, {"x": "Gestern Abend zu Spitzenzeiten getestet. Kein Lag überhaupt. Große Verbesserung.", "n": "Stefan S."}, {"x": "Service ist solide. Hatte eine Frage und ihr habt schnell geantwortet. Danke.", "n": "Jonathan P."}, {"x": "Streams sind klar und stabil. Die Installation war einfacher als erwartet.", "n": "Benjamin H."}, {"x": "Bestätigung: es funktioniert super. Diese Stabilität hatte ich vorher nicht.", "n": "Paul E."}, {"x": "Danke für den Support. Alles funktioniert wie versprochen. Keine Beschwerden bisher.", "n": "David M."}, {"x": "Sehr zufrieden. Ehrlich gesagt hat der Kundenservice den Unterschied gemacht.", "n": "Damian F."}];
+  var gR = [{"x": "Viele IPTV-Services genutzt – StreamDeutschland ist der erste der mich nach der ersten Woche nicht enttäuscht hat. Sender laden schnell, Sport ist flüssig, Qualität konstant.", "n": "Matthias C."}, {"x": "Von einem anderen Anbieter gewechselt der ständig gepuffert hat. StreamDeutschland ist deutlich besser. Streams stabil und der Kundenservice reagiert wirklich.", "n": "Julian T."}, {"x": "Aktivierung war schnell und alles funktionierte wie erwartet. Für Sport und Filme – keine größeren Probleme. Support war höflich und hilfreich.", "n": "Anton M."}, {"x": "Nach schlechten Erfahrungen war ich zögerlich, aber streamdeutschland.de hat mich überrascht. Bildqualität gut, Sender frieren nicht ein, Support blieb verfügbar.", "n": "Roman W."}, {"x": "StreamDeutschland war bisher zuverlässig. Zu Stoßzeiten getestet und alles lief gut. Beim alten Anbieter waren Wochenenden immer problematisch.", "n": "Niklas P."}, {"x": "Was mir am meisten gefällt ist die Beständigkeit. Bei anderen änderte sich die Qualität täglich. StreamDeutschland ist seit dem Abo stabil geblieben.", "n": "Max J."}, {"x": "Schaue hauptsächlich Fußball und PPV-Events – StreamDeutschland handhabt diese gut. Kein nennenswertes Puffern. Support beantwortete Fragen klar.", "n": "Peter O."}, {"x": "Installation einfach. Support antwortete schneller als erwartet. Streams sauber und VOD funktioniert gut. Professioneller als die meisten.", "n": "Sebastian H."}, {"x": "Auf Empfehlung ausprobiert. Im Vergleich zum alten Service stabiler und einfacher. Kundenservice verschwand nicht nach der Zahlung.", "n": "Lukas C."}, {"x": "Sender wechseln schnell, Qualität konstant. Hatte ein kleines Problem und Support löste es in wenigen Minuten. Insgesamt sehr zufrieden.", "n": "Florian R."}, {"x": "streamdeutschland.de seit Monaten genutzt. Live-Sport zuverlässig, Filme laden schnell. Support war jedes Mal reaktionsschnell.", "n": "Vincent A."}, {"x": "StreamDeutschland macht was es verspricht. Keine übertriebenen Aussagen, nur stabiler Service. Beim alten Anbieter hatte ich fast täglich Pufferprobleme. Hier nicht.", "n": "Alex T."}, {"x": "Gute Stream-Qualität und schnelle Aktivierung. Kundenservice hilfreich. Im Vergleich zu anderen wirkt der Anbieter organisierter und vertrauenswürdiger.", "n": "Chris M."}, {"x": "Lasse selten Bewertungen, aber der Service war solide. Sport-Sender gut, VOD-Auswahl gut, Support antwortet schnell statt generische Nachrichten zu senden.", "n": "Stefan B."}, {"x": "Zu StreamDeutschland gewechselt nach ständigen Problemen. Der Unterschied ist spürbar. Bessere Stabilität, deutlich besserer Support.", "n": "Jonathan L."}, {"x": "Aktivierung schnell, Support verfügbar bei Fragen. Hauptsächlich Serien und Filme – alles läuft problemlos. Guter zuverlässiger Service.", "n": "Daniel L."}, {"x": "StreamDeutschland war zu Stoßzeiten stabil, was mein größtes Problem mit früheren Services war. Kundenservice reaktionsschnell und professionell.", "n": "David M."}, {"x": "Sender laden schnell, Qualität bleibt konstant. Support einmal kontaktiert – höflich gelöst. Dieser Service wirkt vertrauenswürdiger.", "n": "Damian P."}, {"x": "StreamDeutschland.de parallel zu einem anderen Anbieter getestet – StreamDeutschland hat klar besser abgeschnitten. Weniger Puffern, schnellerer Kanalwechsel.", "n": "Arndt W."}, {"x": "Zuverlässiger Service mit guter Bildqualität. Bei einer Installationsfrage war Kundenservice erreichbar. Viel flüssiger als mein letzter IPTV-Anbieter.", "n": "Benedikt T."}];
+
+
+  var tpI = 0, waI = 0, gI = 0;
+  var REVIEW_INTERVAL = 7000;
+  var tpPause = 0, waPause = 0, gPause = 0;
+  var STAR_SVG = '<svg viewBox="0 0 24 24" fill="white" width="12" height="12"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+
+  function mkDots(id, total, current, onClick){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var html = '';
+    for(var i = 0; i < total; i++){
+      html += '<button class="review-dot' + (i === current ? ' on' : '') + '" aria-label="Bewertung ' + (i + 1) + '" data-i="' + i + '"></button>';
+    }
+    el.innerHTML = html;
+    el.querySelectorAll('.review-dot').forEach(function(btn){
+      btn.addEventListener('click', function(){ onClick(parseInt(btn.dataset.i, 10)); });
+    });
+  }
+
+  function slideTransition(elId, cb){
+    var el = document.getElementById(elId);
+    el.classList.add('sliding');
+    setTimeout(function(){ cb(); el.classList.remove('sliding'); }, 320);
+  }
+
+  function renderTP(){
+    var r = tpR[tpI];
+    var starsEl = document.getElementById('tpStars');
+    starsEl.innerHTML = '';
+    for(var i = 0; i < 5; i++){
+      var s = document.createElement('div');
+      s.style.cssText = 'width:22px;height:22px;background:#00b67a;border-radius:3px;display:flex;align-items:center;justify-content:center';
+      s.innerHTML = STAR_SVG;
+      starsEl.appendChild(s);
+    }
+    document.getElementById('tpTitle').textContent = r.t;
+    document.getElementById('tpText').textContent = r.x;
+    document.getElementById('tpAuth').textContent = '— ' + r.n;
+    mkDots('tpDots', tpR.length, tpI, function(i){
+      tpPause = Date.now() + REVIEW_INTERVAL;
+      slideTransition('tpSlide', function(){ tpI = i; renderTP(); });
+    });
+  }
+
+  function renderWA(){
+    var waPages = Math.ceil(waR.length / 2);
+    var slice = waR.slice(waI * 2, waI * 2 + 2);
+    document.getElementById('waCards').innerHTML = slice.map(function(r){
+      return '<div class="review-card"><p style="margin-bottom:10px;">' + r.x + '</p><p class="auth">— ' + r.n + '</p></div>';
+    }).join('');
+    mkDots('waDots', waPages, waI, function(i){
+      waPause = Date.now() + REVIEW_INTERVAL;
+      slideTransition('waSlide', function(){ waI = i; renderWA(); });
+    });
+  }
+
+  function renderG(){
+    var gPages = Math.ceil(gR.length / 4);
+    var slice = gR.slice(gI * 4, gI * 4 + 4);
+    document.getElementById('gCards').innerHTML = slice.map(function(r){
+      return '<div class="review-card"><div style="color:var(--accent);font-size:12px;margin-bottom:8px;">★★★★★</div><h4>' + r.n + '</h4><p>' + r.x + '</p></div>';
+    }).join('');
+    mkDots('gDots', gPages, gI, function(i){
+      gPause = Date.now() + REVIEW_INTERVAL;
+      slideTransition('gSlide', function(){ gI = i; renderG(); });
+    });
+  }
+
+  renderTP();
+  renderWA();
+  renderG();
+
+  setInterval(function(){
+    if(Date.now() < tpPause) return;
+    slideTransition('tpSlide', function(){ tpI = (tpI + 1) % tpR.length; renderTP(); });
+  }, REVIEW_INTERVAL);
+  setInterval(function(){
+    if(Date.now() < waPause) return;
+    var waPages = Math.ceil(waR.length / 2);
+    slideTransition('waSlide', function(){ waI = (waI + 1) % waPages; renderWA(); });
+  }, REVIEW_INTERVAL + 600);
+  setInterval(function(){
+    if(Date.now() < gPause) return;
+    var gPages = Math.ceil(gR.length / 4);
+    slideTransition('gSlide', function(){ gI = (gI + 1) % gPages; renderG(); });
+  }, REVIEW_INTERVAL + 1200);
+
+});
