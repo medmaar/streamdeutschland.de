@@ -253,6 +253,7 @@
       var name = document.getElementById('first_name').value.trim();
       var whatsapp = updatePreview();
       var notes = document.getElementById('notes').value.trim();
+      var country = document.getElementById('country').value;
 
       try {
         var res = await fetch('https://iptv-trial-streamdeutschland.medmaar.workers.dev', {
@@ -262,6 +263,7 @@
             name: name,
             email: email,
             whatsapp: whatsapp,
+            country: country,
             device: '',
             notes: notes
           })
