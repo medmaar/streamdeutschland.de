@@ -303,3 +303,40 @@ document.addEventListener('DOMContentLoaded', function(){
   }, REVIEW_INTERVAL + 1200);
 
 });
+// How it works: auto-advancing, clickable step flow
+document.addEventListener('DOMContentLoaded', function(){
+  var flow = document.getElementById('stepsFlow');
+  if(!flow) return;
+  var steps = flow.querySelectorAll('.step-item');
+  var current = 0;
+  var timer = null;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setActive(i){
+    steps.forEach(function(s, idx){ s.classList.toggle('active', idx === i); });
+    current = i;
+  }
+
+  function startAuto(){
+    if(reduced) return;
+    stopAuto();
+    timer = setInterval(function(){
+      setActive((current + 1) % steps.length);
+    }, 2600);
+  }
+
+  function stopAuto(){
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+
+  steps.forEach(function(step, idx){
+    step.addEventListener('click', function(){
+      setActive(idx);
+      startAuto(); // restart the cycle after a manual pick
+    });
+    step.addEventListener('mouseenter', stopAuto);
+    step.addEventListener('mouseleave', startAuto);
+  });
+
+  startAuto();
+});
