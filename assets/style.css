@@ -92,11 +92,11 @@ header.scrolled{background:rgba(18,18,18,0.96);backdrop-filter:blur(10px);border
 /* Scroll-reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
 .reveal.in-view{opacity:1;transform:translateY(0);}
-.row-scroll .tile:nth-child(1){transition-delay:0s;}
-.row-scroll .tile:nth-child(2){transition-delay:.08s;}
-.row-scroll .tile:nth-child(3){transition-delay:.16s;}
-.row-scroll .tile:nth-child(4){transition-delay:.24s;}
-.row-scroll .tile:nth-child(5){transition-delay:.32s;}
+.feature-grid .tile:nth-child(1){transition-delay:0s;}
+.feature-grid .tile:nth-child(2){transition-delay:.08s;}
+.feature-grid .tile:nth-child(3){transition-delay:.16s;}
+.feature-grid .tile:nth-child(4){transition-delay:.24s;}
+.feature-grid .tile:nth-child(5){transition-delay:.32s;}
 .grid-4 .price-card:nth-child(1){transition-delay:0s;}
 .grid-4 .price-card:nth-child(2){transition-delay:.08s;}
 .grid-4 .price-card:nth-child(3){transition-delay:.16s;}
@@ -139,13 +139,11 @@ section{padding:76px 0;}
 .section-head h2{font-size:clamp(28px,4vw,42px);}
 .section-head p{color:var(--text-dim);margin-top:14px;font-size:16.5px;}
 
-.row-scroll{display:flex;gap:16px;overflow-x:auto;padding:8px 4px 20px;scroll-snap-type:x mandatory;}
-.row-scroll::-webkit-scrollbar{height:6px;}
-.row-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
-.tile{flex:0 0 260px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease);}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:8px 0 4px;}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .25s var(--ease),background .25s var(--ease),box-shadow .25s var(--ease);}
 .tile:hover{transform:translateY(-6px) scale(1.02);background:var(--card-hover);box-shadow:0 16px 40px rgba(0,0,0,0.5);}
-.tile .glyph{font-size:26px;margin-bottom:14px;display:block;}
-.tile h3{font-size:21px;margin-bottom:8px;}
+.tile h3{font-size:21px;margin-bottom:8px;position:relative;padding-top:6px;}
+.tile h3::before{content:"";display:block;width:34px;height:3px;border-radius:2px;background:var(--accent);margin-bottom:14px;}
 .tile p{color:var(--text-dim);font-size:14.5px;margin:0;}
 
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
@@ -337,14 +335,6 @@ section > .wrap{position:relative;z-index:1;}
 .nav-links a{position:relative;}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--accent);transition:width .3s var(--ease);}
 .nav-links a:hover::after{width:100%;}
-
-/* Idle float on icon glyphs (child elements only, so it never fights hover/reveal transforms on parent cards) */
-.tile .glyph{display:inline-block;animation:sd-icon-float 3.4s ease-in-out infinite;}
-.tile:nth-child(2) .glyph{animation-delay:.3s;}
-.tile:nth-child(3) .glyph{animation-delay:.6s;}
-.tile:nth-child(4) .glyph{animation-delay:.9s;}
-.tile:nth-child(5) .glyph{animation-delay:1.2s;}
-@keyframes sd-icon-float{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-7px) rotate(-4deg);}}
 
 /* Idle glow breathing behind the logo badge */
 header img.brand-mark{animation:sd-logo-breathe 3.6s ease-in-out infinite;}
