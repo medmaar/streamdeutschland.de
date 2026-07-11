@@ -164,7 +164,7 @@ function reminderEmail(name, username, password, m3uUrl) {
     <p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
       Möchten Sie lieber zuerst unsere Pakete vergleichen?
     </p>
-    ${ctaButton("Jetzt Abonnement wählen →", SITE_URL + "/iptv-kaufen.html")}
+    ${ctaButton("Jetzt Abonnement wählen →", SITE_URL + "/iptv-preise.html")}
     <p style="margin:0 0 16px;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Ihre aktiven Zugangsdaten:</p>
     ${credBox(username, password, m3uUrl)}
     <p style="margin:0 0 20px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
@@ -196,7 +196,7 @@ function followupEmail(name) {
     <p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
       Möchten Sie Ihr Paket lieber selbst auswählen?
     </p>
-    ${ctaButton("Mein Abonnement wählen →", SITE_URL + "/iptv-kaufen.html")}
+    ${ctaButton("Mein Abonnement wählen →", SITE_URL + "/iptv-preise.html")}
     <p style="margin:0 0 20px;font-family:Arial,sans-serif;font-size:14px;line-height:1.65;color:#555555;">
       Eine Frage? Antworten Sie auf diese E-Mail oder schreiben Sie uns auf WhatsApp:
       <a href="https://wa.me/${WA_NUMBER}" style="color:${ACCENT_DARK};text-decoration:none;font-weight:bold;">+1 782-802-6280</a> — wir würden uns freuen, Sie zu behalten.
