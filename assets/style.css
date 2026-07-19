@@ -574,3 +574,12 @@ header img.brand-mark{animation:sd-logo-breathe 3.6s ease-in-out infinite;}
 .foot-payments{border-top:1px solid var(--line);padding:26px 0;text-align:center;}
 .foot-payments p{font-size:11.5px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-faint);margin-bottom:14px;}
 .foot-payments img{max-width:420px;width:100%;height:auto;opacity:0.92;display:block;margin:0 auto;}
+
+/* ── Performance: content-visibility for below-fold sections ── */
+#bewertungen,
+#preise,
+#faq,
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
