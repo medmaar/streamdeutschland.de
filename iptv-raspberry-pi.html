@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPTV Raspberry Pi 2026 – Einrichten & Streamen | StreamDeutschland</title>
+<meta name="description" content="IPTV auf Raspberry Pi einrichten: Kodi oder VLC nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
+<link rel="canonical" href="https://streamdeutschland.de/iptv-raspberry-pi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta property="og:title" content="IPTV Raspberry Pi 2026 – Einrichten & Streamen | StreamDeutschland">
+<meta property="og:description" content="IPTV auf Raspberry Pi einrichten: Kodi oder VLC nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
+<meta property="og:image" content="https://streamdeutschland.de/assets/og-guide.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://streamdeutschland.de/iptv-raspberry-pi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IPTV Raspberry Pi 2026 – Einrichten & Streamen | StreamDeutschland">
+<meta name="twitter:description" content="IPTV auf Raspberry Pi einrichten: Kodi oder VLC nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
+<meta name="twitter:image" content="https://streamdeutschland.de/assets/og-guide.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">{
+  "@context":"https://schema.org","@type":"HowTo",
+  "name":"IPTV auf Raspberry Pi einrichten","description":"IPTV auf Raspberry Pi einrichten: Kodi oder VLC nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.",
+  "step":[{"@type":"HowToStep","name":"LibreELEC auf dem Raspberry Pi installieren","text":"LibreELEC-Image von libreelec.tv herunterladen, mit Raspberry Pi Imager auf SD-Karte schreiben, Pi starten. Kodi öffnet automatisch."},{"@type":"HowToStep","name":"PVR IPTV Simple Client in Kodi aktivieren","text":"Kodi → Einstellungen → Add-ons → Meine Add-ons → PVR-Clients → PVR IPTV Simple Client aktivieren → Konfiguration öffnen."},{"@type":"HowToStep","name":"M3U-URL und EPG eintragen","text":"In der PVR IPTV Simple Client Konfiguration die M3U-URL von StreamDeutschland eintragen. EPG-URL separat im EPG-Tab eingeben. Kodi neu starten."},{"@type":"HowToStep","name":"Alternativ: VLC unter Raspberry Pi OS","text":"sudo apt install vlc → VLC starten → Medien → Netzwerkstream → M3U-URL von StreamDeutschland eingeben. Einfacher, aber ohne EPG."}]
+}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[{"@type":"Question","name":"Welcher Raspberry Pi eignet sich am besten für IPTV?","acceptedAnswer":{"@type":"Answer","text":"Raspberry Pi 4 (4GB RAM) oder Pi 5 für flüssige 4K-Wiedergabe. Ältere Modelle (Pi 3) funktionieren für HD-Streams."}},
+{"@type":"Question","name":"Kann der Raspberry Pi 4K IPTV streamen?","acceptedAnswer":{"@type":"Answer","text":"Ja – Raspberry Pi 4 und 5 geben 4K HDR10 aus. LibreELEC mit Kodi nutzt Hardware-Dekodierung für flüssige 4K-Wiedergabe."}},
+{"@type":"Question","name":"Welches Betriebssystem empfehlen Sie?","acceptedAnswer":{"@type":"Answer","text":"LibreELEC mit Kodi ist die einfachste Lösung speziell für IPTV/Media Center. Raspberry Pi OS + VLC ist flexibler für weitere Anwendungen."}},
+{"@type":"Question","name":"Wie richte ich EPG auf dem Raspberry Pi ein?","acceptedAnswer":{"@type":"Answer","text":"Über den PVR IPTV Simple Client in Kodi. StreamDeutschland liefert die EPG-URL zusammen mit den Zugangsdaten."}},
+{"@type":"Question","name":"Gibt es einen kostenlosen Test?","acceptedAnswer":{"@type":"Answer","text":"Ja – Testlinie anfordern, auf dem Raspberry Pi einrichten, kostenlos testen."}}]
+}</script>
+<script type="application/ld+json">{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Startseite","item":"https://streamdeutschland.de/"},
+    {"@type":"ListItem","position":2,"name":"IPTV Raspberry Pi","item":"https://streamdeutschland.de/iptv-raspberry-pi"}
+  ]
+}</script>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="/"><img class="brand-mark" src="assets/logo.svg" alt="StreamDeutschland" height="34" style="width:auto;"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="/iptv-anbieter">IPTV Anbieter</a>
+      <a href="/#kanaele">Kanäle</a>
+      <a href="/#geraete">Geräte</a>
+      <a href="/iptv-abo">IPTV Abo</a>
+      <a href="/#bewertungen">Bewertungen</a>
+      <a href="/iptv-test">Kostenloser Test</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="/#preise">IPTV kaufen</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="page-content"><div class="wrap" style="max-width:860px;">
+<div class="breadcrumb"><a href="/">Startseite</a> / IPTV Raspberry Pi</div>
+<div class="eyebrow">IPTV Raspberry Pi</div>
+<h1>IPTV Raspberry Pi einrichten – Anleitung 2026</h1>
+<p class="lead" style="font-size:18px;color:var(--text-dim);max-width:720px;margin:18px 0 34px;">Der Raspberry Pi 4 und Pi 5 sind energiesparende Minicomputer, die mit Kodi + PVR IPTV Simple Client zu vollwertigen IPTV-Geräten werden. 50.000+ Kanäle, 4K-Qualität und 300.000+ Filme direkt auf Ihrem Raspberry Pi.</p>
+
+<h2>Empfohlene App: Kodi oder VLC</h2>
+<p>Raspberry Pi ist mit LibreELEC/Kodi oder dem Desktop-Linux über VLC vollständig IPTV-kompatibel. Ideal für technisch versierte Nutzer, die ein günstiges, energiesparendes IPTV-Gerät bauen wollen.</p>
+
+<h2>Schritt-für-Schritt Einrichtung</h2>
+<h3>Schritt 1: LibreELEC auf dem Raspberry Pi installieren</h3><p>LibreELEC-Image von libreelec.tv herunterladen, mit Raspberry Pi Imager auf SD-Karte schreiben, Pi starten. Kodi öffnet automatisch.</p>
+<h3>Schritt 2: PVR IPTV Simple Client in Kodi aktivieren</h3><p>Kodi → Einstellungen → Add-ons → Meine Add-ons → PVR-Clients → PVR IPTV Simple Client aktivieren → Konfiguration öffnen.</p>
+<h3>Schritt 3: M3U-URL und EPG eintragen</h3><p>In der PVR IPTV Simple Client Konfiguration die M3U-URL von StreamDeutschland eintragen. EPG-URL separat im EPG-Tab eingeben. Kodi neu starten.</p>
+<h3>Schritt 4: Alternativ: VLC unter Raspberry Pi OS</h3><p>sudo apt install vlc → VLC starten → Medien → Netzwerkstream → M3U-URL von StreamDeutschland eingeben. Einfacher, aber ohne EPG.</p>
+
+
+<h2>Warum StreamDeutschland für Raspberry Pi?</h2>
+<ul style="color:var(--text-dim);max-width:720px;padding-left:20px;">
+  <li>Vollständig kompatibel mit Raspberry Pi und Kodi oder VLC</li>
+  <li>50.000+ Live-Kanäle inkl. aller deutschen Sender in HD und 4K</li>
+  <li>Kostenloser Test vor dem Kauf – kein Risiko, keine Kreditkarte</li>
+  <li>WhatsApp-Support bei Einrichtungsfragen in Minuten</li>
+  <li>Ab 9€/Monat, keine Vertragsbindung</li>
+</ul>
+
+<div style="margin:44px 0;display:flex;gap:14px;flex-wrap:wrap;">
+  <a class="btn btn-primary" href="/iptv-test">Kostenlosen Test starten</a>
+  <a class="btn btn-ghost" href="/iptv-preise">Preise ansehen</a>
+</div>
+
+<h2>Häufige Fragen</h2>
+<div class="faq-list">
+<details><summary>Welcher Raspberry Pi eignet sich am besten für IPTV?</summary><p>Raspberry Pi 4 (4GB RAM) oder Pi 5 für flüssige 4K-Wiedergabe. Ältere Modelle (Pi 3) funktionieren für HD-Streams.</p></details>
+<details><summary>Kann der Raspberry Pi 4K IPTV streamen?</summary><p>Ja – Raspberry Pi 4 und 5 geben 4K HDR10 aus. LibreELEC mit Kodi nutzt Hardware-Dekodierung für flüssige 4K-Wiedergabe.</p></details>
+<details><summary>Welches Betriebssystem empfehlen Sie?</summary><p>LibreELEC mit Kodi ist die einfachste Lösung speziell für IPTV/Media Center. Raspberry Pi OS + VLC ist flexibler für weitere Anwendungen.</p></details>
+<details><summary>Wie richte ich EPG auf dem Raspberry Pi ein?</summary><p>Über den PVR IPTV Simple Client in Kodi. StreamDeutschland liefert die EPG-URL zusammen mit den Zugangsdaten.</p></details>
+<details><summary>Gibt es einen kostenlosen Test?</summary><p>Ja – Testlinie anfordern, auf dem Raspberry Pi einrichten, kostenlos testen.</p></details>
+</div>
+</div></div>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <img src="assets/logo.svg" alt="StreamDeutschland" height="30" style="height:30px;width:auto;margin-bottom:14px;">
+        <p style="color:var(--text-dim);font-size:14px;max-width:280px;">IPTV Deutschland 2026 – über 50.000 Kanäle, stabiler Server, deutscher Support.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Produkt</h4>
+        <a href="/iptv-abo">IPTV Abo</a>
+        <a href="/iptv-preise">IPTV Preise</a>
+        <a href="/iptv-sender">IPTV Sender</a>
+        <a href="/iptv-anbieter">IPTV Anbieter</a>
+        <a href="/iptv-test">Kostenloser Test</a>
+        <a href="/iptv-test-kostenlos">Gratis IPTV Test</a>
+        <a href="/iptv-line-test">Testline</a>
+        <a href="/iptv-free-trial">Free Trial (EN)</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ratgeber</h4>
+        <a href="/was-ist-iptv">Was ist IPTV?</a>
+        <a href="/iptv-kaufen">IPTV kaufen</a>
+        <a href="/iptv-deutschland">IPTV Deutschland</a>
+        <a href="/iptv-sky">IPTV vs Sky</a>
+        <a href="/iptv-ohne-vertrag">Ohne Vertrag</a>
+        <a href="/iptv-vpn">IPTV VPN</a>
+        <a href="/iptv-abonnement">Abonnement</a>
+        <a href="/iptv-anbieter-vergleich">Anbieter-Vergleich</a>
+        <a href="/iptv-player">IPTV Player</a>
+        <a href="/iptv-app">IPTV App</a>
+        <a href="/iptv-m3u-playlist">M3U Playlist</a>
+        <a href="/iptv-legal">Ist IPTV legal?</a>
+        <a href="/german-iptv">German IPTV (EN)</a>
+        <a href="/iptv-provider">IPTV Provider (EN)</a>
+      </div>
+      <div class="foot-col">
+        <h4>Anleitungen</h4>
+        <a href="/iptv-einrichten">IPTV einrichten</a>
+        <a href="/iptv-fire-tv-stick">Fire TV Stick</a>
+        <a href="/iptv-smart-tv">Smart TV</a>
+        <a href="/iptv-apple-tv">Apple TV</a>
+        <a href="/iptv-chromecast">Chromecast</a>
+        <a href="/iptv-tivimate">TiviMate</a>
+        <a href="/iptv-aufnahme">Aufnahme</a>
+        <a href="/iptv-firestick">Fire Stick (EN)</a>
+        <a href="/iptv-mag">MAG Box</a>
+        <a href="/smart-iptv-app">Smart IPTV App</a>
+        <a href="/iptv-smarters-pro">IPTV Smarters Pro</a>
+        <a href="/kodi-iptv">Kodi IPTV</a>
+        <a href="/iptv-box-stick">Box &amp; Stick</a>
+      </div>
+      <div class="foot-col">
+        <h4>Rechtliches</h4>
+        <a href="/legal/impressum">Impressum</a>
+        <a href="/legal/datenschutz">Datenschutz</a>
+        <a href="/legal/agb">AGB</a>
+      </div>
+    </div>
+    <div class="foot-inline">
+      <span>IPTV in Ihrer Stadt:</span> <a href="/iptv-berlin">Berlin</a> · <a href="/iptv-hamburg">Hamburg</a> · <a href="/iptv-muenchen">München</a> · <a href="/iptv-koeln">Köln</a> · <a href="/iptv-frankfurt">Frankfurt</a> · <a href="/iptv-stuttgart">Stuttgart</a> · <a href="/iptv-duesseldorf">Düsseldorf</a> · <a href="/iptv-dortmund">Dortmund</a> · <a href="/iptv-leipzig">Leipzig</a> · <a href="/iptv-hannover">Hannover</a> · <a href="/iptv-nuernberg">Nürnberg</a> · <a href="/iptv-bremen">Bremen</a> · <a href="/iptv-dresden">Dresden</a> · <a href="/iptv-muenster">Münster</a> · <a href="/iptv-bochum">Bochum</a> · <a href="/iptv-bielefeld">Bielefeld</a> · <a href="/iptv-bonn">Bonn</a> · <a href="/iptv-mannheim">Mannheim</a> · <a href="/iptv-karlsruhe">Karlsruhe</a> · <a href="/iptv-augsburg">Augsburg</a> · <a href="/iptv-wiesbaden">Wiesbaden</a> · <a href="/iptv-aachen">Aachen</a> · <a href="/iptv-braunschweig">Braunschweig</a> · <a href="/iptv-chemnitz">Chemnitz</a> · <a href="/iptv-kiel">Kiel</a> · <a href="/iptv-freiburg">Freiburg</a> · <a href="/iptv-mainz">Mainz</a> · <a href="/iptv-magdeburg">Magdeburg</a> · <a href="/iptv-erfurt">Erfurt</a> · <a href="/iptv-rostock">Rostock</a> · <a href="/iptv-kassel">Kassel</a>
+    </div>
+    <div class="foot-inline">
+      <span>Nach Gerät:</span> <a href="/iptv-android">IPTV Android</a> · <a href="/iptv-samsung">IPTV Samsung</a> · <a href="/iptv-lg">IPTV LG</a> · <a href="/iptv-smart-tv">Smart TV</a> · <a href="/iptv-apple-tv">Apple TV</a> · <a href="/iptv-chromecast">Chromecast</a> · <a href="/iptv-firestick">Fire Stick</a> · <a href="/iptv-box">IPTV Box</a> · <a href="/iptv-stick">IPTV Stick</a> · <a href="/iptv-receiver">IPTV Receiver</a> · <a href="/iptv-mag">MAG Box</a> · <a href="/iptv-windows">IPTV Windows</a> · <a href="/iptv-iphone">IPTV iPhone</a> · <a href="/iptv-4k">IPTV 4K</a> · <a href="/iptv-ipad">IPTV iPad</a> · <a href="/iptv-mac">IPTV Mac</a> · <a href="/iptv-nvidia-shield">Nvidia Shield</a> · <a href="/iptv-formuler">Formuler Box</a> · <a href="/iptv-linux">IPTV Linux</a> · <a href="/iptv-android-player">Android Player</a>
+    </div>
+    <div class="foot-payments">
+      <p>Akzeptierte Zahlungsmethoden</p>
+      <img src="assets/payment-methods.png" alt="Akzeptierte Zahlungsmethoden: Mastercard, Visa, American Express, PayPal, Klarna, Banküberweisung, Google Pay, Apple Pay" width="1570" height="140" loading="lazy">
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 StreamDeutschland. Alle Rechte vorbehalten.</div>
+      <div>IPTV-Technologie ist legal; die Rechtmässigkeit der übertragenen Inhalte liegt beim jeweiligen Rechteinhaber.</div>
+    </div>
+  </div>
+</footer>
+<script>
+const t=document.getElementById('navToggle'),n=document.getElementById('navLinks');
+if(t&&n){t.addEventListener('click',()=>{const o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));n.classList.toggle('open',!o);});}
+</script>
+</body>
+</html>
