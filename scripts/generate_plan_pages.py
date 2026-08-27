@@ -101,10 +101,8 @@ DURATION_CONTENT = {
                 'Ja, Sie können jederzeit vor Ablauf auf ein 6-Monats- oder Jahresabo verlängern und sparen dabei zusätzlich.'),
     },
     'six': {
-        'eyebrow': '🔥 Unser beliebtestes Paket',
-        'badge_html': '''                <div class="popular-badge">
-                    <span class="gradient-gold text-[#161200] text-xs font-bold px-4 py-1.5 rounded-full">🔥 BELIEBTESTE LAUFZEIT</span>
-                </div>''',
+        'eyebrow': '',
+        'badge_html': '',
         'seo_html': '''
             <h3 class="text-xl font-bold mb-3 mt-8 text-white">6 Monate Laufzeit – bester IPTV Anbieter im Vergleich</h3>
             <p class="text-gray-400 leading-relaxed mb-4">Im <strong>iptv anbieter vergleich</strong> überzeugt unser 6-Monats-Abo mit dem besten Verhältnis aus Preis, Stabilität und Funktionsumfang. Statt sich in einem anonymen <strong>iptv forum</strong> durch widersprüchliche Empfehlungen zu wühlen, erhalten Sie bei uns transparente Preise, PPV-Events und direkten Support über WhatsApp – als <strong>bester iptv anbieter</strong> für alle, die Wert auf Zuverlässigkeit legen.</p>
@@ -113,10 +111,8 @@ DURATION_CONTENT = {
                 'Sie bietet das beste Verhältnis aus Preis pro Monat und Flexibilität – ohne sich gleich für ein ganzes Jahr zu binden.'),
     },
     'year': {
-        'eyebrow': '💰 Bester Preis pro Monat',
-        'badge_html': '''                <div class="popular-badge">
-                    <span class="bg-yellow-500 text-black text-xs font-bold px-4 py-1.5 rounded-full">💰 BESTER PREIS + BONUS</span>
-                </div>''',
+        'eyebrow': '',
+        'badge_html': '',
         'seo_html': '''
             <h3 class="text-xl font-bold mb-3 mt-8 text-white">1 Jahr Laufzeit – maximale Ersparnis + gratis Bonus</h3>
             <p class="text-gray-400 leading-relaxed mb-4">Für alle, die dauerhaft <strong>beste iptv</strong> Qualität wollen, ist das Jahresabo am günstigsten – der niedrigste Preis pro Monat im gesamten Sortiment. Egal ob Sie mit <strong>iptv smarters pro</strong>, <strong>kodi xbmc iptv</strong> oder über <strong>iptv fire tv</strong> streamen: Mit 12 Monaten Laufzeit müssen Sie sich ein ganzes Jahr lang um nichts kümmern.</p>
