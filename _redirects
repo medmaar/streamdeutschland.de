@@ -1,0 +1,36 @@
+# ═══════════════════════════════════════════════════════════
+# Cloudflare Pages _redirects
+# ═══════════════════════════════════════════════════════════
+
+# www → non-www (canonical domain enforcement)
+https://www.streamdeutschland.de/* https://streamdeutschland.de/:splat 301
+
+# Remove .html extension (clean URLs)
+/index.html / 301
+/legal/impressum.html /legal/impressum 301
+/legal/datenschutz.html /legal/datenschutz 301
+/legal/agb.html /legal/agb 301
+
+# Common typo/variant redirects
+/iptv-kaufen/ /iptv-kaufen 301
+/iptv-test/ /iptv-test 301
+/iptv-preise/ /iptv-preise 301
+/iptv-anbieter/ /iptv-anbieter 301
+
+# German common search queries → best matching pages
+/iptv-kostenlos-testen /iptv-test 301
+/iptv-free /iptv-free-trial 301
+/iptv-gratis /iptv-gratis-testen 301
+/iptv-testversion /iptv-test 301
+/iptv-probe /iptv-test 301
+
+# Abbreviation redirects
+/iptv-de /iptv-deutschland 301
+/de-iptv /iptv-deutschland 301
+
+# Common misspellings
+/iptv-deustchland /iptv-deutschland 301
+/iptv-deutchland /iptv-deutschland 301
+
+# 404 fallback
+/* /index.html 404
