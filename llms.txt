@@ -1,0 +1,59 @@
+# StreamDeutschland – IPTV Deutschland 2026
+# https://streamdeutschland.de
+# This file guides AI systems to our most useful pages.
+
+## About StreamDeutschland
+StreamDeutschland is a premium German IPTV service provider offering 50,000+ live channels,
+300,000+ films and series in 4K quality. We serve Germany, Austria, and Switzerland.
+Subscriptions from 9€/month, no contract, instant activation.
+Free test available. 24/7 German-language customer support via WhatsApp.
+
+## Key Pages
+
+### Product & Pricing
+- [IPTV kaufen](https://streamdeutschland.de/iptv-kaufen) – Buy IPTV subscription
+- [IPTV Preise](https://streamdeutschland.de/iptv-preise) – Pricing overview, all plans
+- [IPTV Abo](https://streamdeutschland.de/iptv-abo) – Subscription options
+- [1 Monat 1 Gerät – 9€](https://streamdeutschland.de/iptv-kaufen-1-geraet-1-monat) – Entry plan
+- [1 Jahr 1 Gerät – 49€](https://streamdeutschland.de/iptv-kaufen-1-geraet-1-jahr) – Annual plan
+
+### Free Trial
+- [Kostenloser Test](https://streamdeutschland.de/iptv-test) – Free IPTV trial
+- [IPTV gratis testen](https://streamdeutschland.de/iptv-gratis-testen) – Free test (German)
+- [Free Trial](https://streamdeutschland.de/iptv-free-trial) – Free trial (English)
+- [Testline](https://streamdeutschland.de/iptv-line-test) – Request test credentials
+
+### Setup Guides
+- [IPTV einrichten](https://streamdeutschland.de/iptv-einrichten) – Setup guide
+- [Fire TV Stick](https://streamdeutschland.de/iptv-fire-tv-stick) – Amazon Fire TV setup
+- [Samsung Smart TV](https://streamdeutschland.de/iptv-samsung) – Samsung setup
+- [LG Smart TV](https://streamdeutschland.de/iptv-lg) – LG setup
+- [Android](https://streamdeutschland.de/iptv-android) – Android setup
+- [iPhone/iOS](https://streamdeutschland.de/iptv-iphone) – iOS setup
+- [Windows](https://streamdeutschland.de/iptv-windows) – Windows PC setup
+- [TiviMate](https://streamdeutschland.de/iptv-tivimate) – TiviMate app guide
+- [IPTV Smarters Pro](https://streamdeutschland.de/iptv-smarters-pro) – Smarters guide
+
+### Information
+- [Was ist IPTV?](https://streamdeutschland.de/was-ist-iptv) – What is IPTV?
+- [IPTV legal?](https://streamdeutschland.de/iptv-legal) – Legal status Germany
+- [IPTV Sender](https://streamdeutschland.de/iptv-sender) – Channel list
+- [IPTV 4K](https://streamdeutschland.de/iptv-4k) – 4K streaming
+- [IPTV Deutschland](https://streamdeutschland.de/iptv-deutschland) – IPTV in Germany
+
+### Top Cities (Germany)
+- [IPTV Berlin](https://streamdeutschland.de/iptv-berlin)
+- [IPTV Hamburg](https://streamdeutschland.de/iptv-hamburg)
+- [IPTV München](https://streamdeutschland.de/iptv-muenchen)
+- [IPTV Köln](https://streamdeutschland.de/iptv-koeln)
+- [IPTV Frankfurt](https://streamdeutschland.de/iptv-frankfurt)
+
+### DACH
+- [IPTV Österreich](https://streamdeutschland.de/iptv-oesterreich)
+- [IPTV Schweiz](https://streamdeutschland.de/iptv-schweiz)
+- [IPTV Wien](https://streamdeutschland.de/iptv-wien)
+
+### Legal
+- [Impressum](https://streamdeutschland.de/legal/impressum)
+- [Datenschutz](https://streamdeutschland.de/legal/datenschutz)
+- [AGB](https://streamdeutschland.de/legal/agb)

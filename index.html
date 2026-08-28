@@ -2,6 +2,10 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//www.trustpilot.com">
+<meta name="theme-color" content="#0ea5e9">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IPTV Deutschland 2026 – StreamDeutschland</title>
 <meta name="description" content="IPTV Deutschland 2026: über 50.000 Kanäle in 4K, stabiler Server und kostenloser Test bei StreamDeutschland. Jetzt IPTV Abo sichern.">
@@ -35,25 +39,80 @@
 <link rel="preload" href="assets/hero.jpg" as="image" fetchpriority="high">
 <link rel="preload" href="assets/style.css" as="style">
 <link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "StreamDeutschland",
+  "legalName": "StreamDeutschland",
   "url": "https://streamdeutschland.de",
-  "logo": "https://streamdeutschland.de/assets/logo-mark-512.png",
-  "description": "IPTV Deutschland 2026 - IPTV Anbieter mit ueber 50.000 Kanaelen, 4K und kostenlosem Test.",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://streamdeutschland.de/assets/logo-mark-512.png",
+    "width": 512,
+    "height": 512
+  },
+  "image": "https://streamdeutschland.de/assets/og-home.jpg",
+  "description": "StreamDeutschland – Premium IPTV Anbieter für Deutschland, Österreich und die Schweiz. Über 50.000 Live-Kanäle in 4K, 300.000+ Filme und Serien, ab 9€/Monat. Kostenloser Test, sofortige Aktivierung, 24/7 Support.",
+  "slogan": "IPTV Deutschland ohne Kompromisse",
+  "foundingDate": "2022",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Germany",
+      "identifier": "DE"
+    },
+    {
+      "@type": "Country",
+      "name": "Austria",
+      "identifier": "AT"
+    },
+    {
+      "@type": "Country",
+      "name": "Switzerland",
+      "identifier": "CH"
+    }
+  ],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer support",
+    "availableLanguage": [
+      "German",
+      "English",
+      "French",
+      "Arabic"
+    ],
+    "areaServed": [
+      "DE",
+      "AT",
+      "CH"
+    ],
     "contactOption": "TollFree",
-    "areaServed": "DE",
-    "availableLanguage": ["German"],
-    "contactOption": "TollFree"
+    "hoursAvailable": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "IPTV Abo Pakete",
+    "url": "https://streamdeutschland.de/iptv-preise"
   },
   "sameAs": [
     "https://www.trustpilot.com/review/streamdeutschland.de"
   ]
-}</script>
+}
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -130,7 +189,8 @@
   ]
 }</script>
 
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "IPTV Deutschland 2026 – StreamDeutschland",
@@ -148,8 +208,14 @@
     "@type": "Organization",
     "name": "StreamDeutschland",
     "url": "https://streamdeutschland.de"
+  },
+  "about": {
+    "@type": "Service",
+    "name": "StreamDeutschland IPTV",
+    "url": "https://streamdeutschland.de"
   }
-}</script>
+}
+</script>
 
 <script type="application/ld+json">
 {
@@ -210,9 +276,35 @@
     "reviewCount": "3842",
     "bestRating": "5",
     "worstRating": "1"
+  },
+  "category": "Television Streaming",
+  "serviceOutput": "Live-TV und Video-on-Demand Streaming in 4K",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "9",
+    "highPrice": "225",
+    "offerCount": "20",
+    "url": "https://streamdeutschland.de/iptv-preise"
   }
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SpeakableSpecification",
+  "cssSelector": [
+    "h1",
+    ".hero-desc",
+    ".faq-answer",
+    "h2"
+  ],
+  "url": "https://streamdeutschland.de/"
+}
+</script>
+
+<link rel="me" href="https://www.trustpilot.com/review/streamdeutschland.de">
 </head>
 <body>
 

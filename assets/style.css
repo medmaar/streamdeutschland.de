@@ -1,3 +1,23 @@
+
+/* ── Core Web Vitals: CLS prevention ──────────────────────── */
+img, video, iframe {
+  aspect-ratio: attr(width) / attr(height);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.brand-mark {
+  width: auto;
+  height: 34px;
+  aspect-ratio: auto;
+}
+/* Prevent font-related layout shifts */
+@font-face {
+  font-family: 'Open Sans';
+  font-display: swap;
+  font-style: normal;
+}
 /* Font display optimization */
 @font-face {
   font-family: 'Open Sans';
