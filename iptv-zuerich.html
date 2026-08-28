@@ -30,14 +30,77 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">{
-  "@context": "https://schema.org", "@type": "Product",
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "image": [
+    "https://streamdeutschland.de/assets/og-home.jpg"
+  ],
   "name": "IPTV Zürich – StreamDeutschland",
   "description": "IPTV Zürich ab 9€/Monat. Über 50.000 Kanäle in 4K.",
-  "brand": {"@type": "Brand", "name": "StreamDeutschland"},
-  "offers": {"@type": "Offer", "price": "9", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "url": "https://streamdeutschland.de/iptv-zuerich"},
-  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "264", "bestRating": "5", "worstRating": "1"}
-}</script>
+  "brand": {
+    "@type": "Brand",
+    "name": "StreamDeutschland"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "9",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://streamdeutschland.de/iptv-zuerich",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "EUR"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "DE"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "AT"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "CH"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "DE",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "264",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [

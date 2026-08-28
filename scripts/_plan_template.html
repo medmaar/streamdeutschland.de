@@ -35,13 +35,33 @@
         "@type": "Product",
         "name": "__PLAN_NAME__ – StreamDeutschland",
         "description": "__META_DESC__",
+        "image": ["https://streamdeutschland.de/assets/og-pricing.jpg"],
         "brand": { "@type": "Brand", "name": "StreamDeutschland" },
         "offers": {
             "@type": "Offer",
             "price": "__PLAN_PRICE_RAW__",
             "priceCurrency": "EUR",
             "availability": "https://schema.org/InStock",
-            "url": "__CANONICAL_URL__"
+            "url": "__CANONICAL_URL__",
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "EUR" },
+                "shippingDestination": [
+                    { "@type": "DefinedRegion", "addressCountry": "DE" },
+                    { "@type": "DefinedRegion", "addressCountry": "AT" },
+                    { "@type": "DefinedRegion", "addressCountry": "CH" }
+                ],
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" },
+                    "transitTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY" }
+                }
+            },
+            "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "applicableCountry": "DE",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+            }
         },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3842", "bestRating": "5" }
     }

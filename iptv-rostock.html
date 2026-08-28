@@ -31,18 +31,67 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Product",
+  "image": [
+    "https://streamdeutschland.de/assets/og-home.jpg"
+  ],
   "name": "IPTV Rostock – StreamDeutschland",
   "description": "IPTV Rostock ab 9€/Monat. Über +50.000 Kanäle, +300.000 Filme & Serien in 4K Qualität.",
-  "brand": {"@type": "Brand", "name": "StreamDeutschland"},
+  "brand": {
+    "@type": "Brand",
+    "name": "StreamDeutschland"
+  },
   "offers": {
     "@type": "Offer",
     "price": "9",
     "priceCurrency": "EUR",
     "availability": "https://schema.org/InStock",
-    "url": "https://streamdeutschland.de/iptv-rostock"
+    "url": "https://streamdeutschland.de/iptv-rostock",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "EUR"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "DE"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "AT"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "CH"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "DE",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -51,7 +100,8 @@
     "bestRating": "5",
     "worstRating": "1"
   }
-}</script>
+}
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",

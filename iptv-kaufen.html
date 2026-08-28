@@ -110,9 +110,13 @@
   ]
 }</script>
 
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "Product",
+  "image": [
+    "https://streamdeutschland.de/assets/og-pricing.jpg"
+  ],
   "name": "IPTV kaufen – StreamDeutschland Abo",
   "description": "IPTV-Abonnement bei StreamDeutschland – über 50.000 Kanäle in 4K/HD, kein Vertrag, sofortige Aktivierung.",
   "brand": {
@@ -125,7 +129,49 @@
     "highPrice": "225",
     "priceCurrency": "EUR",
     "offerCount": "20",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "EUR"
+      },
+      "shippingDestination": [
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "DE"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "AT"
+        },
+        {
+          "@type": "DefinedRegion",
+          "addressCountry": "CH"
+        }
+      ],
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 0,
+          "maxValue": 0,
+          "unitCode": "DAY"
+        }
+      }
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "DE",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+    }
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -134,7 +180,8 @@
     "bestRating": "5",
     "worstRating": "1"
   }
-}</script>
+}
+</script>
 </head>
 <body>
 
