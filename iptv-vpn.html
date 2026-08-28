@@ -43,6 +43,7 @@ header{position:sticky;top:0;z-index:100;background:rgba(15,23,42,.95);backdrop-
 .hero{display:flex;align-items:center;min-height:88vh;padding:4rem 0}
 img{max-width:100%;height:auto}
 </style>
+<link rel="preload" href="assets/style.css" as="style">
 <link rel="stylesheet" href="assets/style.css">
 <script type="application/ld+json">
 {
@@ -280,7 +281,7 @@ img{max-width:100%;height:auto}
 <body>
 <header>
   <div class="wrap nav">
-    <a href="/"><img loading="eager" class="brand-mark" src="assets/logo.svg" alt="StreamDeutschland" height="34" style="width:auto;"></a>
+    <a href="/"><img width="120" loading="eager" class="brand-mark" src="assets/logo.svg" alt="StreamDeutschland" height="34" style="width:auto;"></a>
     <nav class="nav-links" aria-label="Hauptnavigation" id="navLinks">
       <a href="/iptv-anbieter">IPTV Anbieter</a>
       <a href="/#kanaele">Kanäle</a>
@@ -348,11 +349,20 @@ img{max-width:100%;height:auto}
   <details><summary>Sind VPNs in Deutschland legal?</summary><p>Ja, die Nutzung von VPNs ist in Deutschland vollstaendig legal. Es gibt keine Gesetze, die private VPN-Nutzung einschraenken.</p></details>
   <details><summary>Kann ich dasselbe VPN fuer IPTV und normales Surfen nutzen?</summary><p>Ja - ein aktives VPN schuetzt den gesamten Internettraffic Ihres Geraets gleichzeitig, nicht nur IPTV.</p></details></div>
 </div></div>
+
+<section style="padding:2rem 0;border-top:1px solid #334155;margin-top:2rem;">
+  <div class="wrap" style="max-width:900px;">
+    <h3 style="font-size:1rem;color:#9ca3af;margin-bottom:0.75rem;">Weiterführende Quellen</h3>
+    <ul style="list-style:none;display:flex;flex-wrap:wrap;gap:1rem;font-size:0.9rem;">
+      <li><a href="https://www.bsi.bund.de" target="_blank" rel="noopener noreferrer" style="color:#0ea5e9;">BSI – Bundesamt für Sicherheit ↗</a></li>
+    </ul>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col">
-        <img loading="eager" src="assets/logo.svg" alt="StreamDeutschland" height="30" style="height:30px;width:auto;margin-bottom:14px;">
+        <img width="105" loading="eager" src="assets/logo.svg" alt="StreamDeutschland" height="30" style="height:30px;width:auto;margin-bottom:14px;">
         <p style="color:var(--text-dim);font-size:14px;max-width:280px;">IPTV Deutschland 2026 – über 50.000 Kanäle, stabiler Server, deutscher Support.</p>
       </div>
       <div class="foot-col">
