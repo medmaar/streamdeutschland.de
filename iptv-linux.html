@@ -16,6 +16,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="StreamDeutschland">
 <meta property="og:locale" content="de_DE">
 <meta property="og:url" content="https://streamdeutschland.de/iptv-linux">
 <meta name="twitter:site" content="@StreamDE">
@@ -31,13 +32,36 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="assets/style.css">
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "IPTV auf Linux einrichten",
   "description": "IPTV auf Linux einrichten: VLC oder Kodi installieren und StreamDeutschland mit 50.000+ Kanälen in 4K genießen. Schritt-für-Schritt Anleitung 2026.",
-  "step": [{"@type":"HowToStep","name":"VLC installieren","text":"Auf Ubuntu/Debian: sudo apt install vlc. Auf Fedora: sudo dnf install vlc. Auf Arch: sudo pacman -S vlc. Alternativ Flatpak: flatpak install flathub org.videolan.VLC"},{"@type":"HowToStep","name":"M3U-Stream mit VLC öffnen","text":"VLC starten → Menü "Medien" → "Netzwerkstream öffnen" (Strg+N) → M3U-URL von StreamDeutschland einfügen → öffnen. VLC spielt den ersten Kanal der Playlist ab."},{"@type":"HowToStep","name":"Kodi mit IPTV Simple Client einrichten","text":"Kodi installieren → Einstellungen → Add-ons → PVR-Clients → PVR IPTV Simple Client aktivieren → Konfiguration → M3U-URL von StreamDeutschland einfügen → OK."},{"@type":"HowToStep","name":"EPG in Kodi aktivieren","text":"Nach dem Aktivieren des PVR IPTV Simple Clients zeigt Kodi einen EPG-Programmführer für alle Kanäle. URL für EPG-Daten erhalten Sie zusammen mit Ihrer Testlinie."}]
-}</script>
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "VLC installieren",
+      "text": "Auf Ubuntu/Debian: sudo apt install vlc. Auf Fedora: sudo dnf install vlc. Auf Arch: sudo pacman -S vlc. Alternativ Flatpak: flatpak install flathub org.videolan.VLC"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "M3U-Stream mit VLC öffnen",
+      "text": "VLC starten → Menü \"Medien\" → \"Netzwerkstream öffnen\" (Strg+N) → M3U-URL von StreamDeutschland einfügen → öffnen. VLC spielt den ersten Kanal der Playlist ab."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Kodi mit IPTV Simple Client einrichten",
+      "text": "Kodi installieren → Einstellungen → Add-ons → PVR-Clients → PVR IPTV Simple Client aktivieren → Konfiguration → M3U-URL von StreamDeutschland einfügen → OK."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "EPG in Kodi aktivieren",
+      "text": "Nach dem Aktivieren des PVR IPTV Simple Clients zeigt Kodi einen EPG-Programmführer für alle Kanäle. URL für EPG-Daten erhalten Sie zusammen mit Ihrer Testlinie."
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
