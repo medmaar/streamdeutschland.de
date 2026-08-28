@@ -298,7 +298,7 @@ for slug, plan_name, price, device, duration in ALL_SLUGS:
     duc = DURATION_CONTENT[duration]
     months = DURATION_MONTHS[duration]
 
-    canonical_url = f'https://www.streamdeutschland.de/{slug}.html'
+    canonical_url = f'https://streamdeutschland.de/{slug}'
     title = f'{plan_name} – {price}€ | StreamDeutschland'
     meta_desc = f'{DURATION_LABEL[duration]} IPTV Abo für {device_label(device)} – {price}€. +50.000 Kanäle, +300.000 Filme & Serien, 4K Qualität, VPN-freundlich. Jetzt unverbindlich anfragen!'
     meta_keywords = ', '.join(dedupe(CORE_KEYWORDS + DEVICE_KEYWORDS[device] + DURATION_KEYWORDS[duration]))

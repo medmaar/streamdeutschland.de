@@ -42,6 +42,8 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer support",
+    "contactOption": "TollFree",
+    "areaServed": "DE",
     "availableLanguage": ["German"],
     "contactOption": "TollFree"
   },
@@ -100,7 +102,15 @@
   "@type": "WebSite",
   "name": "StreamDeutschland",
   "alternateName": "IPTV Deutschland 2026",
-  "url": "https://streamdeutschland.de/"
+  "url": "https://streamdeutschland.de/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://streamdeutschland.de/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
 }</script>
 <meta property="og:url" content="https://streamdeutschland.de/">
 
@@ -137,12 +147,72 @@
     "url": "https://streamdeutschland.de"
   }
 }</script>
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "IPTV Deutschland Abo",
+  "serviceType": "IPTV Streaming Service",
+  "provider": {
+    "@type": "Organization",
+    "name": "StreamDeutschland",
+    "url": "https://streamdeutschland.de"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Germany"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "IPTV Abo Pakete",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "1 Monat IPTV Abo – 1 Gerät",
+        "price": "9.00",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://streamdeutschland.de/iptv-kaufen-1-geraet-1-monat"
+      },
+      {
+        "@type": "Offer",
+        "name": "3 Monate IPTV Abo – 1 Gerät",
+        "price": "29.00",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://streamdeutschland.de/iptv-kaufen-1-geraet-3-monate"
+      },
+      {
+        "@type": "Offer",
+        "name": "6 Monate IPTV Abo – 1 Gerät",
+        "price": "39.00",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://streamdeutschland.de/iptv-kaufen-1-geraet-6-monate"
+      },
+      {
+        "@type": "Offer",
+        "name": "1 Jahr IPTV Abo – 1 Gerät",
+        "price": "49.00",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/InStock",
+        "url": "https://streamdeutschland.de/iptv-kaufen-1-geraet-1-jahr"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "3842",
+    "bestRating": "5"
+  }
+}</script>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="/"><img class="brand-mark" src="assets/logo.svg" alt="StreamDeutschland" height="34" style="width:auto;"></a>
+    <a href="/"><img class="brand-mark" src="assets/logo.svg" loading="eager" alt="StreamDeutschland" height="34" style="width:auto;"></a>
     <nav class="nav-links" id="navLinks">
       <a href="/iptv-anbieter">IPTV Anbieter</a>
       <a href="/#kanaele">Kanäle</a>
