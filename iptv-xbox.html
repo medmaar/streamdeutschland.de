@@ -5,6 +5,12 @@
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="dns-prefetch" href="//www.trustpilot.com">
+<link rel="manifest" href="/manifest.json">
+<meta name="application-name" content="StreamDeutschland">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="StreamDE">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0ea5e9">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IPTV Xbox One/Series X 2026 – Einrichten | StreamDeutschland</title>
@@ -13,6 +19,7 @@
 <link rel="alternate" hreflang="de" href="https://streamdeutschland.de/iptv-xbox">
 <link rel="alternate" hreflang="x-default" href="https://streamdeutschland.de/iptv-xbox">
 <meta name="author" content="StreamDeutschland Redaktion">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="IPTV Xbox One/Series X 2026 – Einrichten">
 <meta property="og:description" content="IPTV auf Xbox (One / Series X/S) einrichten: Browser oder Fire TV Stick nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
@@ -29,6 +36,7 @@
 <meta name="twitter:site" content="@StreamDE">
 <meta name="twitter:title" content="IPTV Xbox One/Series X 2026 – Einrichten">
 <meta name="twitter:description" content="IPTV auf Xbox (One / Series X/S) einrichten: Browser oder Fire TV Stick nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
+<meta name="twitter:image:alt" content="IPTV Xbox One/Series X 2026 – Einrichten">
 <meta name="twitter:image" content="https://streamdeutschland.de/assets/og-guide.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
@@ -58,14 +66,54 @@ img{max-width:100%;height:auto}
   "name":"IPTV auf Xbox (One / Series X/S) einrichten","description":"IPTV auf Xbox (One / Series X/S) einrichten: Browser oder Fire TV Stick nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.",
   "step":[{"@type":"HowToStep","name":"Fire TV Stick parallel zur Xbox betreiben","text":"Schließen Sie einen Amazon Fire TV Stick an einen freien HDMI-Port Ihres Fernsehers an. Mit HDMI-CEC wechseln Sie per Fernbedienung zwischen Xbox und IPTV."},{"@type":"HowToStep","name":"TiviMate auf dem Fire Stick einrichten","text":"TiviMate über den Amazon App Store installieren, Xtream-Codes-Zugangsdaten von StreamDeutschland eingeben – alle 50.000+ Sender laden automatisch."},{"@type":"HowToStep","name":"Xbox-Browser als Notlösung","text":"Öffnen Sie Microsoft Edge auf der Xbox, navigieren Sie zu Ihrer M3U-URL von StreamDeutschland. Einzelne Streams lassen sich so abspielen, ohne vollständige Kanalnavigation."},{"@type":"HowToStep","name":"Plex Media Server als Alternative","text":"Über einen Plex Media Server im Heimnetzwerk können Sie M3U-Streams auf der Xbox als Plex-Quelle einbinden. Technisch anspruchsvoll, aber ohne externe Hardware."}]
 }</script>
-<script type="application/ld+json">{
-  "@context":"https://schema.org","@type":"FAQPage",
-  "mainEntity":[{"@type":"Question","name":"Gibt es eine IPTV App für Xbox?","acceptedAnswer":{"@type":"Answer","text":"Nein – der Microsoft Store bietet keine native IPTV-App für Xbox. Die einfachste Lösung ist ein Amazon Fire TV Stick am gleichen Fernseher."}},
-{"@type":"Question","name":"Kann ich IPTV über den Xbox-Browser schauen?","acceptedAnswer":{"@type":"Answer","text":"Eingeschränkt – Microsoft Edge auf Xbox kann M3U-URLs abspielen, bietet aber kein EPG. Für vollständiges IPTV empfehlen wir den Fire TV Stick."}},
-{"@type":"Question","name":"Funktioniert Plex für IPTV auf Xbox?","acceptedAnswer":{"@type":"Answer","text":"Ja, mit einem Plex Media Server im Heimnetzwerk können M3U-Streams auf der Xbox eingebunden werden. Das ist technisch aufwendiger als ein Fire Stick."}},
-{"@type":"Question","name":"Welcher Fire TV Stick ist am besten für Xbox-Nutzer?","acceptedAnswer":{"@type":"Answer","text":"Fire TV Stick 4K Max – er unterstützt 4K HDR und WLAN 6, stört den Xbox-Betrieb nicht und wird per eigener Fernbedienung gesteuert."}},
-{"@type":"Question","name":"Gibt es einen kostenlosen Test?","acceptedAnswer":{"@type":"Answer","text":"Ja – Testlinie kostenlos anfordern, auf dem Fire Stick testen. Kein Risiko."}}]
-}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Gibt es eine IPTV App für Xbox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein – der Microsoft Store bietet keine native IPTV-App für Xbox. Die einfachste Lösung ist ein Amazon Fire TV Stick am gleichen Fernseher."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich IPTV über den Xbox-Browser schauen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eingeschränkt – Microsoft Edge auf Xbox kann M3U-URLs abspielen, bietet aber kein EPG. Für vollständiges IPTV empfehlen wir den Fire TV Stick."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Funktioniert Plex für IPTV auf Xbox?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, mit einem Plex Media Server im Heimnetzwerk können M3U-Streams auf der Xbox eingebunden werden. Das ist technisch aufwendiger als ein Fire Stick."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welcher Fire TV Stick ist am besten für Xbox-Nutzer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fire TV Stick 4K Max – er unterstützt 4K HDR und WLAN 6, stört den Xbox-Betrieb nicht und wird per eigener Fernbedienung gesteuert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es einen kostenlosen Test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – StreamDeutschland bietet eine kostenlose 24-Stunden-Testlinie an. Einfach per WhatsApp anfragen, keine Kreditkarte erforderlich. Voller Zugang zu 50.000+ Kanälen."
+      }
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">{
   "@context":"https://schema.org","@type":"BreadcrumbList",
   "itemListElement":[

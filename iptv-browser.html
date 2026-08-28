@@ -5,6 +5,12 @@
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="dns-prefetch" href="//www.trustpilot.com">
+<link rel="manifest" href="/manifest.json">
+<meta name="application-name" content="StreamDeutschland">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="StreamDE">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0ea5e9">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IPTV Browser 2026 – Chrome & Firefox | StreamDeutschland</title>
@@ -13,6 +19,7 @@
 <link rel="alternate" hreflang="de" href="https://streamdeutschland.de/iptv-browser">
 <link rel="alternate" hreflang="x-default" href="https://streamdeutschland.de/iptv-browser">
 <meta name="author" content="StreamDeutschland Redaktion">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="IPTV Browser 2026 – Chrome & Firefox">
 <meta property="og:description" content="IPTV auf Browser (Chrome, Firefox, Safari) einrichten: Web-Browser direkt nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
@@ -29,6 +36,7 @@
 <meta name="twitter:site" content="@StreamDE">
 <meta name="twitter:title" content="IPTV Browser 2026 – Chrome & Firefox">
 <meta name="twitter:description" content="IPTV auf Browser (Chrome, Firefox, Safari) einrichten: Web-Browser direkt nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
+<meta name="twitter:image:alt" content="IPTV Browser 2026 – Chrome & Firefox">
 <meta name="twitter:image" content="https://streamdeutschland.de/assets/og-guide.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
@@ -83,14 +91,54 @@ img{max-width:100%;height:auto}
   ]
 }
 </script>
-<script type="application/ld+json">{
-  "@context":"https://schema.org","@type":"FAQPage",
-  "mainEntity":[{"@type":"Question","name":"Kann ich IPTV direkt im Chrome-Browser schauen?","acceptedAnswer":{"@type":"Answer","text":"Ja – Chrome kann M3U-Stream-URLs direkt abspielen. Für vollständige Kanalnavigation empfehlen wir einen webbasierten IPTV-Player oder die Desktop-App."}},
-{"@type":"Question","name":"Funktioniert IPTV im Safari-Browser auf Mac?","acceptedAnswer":{"@type":"Answer","text":"Eingeschränkt – Safari spielt einzelne Streams ab. Für bessere Kompatibilität empfehlen wir Chrome oder Firefox auf Mac."}},
-{"@type":"Question","name":"Brauche ich ein Plugin für IPTV im Browser?","acceptedAnswer":{"@type":"Answer","text":"Nein – moderne Browser spielen HLS-Streams ohne Plugin ab. Für M3U-Playlist-Navigation ist ein Web-IPTV-Player hilfreich."}},
-{"@type":"Question","name":"Ist IPTV im Browser genauso gut wie in einer App?","acceptedAnswer":{"@type":"Answer","text":"Nein – Browser-IPTV hat kein EPG, keine Favoriten und keine Catch-up-Funktion. Für täglichen Gebrauch empfehlen wir eine dedizierte App."}},
-{"@type":"Question","name":"Gibt es einen kostenlosen Test?","acceptedAnswer":{"@type":"Answer","text":"Ja – Testlinie anfordern und M3U-URL direkt im Browser testen. Kein Risiko."}}]
-}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kann ich IPTV direkt im Chrome-Browser schauen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – Chrome kann M3U-Stream-URLs direkt abspielen. Für vollständige Kanalnavigation empfehlen wir einen webbasierten IPTV-Player oder die Desktop-App."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Funktioniert IPTV im Safari-Browser auf Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eingeschränkt – Safari spielt einzelne Streams ab. Für bessere Kompatibilität empfehlen wir Chrome oder Firefox auf Mac."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauche ich ein Plugin für IPTV im Browser?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein – moderne Browser spielen HLS-Streams ohne Plugin ab. Für M3U-Playlist-Navigation ist ein Web-IPTV-Player hilfreich."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist IPTV im Browser genauso gut wie in einer App?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein – Browser-IPTV hat kein EPG, keine Favoriten und keine Catch-up-Funktion. Für täglichen Gebrauch empfehlen wir eine dedizierte App."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es einen kostenlosen Test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – StreamDeutschland bietet eine kostenlose 24-Stunden-Testlinie an. Einfach per WhatsApp anfragen, keine Kreditkarte erforderlich. Voller Zugang zu 50.000+ Kanälen."
+      }
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">{
   "@context":"https://schema.org","@type":"BreadcrumbList",
   "itemListElement":[

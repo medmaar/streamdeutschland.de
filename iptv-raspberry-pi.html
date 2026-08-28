@@ -5,6 +5,12 @@
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
 <link rel="dns-prefetch" href="//www.trustpilot.com">
+<link rel="manifest" href="/manifest.json">
+<meta name="application-name" content="StreamDeutschland">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="StreamDE">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0ea5e9">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IPTV Raspberry Pi 2026 – Einrichten | StreamDeutschland</title>
@@ -13,6 +19,7 @@
 <link rel="alternate" hreflang="de" href="https://streamdeutschland.de/iptv-raspberry-pi">
 <link rel="alternate" hreflang="x-default" href="https://streamdeutschland.de/iptv-raspberry-pi">
 <meta name="author" content="StreamDeutschland Redaktion">
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta property="og:title" content="IPTV Raspberry Pi 2026 – Einrichten">
 <meta property="og:description" content="IPTV auf Raspberry Pi einrichten: Kodi oder VLC nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
@@ -29,6 +36,7 @@
 <meta name="twitter:site" content="@StreamDE">
 <meta name="twitter:title" content="IPTV Raspberry Pi 2026 – Einrichten">
 <meta name="twitter:description" content="IPTV auf Raspberry Pi einrichten: Kodi oder VLC nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.">
+<meta name="twitter:image:alt" content="IPTV Raspberry Pi 2026 – Einrichten">
 <meta name="twitter:image" content="https://streamdeutschland.de/assets/og-guide.jpg">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
@@ -58,14 +66,54 @@ img{max-width:100%;height:auto}
   "name":"IPTV auf Raspberry Pi einrichten","description":"IPTV auf Raspberry Pi einrichten: Kodi oder VLC nutzen und 50.000+ Kanäle in 4K streamen. Schritt-für-Schritt Anleitung 2026 – kostenloser Test verfügbar.",
   "step":[{"@type":"HowToStep","name":"LibreELEC auf dem Raspberry Pi installieren","text":"LibreELEC-Image von libreelec.tv herunterladen, mit Raspberry Pi Imager auf SD-Karte schreiben, Pi starten. Kodi öffnet automatisch."},{"@type":"HowToStep","name":"PVR IPTV Simple Client in Kodi aktivieren","text":"Kodi → Einstellungen → Add-ons → Meine Add-ons → PVR-Clients → PVR IPTV Simple Client aktivieren → Konfiguration öffnen."},{"@type":"HowToStep","name":"M3U-URL und EPG eintragen","text":"In der PVR IPTV Simple Client Konfiguration die M3U-URL von StreamDeutschland eintragen. EPG-URL separat im EPG-Tab eingeben. Kodi neu starten."},{"@type":"HowToStep","name":"Alternativ: VLC unter Raspberry Pi OS","text":"sudo apt install vlc → VLC starten → Medien → Netzwerkstream → M3U-URL von StreamDeutschland eingeben. Einfacher, aber ohne EPG."}]
 }</script>
-<script type="application/ld+json">{
-  "@context":"https://schema.org","@type":"FAQPage",
-  "mainEntity":[{"@type":"Question","name":"Welcher Raspberry Pi eignet sich am besten für IPTV?","acceptedAnswer":{"@type":"Answer","text":"Raspberry Pi 4 (4GB RAM) oder Pi 5 für flüssige 4K-Wiedergabe. Ältere Modelle (Pi 3) funktionieren für HD-Streams."}},
-{"@type":"Question","name":"Kann der Raspberry Pi 4K IPTV streamen?","acceptedAnswer":{"@type":"Answer","text":"Ja – Raspberry Pi 4 und 5 geben 4K HDR10 aus. LibreELEC mit Kodi nutzt Hardware-Dekodierung für flüssige 4K-Wiedergabe."}},
-{"@type":"Question","name":"Welches Betriebssystem empfehlen Sie?","acceptedAnswer":{"@type":"Answer","text":"LibreELEC mit Kodi ist die einfachste Lösung speziell für IPTV/Media Center. Raspberry Pi OS + VLC ist flexibler für weitere Anwendungen."}},
-{"@type":"Question","name":"Wie richte ich EPG auf dem Raspberry Pi ein?","acceptedAnswer":{"@type":"Answer","text":"Über den PVR IPTV Simple Client in Kodi. StreamDeutschland liefert die EPG-URL zusammen mit den Zugangsdaten."}},
-{"@type":"Question","name":"Gibt es einen kostenlosen Test?","acceptedAnswer":{"@type":"Answer","text":"Ja – Testlinie anfordern, auf dem Raspberry Pi einrichten, kostenlos testen."}}]
-}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Welcher Raspberry Pi eignet sich am besten für IPTV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Raspberry Pi 4 (4GB RAM) oder Pi 5 für flüssige 4K-Wiedergabe. Ältere Modelle (Pi 3) funktionieren für HD-Streams."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann der Raspberry Pi 4K IPTV streamen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – Raspberry Pi 4 und 5 geben 4K HDR10 aus. LibreELEC mit Kodi nutzt Hardware-Dekodierung für flüssige 4K-Wiedergabe."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welches Betriebssystem empfehlen Sie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LibreELEC mit Kodi ist die einfachste Lösung speziell für IPTV/Media Center. Raspberry Pi OS + VLC ist flexibler für weitere Anwendungen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie richte ich EPG auf dem Raspberry Pi ein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Über den PVR IPTV Simple Client in Kodi. StreamDeutschland liefert die EPG-URL zusammen mit den Zugangsdaten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es einen kostenlosen Test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja – StreamDeutschland bietet eine kostenlose 24-Stunden-Testlinie an. Einfach per WhatsApp anfragen, keine Kreditkarte erforderlich. Voller Zugang zu 50.000+ Kanälen."
+      }
+    }
+  ]
+}
+</script>
 <script type="application/ld+json">{
   "@context":"https://schema.org","@type":"BreadcrumbList",
   "itemListElement":[
