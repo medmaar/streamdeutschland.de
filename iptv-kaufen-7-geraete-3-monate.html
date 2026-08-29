@@ -282,7 +282,7 @@ img{max-width:100%;height:auto}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/style.css">
 
 <script type="application/ld+json">
 {
@@ -316,54 +316,31 @@ img{max-width:100%;height:auto}
 }
 </script>
 </head>
-<body class="gradient-bg text-white overflow-x-hidden">
+<body>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="/go/wa?msg=Hallo!%20Ich%20interessiere%20mich%20für%20das%203%20Monate%20IPTV%20Abo%20für%207%20Geräte." target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Kontakt">
-        <div class="bg-green-500 hover:bg-green-600 rounded-full p-4 shadow-2xl cursor-pointer pulse-glow">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-        </div>
-    </a>
-
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center gap-2">
-                    <img loading="eager" src="assets/logo.svg" alt="StreamDeutschland" width="120" height="34" class="h-8 w-auto object-contain">
-                </a>
-                <div class="hidden xl:flex items-center gap-6">
-                    <a href="index.html" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Startseite</a>
-                    <a href="index.html#kanaele" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Kanäle</a>
-                    <a href="index.html#preise" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Preise</a>
-                    <a href="index.html#faq" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">FAQ</a>
-                    <a href="iptv-test.html" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Kostenlos Testen</a>
-                    <a href="/go/wa?msg=Hallo%20StreamDeutschland!%20Ich%20möchte%20ein%20IPTV%20Abo%20bestellen." target="_blank" rel="noopener" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        Jetzt Bestellen
-                    </a>
-                </div>
-                <button id="mobileMenuBtn" class="xl:hidden text-white p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobileMenu" class="hidden xl:hidden glass mx-4 rounded-2xl p-6 mb-4">
-            <div class="flex flex-col gap-4">
-                <a href="index.html" class="text-gray-300 hover:text-white transition">Startseite</a>
-                <a href="index.html#kanaele" class="text-gray-300 hover:text-white transition">Kanäle</a>
-                <a href="index.html#preise" class="text-gray-300 hover:text-white transition">Preise</a>
-                <a href="index.html#faq" class="text-gray-300 hover:text-white transition">FAQ</a>
-                <a href="iptv-test.html" class="text-gray-300 hover:text-white transition">Kostenlos Testen</a>
-                <a href="/go/wa?msg=Hallo%20StreamDeutschland!%20Ich%20möchte%20ein%20IPTV%20Abo%20bestellen." target="_blank" rel="noopener" class="bg-green-500 text-white px-6 py-3 rounded-full text-center font-semibold">Jetzt Bestellen</a>
-            </div>
-        </div>
+<header>
+  <div class="wrap nav">
+    <a href="/"><img width="120" class="brand-mark" src="assets/logo.svg" loading="eager" alt="StreamDeutschland" height="34" style="width:auto;"></a>
+    <nav class="nav-links" aria-label="Hauptnavigation" id="navLinks">
+      <a href="/iptv-anbieter">IPTV Anbieter</a>
+      <a href="/#kanaele">Kanäle</a>
+      <a href="/#geraete">Geräte</a>
+      <a href="/iptv-abo">IPTV Abo</a>
+      <a href="/#bewertungen">Bewertungen</a>
+      <a href="/iptv-test">Kostenloser Test</a>
+      <a href="/#faq">FAQ</a>
     </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="/#preise">IPTV kaufen</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-    <!-- ======== HERO: TITLE + PRICE ======== -->
-    <div style="padding:5.5rem 1.25rem 0;max-width:600px;margin:0 auto;text-align:center;">
+<!-- ======== HERO: TITLE + PRICE ======== -->
+    <div style="padding:2rem 1.25rem 0;max-width:600px;margin:0 auto;text-align:center;">
         <h1 style="font-size:1.5rem;font-weight:800;margin-bottom:0.35rem;line-height:1.3;">3 Monate IPTV Abo für 7 Geräte</h1>
         <p style="color:#94a3b8;font-size:.875rem;margin-bottom:0;">29€ &middot; kein Vertrag &middot; sofortige Aktivierung</p>
     </div>
@@ -969,5 +946,26 @@ img{max-width:100%;height:auto}
     });
   }
 </script>
+
+<a href="/go/wa?msg=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20IPTV%20Deutschland" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Per WhatsApp kontaktieren">
+  <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 0 0 4.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 0 1-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+<button id="scrollTop" type="button" aria-label="Nach oben scrollen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18,15 12,9 6,15"/></svg>
+</button>
+
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1e293b;border-top:2px solid #0ea5e9;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.85rem;color:#cbd5e1;" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung">
+  <p style="margin:0;max-width:600px;">🍪 Wir verwenden technisch notwendige Cookies. <a href="/legal/datenschutz" style="color:#0ea5e9;margin-left:.5rem;">Datenschutz</a></p>
+  <div style="display:flex;gap:.75rem;flex-shrink:0;">
+    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie_ok','1');" style="background:#0ea5e9;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:.375rem;cursor:pointer;font-weight:600;">Akzeptieren</button>
+    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie_ok','1');" style="background:transparent;color:#94a3b8;border:1px solid #334155;padding:.5rem 1rem;border-radius:.375rem;cursor:pointer;">Nur notwendige</button>
+  </div>
+</div>
+<script>
+const t=document.getElementById('navToggle'),n=document.getElementById('navLinks');
+if(t&&n){t.addEventListener('click',()=>{const o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));n.classList.toggle('open',!o);});}
+if(localStorage.getItem('cookie_ok')){document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('cookie-banner');if(b)b.style.display='none';});}
+</script>
+<script src="assets/main.js" defer></script>
 </body>
 </html>
