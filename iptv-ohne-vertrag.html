@@ -539,21 +539,29 @@ img{max-width:100%;height:auto}
 <a href="/go/wa?msg=Hallo%2C%20ich%20moechte%20IPTV%20ohne%20Vertrag%20testen" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 0 0 4.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 0 1-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg></a>
 <script src="assets/main.js" defer></script>
 
-<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1e293b;border-top:2px solid #0ea5e9;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.85rem;color:#cbd5e1;" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung">
-  <p style="margin:0;max-width:600px;">
-    🍪 Wir verwenden technisch notwendige Cookies für den Betrieb der Website. Durch die weitere Nutzung stimmen Sie zu.
-    <a href="/legal/datenschutz" style="color:#0ea5e9;margin-left:.5rem;">Datenschutz</a>
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:10000;background:#1e293b;border-top:2px solid #0ea5e9;padding:1rem 1.5rem;padding-bottom:max(1rem,env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-size:.85rem;color:#cbd5e1;" role="dialog" aria-live="polite" aria-label="Cookie-Einwilligung">
+  <p style="margin:0;max-width:600px;">🍪 Wir verwenden technisch notwendige Cookies.
+    <a href="/legal/datenschutz" style="color:#0ea5e9;margin-left:.5rem;text-decoration:underline;cursor:pointer;">Datenschutz</a>
   </p>
   <div style="display:flex;gap:.75rem;flex-shrink:0;">
-    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie_ok','1');"
-      style="background:#0ea5e9;color:#fff;border:none;padding:.5rem 1.25rem;border-radius:.375rem;cursor:pointer;font-weight:600;">
-      Akzeptieren
-    </button>
-    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie_ok','1');"
-      style="background:transparent;color:#94a3b8;border:1px solid #334155;padding:.5rem 1rem;border-radius:.375rem;cursor:pointer;">
-      Nur notwendige
-    </button>
+    <button id="cookie-accept" type="button" style="background:#0ea5e9;color:#fff;border:none;padding:.625rem 1.5rem;border-radius:.375rem;cursor:pointer;font-weight:700;font-size:.9rem;touch-action:manipulation;user-select:none;-webkit-user-select:none;">Akzeptieren</button>
+    <button id="cookie-decline" type="button" style="background:transparent;color:#cbd5e1;border:1.5px solid #475569;padding:.625rem 1rem;border-radius:.375rem;cursor:pointer;font-size:.9rem;touch-action:manipulation;user-select:none;-webkit-user-select:none;">Nur notwendige</button>
   </div>
+</div>
+<script>
+(function(){
+  function closeCookie(){
+    var b=document.getElementById('cookie-banner');
+    if(b){b.style.display='none';}
+    try{localStorage.setItem('cookie_ok','1');}catch(e){}
+  }
+  var a=document.getElementById('cookie-accept');
+  var d=document.getElementById('cookie-decline');
+  if(a) a.addEventListener('click', closeCookie);
+  if(d) d.addEventListener('click', closeCookie);
+  try{if(localStorage.getItem('cookie_ok')){closeCookie();}}catch(e){}
+})();
+</script>
 </div>
 <script>
   if(localStorage.getItem('cookie_ok')){
