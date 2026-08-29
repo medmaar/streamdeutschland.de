@@ -568,19 +568,50 @@ img{max-width:100%;height:auto}
                     <p id="formStatus" class="text-sm text-center min-h-[1.25rem]"></p>
                 </form>
 
-                <div id="formSuccessPanel" class="hidden text-center py-4">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-green-500/15 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-black mb-3">Anfrage erfolgreich gesendet!</h3>
-                    <p class="text-gray-300 leading-relaxed mb-4">Vielen Dank! Wir melden uns in Kürze bei Ihnen per WhatsApp oder E-Mail.</p>
-                    <p class="text-gray-400 leading-relaxed mb-6">Bitte schauen Sie in Kürze in Ihr <strong class="text-white">E-Mail-Postfach</strong> – dort finden Sie Ihre Zugangsdaten. Falls Sie dort nichts sehen, prüfen Sie bitte auch Ihren <strong class="text-white">Spam-/Junk-Ordner</strong>.</p>
-                    
-                    <a href="/go/wa?msg=Hallo!%20Ich%20interessiere%20mich%20für%20das%201%20Jahr%20IPTV%20Abo%20für%207%20Geräte." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-sm underline">Oder direkt per WhatsApp kontaktieren</a>
-                </div>
-            </div>
+                <div id="formSuccessPanel" style="display:none;position:fixed;inset:0;z-index:9998;background:#0a0a0a;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;">
+  <div style="max-width:480px;width:100%;">
+    <!-- Animated checkmark circle -->
+    <div style="width:120px;height:120px;margin:0 auto 2rem;position:relative;">
+      <svg viewBox="0 0 120 120" width="120" height="120" style="overflow:visible;">
+        <circle cx="60" cy="60" r="54"
+          fill="none" stroke="#1a3a1a" stroke-width="8"/>
+        <circle cx="60" cy="60" r="54"
+          fill="none" stroke="#22c55e" stroke-width="8"
+          stroke-dasharray="339" stroke-dashoffset="339"
+          style="transform:rotate(-90deg);transform-origin:60px 60px;transition:stroke-dashoffset 0.8s cubic-bezier(.4,0,.2,1) 0.1s;"
+          id="successCircle"/>
+        <path d="M36 62 L52 78 L84 44"
+          fill="none" stroke="#22c55e" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"
+          stroke-dasharray="70" stroke-dashoffset="70"
+          style="transition:stroke-dashoffset 0.5s cubic-bezier(.4,0,.2,1) 0.7s;"
+          id="successTick"/>
+      </svg>
+    </div>
+
+    <h2 style="font-size:1.6rem;font-weight:800;color:#fff;margin:0 0 .75rem;line-height:1.2;">Zugangsdaten werden gesendet!</h2>
+
+    <p style="font-size:1rem;color:#a3a3a3;margin:0 0 1.25rem;line-height:1.6;">
+      Wir haben Ihre Zugangsdaten an<br>
+      <strong id="confirmedEmail" style="color:#fff;font-size:1.05rem;"></strong><br>
+      gesendet.
+    </p>
+
+    <div style="background:#0f1f0f;border:1px solid rgba(34,197,94,.25);border-radius:14px;padding:1.25rem 1.5rem;margin:0 0 1.75rem;">
+      <p style="margin:0 0 .6rem;font-size:.95rem;color:#22c55e;font-weight:700;">📥 Bitte überprüfen Sie jetzt:</p>
+      <p style="margin:0;font-size:.9rem;color:#d1d5db;line-height:1.6;">
+        <strong style="color:#fff;">Posteingang</strong> — Zugangsdaten sind bereits unterwegs<br>
+        <strong style="color:#fff;">Spam / Junk</strong> — manchmal landen E-Mails dort
+      </p>
+    </div>
+
+    <p style="font-size:.82rem;color:#6b7280;margin:0;">
+      Probleme? Schreiben Sie uns auf 
+      <a href="/go/wa" target="_blank" rel="noopener" style="color:#22c55e;text-decoration:none;font-weight:600;">WhatsApp</a>
+    </p>
+  </div>
+</div>
+</div>
         </div>
     </section>
 
@@ -886,9 +917,25 @@ img{max-width:100%;height:auto}
 
             emailjs.sendForm('service_h2a475r', 'template_h91ckqg', leadForm)
                 .then(function () {
-                    if(formHeader){formHeader.classList.add('hidden');}
-                    leadForm.classList.add('hidden');
-                    formSuccessPanel.classList.remove('hidden');
+                    // Capture email before reset
+                    var emailVal = document.getElementById('email').value || '';
+                    document.getElementById('confirmedEmail').textContent = emailVal;
+
+                    // Show fullscreen overlay
+                    var panel = document.getElementById('formSuccessPanel');
+                    panel.style.display = 'flex';
+
+                    // Trigger SVG animations
+                    requestAnimationFrame(function(){
+                        var circle = document.getElementById('successCircle');
+                        var tick   = document.getElementById('successTick');
+                        if(circle) circle.style.strokeDashoffset = '0';
+                        if(tick)   tick.style.strokeDashoffset   = '0';
+                    });
+
+                    // Scroll lock
+                    document.body.style.overflow = 'hidden';
+
                     leadForm.reset();
                     submitBtn.textContent = 'Anfrage senden';
                     submitBtn.disabled = false;
