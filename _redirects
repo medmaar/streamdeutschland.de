@@ -34,3 +34,13 @@ https://www.streamdeutschland.de/* https://streamdeutschland.de/:splat 301
 
 # 404 fallback
 /* /index.html 404
+
+# Capture "deutsch iptv" and variant searches → iptv-deutschland
+/iptv-deutsch /iptv-deutschland 301
+/deutsch-iptv /iptv-deutschland 301
+
+# Capture albanisch / strong variant searches
+/iptv-albanische-sender /iptv-albanisch 301
+/alb-kanal-iptv /iptv-albanisch 301
+/albkanale-iptv /iptv-albanisch 301
+/iptv-strong-receiver /iptv-strong 301
