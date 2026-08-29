@@ -326,7 +326,7 @@ img{max-width:100%;height:auto}
 </header>
 
 <!-- ======== HERO: TITLE + PRICE ======== -->
-    <div style="padding:5rem 1.25rem 1.75rem;max-width:600px;margin:0 auto;text-align:center;">
+    <div style="padding:6.5rem 1.25rem 1.5rem;max-width:600px;margin:0 auto;text-align:center;">
         <h1 style="font-size:1.65rem;font-weight:800;margin-bottom:.5rem;line-height:1.25;color:var(--text);">1 Monat IPTV Abo für 5 Geräte</h1>
         <p style="color:#94a3b8;font-size:.875rem;margin-bottom:0;">45€ &middot; kein Vertrag &middot; sofortige Aktivierung</p>
     </div>
@@ -334,22 +334,22 @@ img{max-width:100%;height:auto}
     <!-- ======== LEAD FORM ======== -->
     <section id="angebot" style="padding:1rem 0 2rem;">
         <div style="max-width:600px;margin:0 auto;padding:0 1.25rem;">
-            <div class="glass rounded-3xl slide-up" style="padding:1.25rem;">
-                <p style="margin:0 0 1.25rem;font-size:.8rem;color:#64748b;text-transform:uppercase;letter-spacing:.05em;font-weight:600;">Anfrage für 1 Monat IPTV Abo für 5 Geräte &middot; 45€</p>
+            <div style="background:#1a1a2e;border:1px solid rgba(223,173,5,.35);border-top:3px solid #DFAD05;border-radius:16px;padding:1.75rem 1.5rem;box-shadow:0 8px 32px rgba(0,0,0,.5);">
+                <p style="margin:0 0 1.5rem;font-size:.75rem;color:#DFAD05;text-transform:uppercase;letter-spacing:.08em;font-weight:700;opacity:.85;">Anfrage für 1 Monat IPTV Abo für 5 Geräte &middot; 45€</p>
 
-                <form id="leadForm" class="space-y-5">
+                <form id="leadForm" style="display:flex;flex-direction:column;gap:1.1rem;">
                     <div>
                         <label for="first_name" class="form-label">Vorname</label>
-                        <input type="text" id="first_name" name="from_name" class="form-field" placeholder="Ihr Vorname">
+                        <input type="text" id="first_name" name="from_name" class="form-field" placeholder="Ihr Vorname" style="background:#0f0f1a;border-color:rgba(255,255,255,.18);border-radius:10px;">
                     </div>
                     <div>
                         <label for="email" class="form-label">E-Mail Adresse</label>
-                        <input type="email" id="email" name="from_email" class="form-field" placeholder="ihre@email.de">
+                        <input type="email" id="email" name="from_email" class="form-field" placeholder="ihre@email.de" style="background:#0f0f1a;border-color:rgba(255,255,255,.18);border-radius:10px;">
                     </div>
                     <div>
                         <label for="whatsappNumber" class="form-label">WhatsApp Nummer</label>
                         <div class="flex gap-2">
-                            <select id="country" name="country" class="form-field" style="flex: 0 0 44%;">
+                            <select id="country" name="country" class="form-field" style="flex:0 0 44%;background:#0f0f1a;border-color:rgba(255,255,255,.18);border-radius:10px;">
                                 <option value="Deutschland" data-code="49" selected>Deutschland (+49)</option>
                                 <option value="Österreich" data-code="43">Österreich (+43)</option>
                                 <option value="Schweiz" data-code="41">Schweiz (+41)</option>
@@ -534,14 +534,14 @@ img{max-width:100%;height:auto}
                                 <option value="Zypern" data-code="357">Zypern (+357)</option>
                                 <option value="Andere" data-code="">Andere</option>
                             </select>
-                            <input type="tel" id="whatsappNumber" class="form-field flex-1" placeholder="151 23456789">
+                            <input type="tel" id="whatsappNumber" class="form-field flex-1" placeholder="151 23456789" style="background:#0f0f1a;border-color:rgba(255,255,255,.18);border-radius:10px;">
                         </div>
                         <input type="hidden" id="whatsapp" name="phone">
                         <p class="text-xs text-gray-500 mt-1.5">Vollständige Nummer: <span id="whatsappPreview" class="text-gray-400">+49</span></p>
                     </div>
                     <div>
                         <label for="notes" class="form-label">Anmerkungen</label>
-                        <textarea id="notes" name="message" class="form-field" rows="3" placeholder="z.B. gewünschtes Gerät, Fragen zur Aktivierung ..."></textarea>
+                        <textarea id="notes" name="message" class="form-field" rows="3" placeholder="z.B. gewünschtes Gerät, Fragen zur Aktivierung ..." style="background:#0f0f1a;border-color:rgba(255,255,255,.18);border-radius:10px;resize:none;"></textarea>
                     </div>
 
                     <input type="hidden" id="nameMirror" name="name" value="">
@@ -552,7 +552,6 @@ img{max-width:100%;height:auto}
 
                     <button type="submit" id="submitBtn" class="btn-submit w-full">Anfrage senden</button>
                     <p id="formStatus" class="text-sm text-center min-h-[1.25rem]"></p>
-                    <p class="text-xs text-gray-500 text-center">Oder direkt per <a href="/go/wa?msg=Hallo!%20Ich%20interessiere%20mich%20für%20das%201%20Monat%20IPTV%20Abo%20für%205%20Geräte." target="_blank" rel="noopener" class="text-green-400 hover:text-green-300 underline">WhatsApp bestellen</a></p>
                 </form>
 
                 <div id="formSuccessPanel" class="hidden text-center py-4">
@@ -564,6 +563,7 @@ img{max-width:100%;height:auto}
                     <h3 class="text-2xl font-black mb-3">Anfrage erfolgreich gesendet!</h3>
                     <p class="text-gray-300 leading-relaxed mb-4">Vielen Dank! Wir melden uns in Kürze bei Ihnen per WhatsApp oder E-Mail.</p>
                     <p class="text-gray-400 leading-relaxed mb-6">Bitte schauen Sie in Kürze in Ihr <strong class="text-white">E-Mail-Postfach</strong> – dort finden Sie Ihre Zugangsdaten. Falls Sie dort nichts sehen, prüfen Sie bitte auch Ihren <strong class="text-white">Spam-/Junk-Ordner</strong>.</p>
+                    
                     <a href="/go/wa?msg=Hallo!%20Ich%20interessiere%20mich%20für%20das%201%20Monat%20IPTV%20Abo%20für%205%20Geräte." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-sm underline">Oder direkt per WhatsApp kontaktieren</a>
                 </div>
             </div>
