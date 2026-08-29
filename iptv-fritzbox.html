@@ -101,9 +101,12 @@ img{max-width:100%;height:auto}
     {"@type": "Question", "name": "Muss ich die Fritzbox für IPTV konfigurieren?",
      "acceptedAnswer": {"@type": "Answer", "text": "In den meisten Fällen nicht. StreamDeutschland IPTV funktioniert ohne spezielle Fritzbox-Konfiguration. Lediglich wenn der DNS-Rebind-Schutz Probleme verursacht, ist eine kleine Anpassung nötig."}},
     {"@type": "Question", "name": "Welche Fritzbox-Modelle sind für IPTV geeignet?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Alle aktuellen Fritzbox-Modelle (7590, 7530, 7490, 6890, 6660 usw.) sind für IPTV geeignet. Wichtig ist nur eine stabile Internetverbindung mit mindestens 25 Mbit/s."}}
+     "acceptedAnswer": {"@type": "Answer", "text": "Alle aktuellen Fritzbox-Modelle (7590, 7530, 7490, 6890, 6660 usw.) sind für IPTV geeignet. Wichtig ist nur eine stabile Internetverbindung mit mindestens 25 Mbit/s.",
+    {"@type": "Question", "name": "Welche IPTV-Apps funktionieren mit FritzBox?", "acceptedAnswer": {"@type": "Answer", "text": "TiviMate, IPTV Smarters Pro und GSE Smart IPTV funktionieren einwandfrei auf Geräten im FritzBox-Netzwerk. Für Fire TV Stick im selben Netz empfehlen wir TiviMate als App."}},
+    {"@type": "Question", "name": "Beeinflusst VPN die IPTV-Qualität über FritzBox?", "acceptedAnswer": {"@type": "Answer", "text": "VPN auf dem Endgerät lässt die IPTV-Qualität unberührt. VPN direkt auf der FritzBox kann bei schlechter Server-Performance die Bitrate senken – deshalb empfehlen wir VPN auf dem Streaminggerät selbst."}}
   ]
-}</script>
+}
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -370,6 +373,14 @@ img{max-width:100%;height:auto}
     <details style="margin-top:1rem;padding-bottom:1rem;">
       <summary style="font-weight:600;cursor:pointer;padding:.75rem 0;">Ist LAN-Kabel oder WLAN besser für IPTV über Fritzbox?</summary>
       <p style="margin:.75rem 0 0;">LAN-Kabel ist immer die stabilere Option – besonders für 4K-Streaming. WLAN über das 5-GHz-Band der Fritzbox funktioniert aber in den meisten Wohnungen ebenfalls zuverlässig für 4K.</p>
+    </details>
+    <details style="margin-top:1rem;border-bottom:1px solid var(--line);padding-bottom:1rem;">
+      <summary style="font-weight:600;cursor:pointer;padding:.75rem 0;">Welche IPTV-Apps funktionieren mit FritzBox?</summary>
+      <p style="margin:.75rem 0 0;">TiviMate, IPTV Smarters Pro und GSE Smart IPTV funktionieren einwandfrei auf Geräten im FritzBox-Netzwerk. Für Fire TV Stick empfehlen wir TiviMate.</p>
+    </details>
+    <details style="margin-top:1rem;border-bottom:1px solid var(--line);padding-bottom:1rem;">
+      <summary style="font-weight:600;cursor:pointer;padding:.75rem 0;">Beeinflusst VPN die IPTV-Qualität über FritzBox?</summary>
+      <p style="margin:.75rem 0 0;">VPN auf dem Endgerät lässt IPTV unberührt. VPN direkt auf der FritzBox kann bei schlechten VPN-Servern die Bitrate senken – deshalb empfehlen wir VPN auf dem Streaminggerät.</p>
     </details>
   </div>
 </section>
