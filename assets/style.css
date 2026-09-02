@@ -90,6 +90,7 @@ header.scrolled{background:rgba(18,18,18,0.96);backdrop-filter:blur(10px);border
   header{padding:14px 0;}
   header img.brand-mark{height:26px !important;}
   .nav-right .btn-primary{padding:9px 16px;font-size:13.5px;}
+  .hero{padding-top:100px;}
 }
 .btn{display:inline-block;padding:12px 28px;border-radius:4px;font-weight:700;font-size:15px;border:none;cursor:pointer;transition:transform .18s var(--ease),background .18s var(--ease),box-shadow .18s var(--ease);}
 .btn-primary{background:var(--accent);color:#fff;}
@@ -98,7 +99,7 @@ header.scrolled{background:rgba(18,18,18,0.96);backdrop-filter:blur(10px);border
 .btn-ghost:hover{background:rgba(255,255,255,0.16);}
 .btn-block{width:100%;text-align:center;}
 
-.hero{position:relative;min-height:86vh;display:flex;align-items:center;padding-top:80px;overflow:hidden;
+.hero{position:relative;min-height:86vh;display:flex;align-items:center;padding-top:120px;overflow:hidden;
   background:
     linear-gradient(180deg, rgba(18,18,18,0.35) 0%, rgba(18,18,18,0.75) 55%, var(--bg) 100%),
     radial-gradient(ellipse at 75% 15%, rgba(223,173,5,0.10), transparent 55%),
