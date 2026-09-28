@@ -5,13 +5,17 @@
 # www → non-www (canonical domain enforcement)
 https://www.streamdeutschland.de/* https://streamdeutschland.de/:splat 301
 
+# Homepage moved to /de
+/ /de 301
+
 # Remove .html extension (clean URLs)
-/index.html / 301
+/index.html /de 301
 /legal/impressum.html /legal/impressum 301
 /legal/datenschutz.html /legal/datenschutz 301
 /legal/agb.html /legal/agb 301
 
 # Common typo/variant redirects
+/de/ /de 301
 /iptv-kaufen/ /iptv-kaufen 301
 /iptv-test/ /iptv-test 301
 /iptv-preise/ /iptv-preise 301

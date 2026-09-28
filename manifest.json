@@ -2,7 +2,7 @@
   "name": "StreamDeutschland – IPTV Deutschland",
   "short_name": "StreamDE",
   "description": "IPTV Anbieter Deutschland – 50.000+ Kanäle, 4K, ab 9€/Monat",
-  "start_url": "/",
+  "start_url": "/de",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#0ea5e9",
