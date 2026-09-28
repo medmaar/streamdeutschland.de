@@ -5,11 +5,11 @@
 # www → non-www (canonical domain enforcement)
 https://www.streamdeutschland.de/* https://streamdeutschland.de/:splat 301
 
-# Homepage moved to /de
-/ /de 301
+# Homepage moved to /de (redirect straight to the canonical trailing-slash URL)
+/ /de/ 301
 
 # Remove .html extension (clean URLs)
-/index.html /de 301
+/index.html /de/ 301
 /legal/impressum.html /legal/impressum 301
 /legal/datenschutz.html /legal/datenschutz 301
 /legal/agb.html /legal/agb 301
