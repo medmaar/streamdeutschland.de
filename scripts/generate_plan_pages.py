@@ -331,7 +331,7 @@ for slug, plan_name, price, device, duration in ALL_SLUGS:
     other_plans_html_parts = []
     for s2, name2, price2 in other_links[:6]:
         other_plans_html_parts.append(
-            f'                <a href="{s2}.html" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
+            f'                <a href="/{s2}" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
             f'                    <span class="block font-bold text-sm">{name2}</span>\n'
             f'                    <span class="block text-xs text-gray-400">{price2}€</span>\n'
             f'                </a>'
