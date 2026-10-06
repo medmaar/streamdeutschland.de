@@ -80,13 +80,13 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <meta property="og:description" content="IPTV {name} ab 9€/Monat: über 20.000 Live-Kanäle, 4K Qualität, {club} live verfolgen.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.streamdeutschland.de/iptv-{slug}.html">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="/assets/style.css">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
 <header>
   <div class="wrap nav">
-    <a href="index.html"><img class="brand-mark" src="assets/logo.svg" alt="StreamDeutschland" height="34" style="width:auto;"></a>
+    <a href="/de/"><img class="brand-mark" src="/assets/logo.svg" alt="StreamDeutschland" height="34" style="width:auto;"></a>
     <nav class="nav-links" id="navLinks">
       <a href="index.html#kanaele">Kanäle</a>
       <a href="iptv-preise.html">IPTV Preise</a>
@@ -131,7 +131,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 </header>
 
 <div class="page-content"><div class="wrap" style="max-width:860px;">
-<div class="breadcrumb"><a href="index.html">Startseite</a> / IPTV {name}</div>
+<div class="breadcrumb"><a href="/de/">Startseite</a> / IPTV {name}</div>
 <div class="eyebrow">IPTV {name}</div>
 <h1>IPTV {name} – Ihr lokaler Zugang zu über 20.000 Kanälen</h1>
 <p class="lead" style="font-size:18px;color:var(--text-dim);max-width:720px;margin:18px 0 34px;">Sie suchen einen zuverlässigen <strong>IPTV Anbieter in {name}</strong>? StreamDeutschland liefert über 20.000 Live-Kanäle und 300.000 Filme &amp; Serien in 4K — mit Server-Kapazität, die auch bei {club} an Spieltagen im {arena} stabil bleibt.</p>
@@ -171,7 +171,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col">
-        <img src="assets/logo.svg" alt="StreamDeutschland" height="30" style="height:30px;width:auto;margin-bottom:14px;">
+        <img src="/assets/logo.svg" alt="StreamDeutschland" height="30" style="height:30px;width:auto;margin-bottom:14px;">
         <p style="color:var(--text-dim);font-size:14px;max-width:280px;">IPTV Deutschland 2026 – über 20.000 Kanäle, stabiler Server, deutscher Support.</p>
       </div>
       <div class="foot-col">
@@ -208,7 +208,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   <svg viewBox="0 0 32 32" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.66 4.57 1.8 6.46L4 29l7.7-1.75a11.98 11.98 0 0 0 4.32.8h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.9h-.01a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-4.57 1.04 1.06-4.45-.24-.38a9.86 9.86 0 0 1-1.5-5.5c0-5.47 4.45-9.92 9.93-9.92 2.65 0 5.14 1.03 7.01 2.91a9.85 9.85 0 0 1 2.9 7.02c0 5.47-4.45 9.87-9.87 9.87zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.04-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/></svg>
 </a>
 
-<script src="assets/main.js"></script>
+<script src="/assets/main.js"></script>
 </body>
 </html>
 """
