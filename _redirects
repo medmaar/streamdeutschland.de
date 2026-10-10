@@ -23,7 +23,18 @@ https://www.streamdeutschland.de/* https://streamdeutschland.de/:splat 301
 # German common search queries → best matching pages
 /iptv-kostenlos-testen /iptv-test 301
 /iptv-free /iptv-free-trial 301
-/iptv-gratis /iptv-gratis-testen 301
+/iptv-gratis /iptv-test 301
+
+# Consolidated duplicate test pages (were noindex/duplicate, now merged)
+/iptv-gratis-testen /iptv-test 301
+/iptv-test-kostenlos /iptv-test 301
+/iptv-testline /iptv-line-test 301
+/iptv-test-24h /iptv-test 301
+
+# Near-duplicate comparison pages merged into the main comparison
+/iptv-sky-ticket /iptv-sky 301
+/iptv-dazn /iptv-sky 301
+/iptv-kabel-deutschland /iptv-vs-kabel 301
 /iptv-testversion /iptv-test 301
 /iptv-probe /iptv-test 301
 

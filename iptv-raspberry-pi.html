@@ -226,7 +226,7 @@ img{max-width:100%;height:auto}
     }
   },
   "datePublished": "2026-01-01",
-  "dateModified": "2026-08-29",
+  "dateModified": "2026-10-10",
   "inLanguage": "de-DE",
   "proficiencyLevel": "Beginner",
   "articleSection": "IPTV Einrichten"
@@ -292,7 +292,7 @@ img{max-width:100%;height:auto}
 <div class="eyebrow">IPTV Raspberry Pi</div>
 <h1>IPTV Raspberry Pi einrichten – Anleitung 2026</h1>
 <div class="update-bar" style="background:rgba(14,165,233,.1);border-left:3px solid #0ea5e9;padding:.5rem 1rem;margin:1rem 0;font-size:.85rem;color:#94a3b8;border-radius:0 .375rem .375rem 0;">
-  <span>🕐 Zuletzt aktualisiert: <strong style="color:#0ea5e9;">August 2026</strong></span>
+  <span>🕐 Zuletzt aktualisiert: <strong style="color:#0ea5e9;">Oktober 2026</strong></span>
   <span style="margin-left:1rem;">✓ Monatlich geprüft</span>
   <span style="margin-left:1rem;">✓ StreamDeutschland Redaktion</span>
 </div>
@@ -326,6 +326,18 @@ img{max-width:100%;height:auto}
 <h2>Raspberry Pi IPTV vs. andere Alternativen</h2>
 <p>Der Raspberry Pi 4 ist eine günstige, aber technisch anspruchsvolle IPTV-Lösung. Für weniger technikaffine Nutzer empfehlen sich einfachere Alternativen: <a href="/iptv-fire-tv-stick">Amazon Fire TV Stick</a> (ab 40&nbsp;€, Plug-and-Play), <a href="/iptv-android-box">Android Box</a> (ab 50&nbsp;€) oder ein <a href="/iptv-mecool">Mecool-Gerät</a>. Alle diese Optionen bieten mehr Einfachheit bei ähnlicher oder besserer Leistung für IPTV.</p>
 
+<h2>Raspberry Pi für IPTV optimieren</h2>
+<p>Ein Raspberry Pi reagiert empfindlicher auf schwache Netzteile, langsame Speicherkarten und Überhitzung als ein fertiges Streaming-Gerät. Mit diesen Einstellungen läuft IPTV dauerhaft stabil:</p>
+<ul style="color:var(--text-dim);max-width:720px;padding-left:20px;">
+  <li><strong>Offizielles Netzteil verwenden:</strong> Der Pi 4 benötigt 5 V / 3 A, der Pi 5 5 V / 5 A. Ein zu schwaches Netzteil führt zu Unterspannung (Blitz-Symbol oben rechts) und Bildaussetzern.</li>
+  <li><strong>Schnelle microSD-Karte:</strong> Eine Karte der Klasse A1/A2 verkürzt das Laden der Senderliste und des EPG in Kodi deutlich.</li>
+  <li><strong>Kühlung einplanen:</strong> Bei 4K-Wiedergabe drosselt ein Pi ohne Kühlkörper nach einiger Zeit die Leistung. Ein Gehäuse mit passivem Kühlkörper oder kleinem Lüfter verhindert das.</li>
+  <li><strong>Kabel statt WLAN:</strong> Der Gigabit-Ethernet-Port ist für 4K-Streams deutlich zuverlässiger als das integrierte WLAN.</li>
+  <li><strong>EPG-Cache in Kodi:</strong> Im PVR IPTV Simple Client „EPG-Daten zwischenspeichern“ aktivieren und die Aktualisierung auf einmal täglich setzen – das entlastet den Pi beim Start.</li>
+</ul>
+<h3>Typische Fehler und Lösungen</h3>
+<p><strong>„Keine Sender gefunden“ nach dem Eintragen der M3U-URL:</strong> Prüfen Sie, ob die URL vollständig kopiert wurde (Benutzername, Passwort und Parameter am Ende) und starten Sie Kodi danach neu – der PVR-Client lädt die Liste erst beim Neustart. <strong>Bild ruckelt, Ton läuft weiter:</strong> Unter Einstellungen → Player → Videos „Bildwiederholrate anpassen“ auf „Beim Start/Ende“ stellen. <strong>Fernbedienung funktioniert nicht:</strong> Die meisten Fernseher unterstützen HDMI-CEC; aktivieren Sie CEC im TV-Menü (bei Samsung „Anynet+“, bei LG „SIMPLINK“), dann steuert die TV-Fernbedienung Kodi direkt.</p>
+
 <h2>Häufige Fragen</h2>
 <div class="faq-list">
 <details><summary>Welcher Raspberry Pi eignet sich am besten für IPTV?</summary><p>Raspberry Pi 4 (4GB RAM) oder Pi 5 für flüssige 4K-Wiedergabe. Ältere Modelle (Pi 3) funktionieren für HD-Streams.</p></details>
@@ -349,7 +361,6 @@ img{max-width:100%;height:auto}
         <a href="/iptv-sender">IPTV Sender</a>
         <a href="/iptv-anbieter">IPTV Anbieter</a>
         <a href="/iptv-test">Kostenloser Test</a>
-        <a href="/iptv-test-kostenlos">Gratis IPTV Test</a>
         <a href="/iptv-line-test">Testline</a>
         <a href="/iptv-free-trial">Free Trial (EN)</a>
       </div>
