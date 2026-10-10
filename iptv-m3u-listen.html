@@ -72,7 +72,7 @@ img{max-width:100%;height:auto}
   "url": "https://streamdeutschland.de/iptv-m3u-listen",
   "description": "IPTV M3U Listen auf Deutsch: Was sie sind, wo sie herkommen und warum eine stabile M3U-URL von StreamDeutschland besser ist als öffentliche Gratis-Listen.",
   "inLanguage": "de",
-  "dateModified": "2026-08-27",
+  "dateModified": "2026-10-10",
   "datePublished": "2026-08-27",
   "isPartOf": {
     "@type": "WebSite",
@@ -306,7 +306,7 @@ img{max-width:100%;height:auto}
 <div class="eyebrow">IPTV M3U Listen</div>
 <h1>IPTV M3U Listen Deutsch – stabile Playlisten für alle Player</h1>
 <div class="update-bar" style="background:rgba(14,165,233,.1);border-left:3px solid #0ea5e9;padding:.5rem 1rem;margin:1rem 0;font-size:.85rem;color:#94a3b8;border-radius:0 .375rem .375rem 0;">
-  <span>🕐 Zuletzt aktualisiert: <strong style="color:#0ea5e9;">August 2026</strong></span>
+  <span>🕐 Zuletzt aktualisiert: <strong style="color:#0ea5e9;">Oktober 2026</strong></span>
   <span style="margin-left:1rem;">✓ Monatlich geprüft</span>
   <span style="margin-left:1rem;">✓ StreamDeutschland Redaktion</span>
 </div>
@@ -345,6 +345,20 @@ img{max-width:100%;height:auto}
   <a class="btn btn-ghost" href="/iptv-test">Kostenlosen Test starten</a>
 </div>
 
+<h2>So ist eine M3U-Liste aufgebaut</h2>
+<p>Eine M3U-Playlist ist eine reine Textdatei im Format „Extended M3U“. Sie beginnt immer mit der Zeile <code>#EXTM3U</code>. Danach folgt für jeden Sender ein Zeilenpaar: eine Info-Zeile mit <code>#EXTINF</code> und darunter die Stream-Adresse. Vereinfacht sieht ein Eintrag so aus:</p>
+<pre style="background:var(--card);border:1px solid var(--border);border-radius:.5rem;padding:1rem;overflow-x:auto;font-size:.85rem;color:var(--text-dim);">#EXTM3U
+#EXTINF:-1 tvg-id="DasErste.de" tvg-name="Das Erste HD" tvg-logo="https://…/daserste.png" group-title="Deutschland",Das Erste HD
+http://server.example:8080/benutzer/passwort/12345</pre>
+<ul style="color:var(--text-dim);max-width:720px;padding-left:20px;">
+  <li><strong>tvg-id:</strong> verknüpft den Sender mit dem passenden Eintrag im EPG (XMLTV). Stimmt die ID nicht, bleibt der Programmführer leer.</li>
+  <li><strong>tvg-logo:</strong> Adresse des Senderlogos, das der Player in der Kanalliste anzeigt.</li>
+  <li><strong>group-title:</strong> ordnet den Sender einer Gruppe zu, z. B. „Deutschland“, „Sport“ oder „Kinder“.</li>
+  <li><strong>Name nach dem Komma:</strong> der Anzeigename in der Senderliste.</li>
+</ul>
+<h3>Häufige Probleme mit M3U-Listen</h3>
+<p><strong>Liste lädt nicht:</strong> Meist wurde die URL unvollständig kopiert oder enthält ein Leerzeichen am Ende. <strong>Programmführer bleibt leer:</strong> Die EPG-Adresse (XMLTV) muss im Player separat eingetragen werden; bei <a href="/iptv-xtream-codes">Xtream Codes</a> geschieht das automatisch. <strong>Sehr große Liste, langsamer Start:</strong> Blenden Sie im Player nicht benötigte Gruppen aus – TiviMate und IPTV Smarters Pro laden dann nur die gewählten Kategorien. Wie Sie eine Playlist in Ihren Player einbinden, zeigt auch die Anleitung zur <a href="/iptv-m3u-playlist">M3U Playlist</a>.</p>
+
 <h2>Häufige Fragen</h2>
 <div class="faq-list">
 <details><summary>Was ist eine M3U Liste für IPTV?</summary><p>Eine M3U-Liste ist eine Textdatei oder URL mit allen Kanal-Links eines IPTV-Dienstes. IPTV-Player laden diese Liste und stellen die Kanäle als navigierbare Senderliste dar.</p></details>
@@ -370,7 +384,6 @@ img{max-width:100%;height:auto}
         <a href="/iptv-sender">IPTV Sender</a>
         <a href="/iptv-anbieter">IPTV Anbieter</a>
         <a href="/iptv-test">Kostenloser Test</a>
-        <a href="/iptv-test-kostenlos">Gratis IPTV Test</a>
         <a href="/iptv-line-test">Testline</a>
         <a href="/iptv-free-trial">Free Trial (EN)</a>
       </div>
