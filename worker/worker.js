@@ -54,23 +54,26 @@ const EMAIL_BRAND = {
   "url": "https://streamdeutschland.de",
   "lang": "de",
   "email": "kontakt@streamdeutschland.de",
-  "emoji": "🇩🇪",
-  "logo": null,
+  "light": false,
+  "logo": {
+    "src": "https://iptv-trial-streamdeutschland.medmaar.workers.dev/email/logo.png?v=1",
+    "w": 162,
+    "h": 44
+  },
   "tagline": "Premium IPTV Deutschland · 4K Streaming",
-  "accent": "#0284C7",
-  "accent2": "#7C3AED",
-  "accentText": "#38BDF8",
-  "onAccent": "#FFFFFF",
-  "badgeInk": "#0284C7",
+  "accent": "#DFAD05",
+  "accentText": "#DFAD05",
+  "onAccent": "#121212",
   "c": {
-    "page": "#0F172A",
-    "surface": "#1A2134",
-    "raised": "#232B3C",
-    "line": "#383E4E",
-    "soft": "#E7E8EA",
-    "text": "#CFD1D4",
-    "muted": "#9A9EA6",
-    "faint": "#7B7F8A"
+    "page": "#121212",
+    "surface": "#1B1B1B",
+    "raised": "#232323",
+    "line": "#363636",
+    "head": "#FFFFFF",
+    "soft": "#E3E3E3",
+    "text": "#C6C6C6",
+    "muted": "#949494",
+    "faint": "#767676"
   },
   "wa": "17828026280",
   "waLabel": "+1 782-802-6280",
@@ -129,6 +132,9 @@ const EMAIL_BRAND = {
   ]
 };
 
+// StreamDeutschland header logo (PNG), served at /email/logo.png for the emails.
+const EMAIL_LOGO_PNG = "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";
+
 const EMAIL_TEXT = {
   "hi": "Hallo {name},",
   "hiAnon": "Hallo,",
@@ -164,7 +170,10 @@ const EMAIL_TEXT = {
     ]
   ],
   "tryTitle": "Das sollten Sie testen, bevor Ihr Pass abläuft",
-  "helpBtn": "💬 Hilfe nötig? Schreiben Sie uns auf WhatsApp",
+  "no": "Nr.",
+  "f_helpTitle": "Lieber kurz persönlich sprechen?",
+  "helpTitle": "Brauchen Sie Hilfe bei der Einrichtung?",
+  "helpBtn": "WhatsApp",
   "helpLine": "Oder antworten Sie einfach auf diese E-Mail. Echte Menschen, schnelle Antworten.",
   "r_pre": "Nur noch etwa 4 Stunden Testzugang. Behalten Sie denselben Zugang, dauerhaft.",
   "r_eyebrow": "Testzugang endet bald",
@@ -188,27 +197,29 @@ const EMAIL_TEXT = {
   "badgeBest": "Bester Preis",
   "badgePopular": "Beliebt",
   "allPlans": "Alle Pakete vergleichen →",
-  "replyTitle": "📩 Der schnellste Weg?",
+  "replyTitle": "Der schnellste Weg?",
   "replyBody": "Antworten Sie einfach mit <strong>„JA“</strong> auf diese E-Mail und wir aktivieren Ihren Zugang in wenigen Minuten. Kein Formular, kein Aufwand.",
   "trust": [
-    "⚡ In Minuten aktiviert",
-    "📺 Dieselbe Qualität wie im Test",
-    "💬 Echte Menschen auf WhatsApp"
+    "In Minuten aktiviert",
+    "Dieselbe Qualität wie im Test",
+    "Echte Menschen auf WhatsApp"
   ],
-  "ps": "PS: Nicht sicher, welches Paket passt? Schreiben Sie uns, auf wie vielen Bildschirmen Sie schauen, und wir empfehlen Ihnen das richtige.",
-  "f_help": "💬 Auf WhatsApp beraten lassen",
+  "ps": "Nicht sicher, welches Paket passt? Schreiben Sie uns, auf wie vielen Bildschirmen Sie schauen, und wir empfehlen Ihnen das richtige.",
+  "f_help": "Auf WhatsApp beraten lassen",
   "footerWhy": "Sie erhalten diese E-Mail, weil Sie auf {domain} einen kostenlosen Testzugang angefordert haben.",
   "plansLink": "Preise",
   "waText": "Hallo {brand}! Ich habe eine Frage zu meinem Testzugang."
 };
 
 // Trial email kit: welcome, 4-hours-left reminder and trial-ended follow-up.
-// Dark, table-based, inline-styled HTML that holds up in Gmail, Outlook, Apple Mail
-// and Yahoo, on phones and desktops, in light and dark mode.
+// Editorial layout: the site's own logo, serif headlines, hairline rules, restrained colour.
+// Table-based and inline-styled so it holds up in Gmail, Outlook, Apple Mail and Yahoo,
+// on phones and desktops, in light and dark mode.
 // Needs EMAIL_BRAND (site look, plans, contacts) and EMAIL_TEXT (copy) defined above it.
 
-const TK_FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
-const TK_MONO = "'SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace";
+const TK_SERIF = "'Playfair Display',Georgia,'Times New Roman',Times,serif";
+const TK_SANS = "'Helvetica Neue',Helvetica,Arial,sans-serif";
+const TK_MONO = "'SF Mono',SFMono-Regular,Menlo,Consolas,'Liberation Mono','Courier New',monospace";
 
 function tkEsc(v) {
   return String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -244,68 +255,74 @@ function tkServer(m3uUrl) {
   try { return new URL(m3uUrl).origin; } catch { return EMAIL_BRAND.host; }
 }
 
+// The site logo is served by this Worker, so it never depends on the website's own hosting.
+function tkLogoResponse(request) {
+  if (request.method !== "GET" || new URL(request.url).pathname !== "/email/logo.png") return null;
+  const bin = atob(EMAIL_LOGO_PNG);
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return new Response(bytes, { headers: { "Content-Type": "image/png", "Cache-Control": "public, max-age=31536000, immutable", "Access-Control-Allow-Origin": "*" } });
+}
+
 // ── building blocks ───────────────────────────────────────────────────────────
 
 function tkShell(preheader, body) {
   const B = EMAIL_BRAND, C = B.c, T = EMAIL_TEXT;
-  const logo = B.logo
-    ? `<img src="${B.logo.src}" width="${B.logo.w}" height="${B.logo.h}" alt="${tkEsc(B.name)}" style="display:block;border:0;outline:none;width:${B.logo.w}px;height:${B.logo.h}px;color:#ffffff;font:800 22px ${TK_FONT};">`
-    : `<span style="font:800 22px/28px ${TK_FONT};color:#ffffff;letter-spacing:-0.3px;">${B.emoji ? B.emoji + "&nbsp;" : ""}${tkEsc(B.name)}</span>`;
   return `<!DOCTYPE html>
-<html lang="${B.lang}" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="${B.lang}" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="x-apple-disable-message-reformatting">
 <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
-<meta name="color-scheme" content="dark light">
-<meta name="supported-color-schemes" content="dark light">
+<meta name="color-scheme" content="${B.light ? "light dark" : "dark light"}">
+<meta name="supported-color-schemes" content="${B.light ? "light dark" : "dark light"}">
 <title>${tkEsc(B.name)}</title>
+<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet"><!--<![endif]-->
 <style>
   body,table,td,a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
   table,td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
-  img { -ms-interpolation-mode:bicubic; }
+  img { -ms-interpolation-mode:bicubic; border:0; outline:none; text-decoration:none; }
   a { text-decoration:none; }
-  :root { color-scheme: dark light; supported-color-schemes: dark light; }
+  .tk-serif { font-variant-numeric:lining-nums; -webkit-font-feature-settings:'lnum'; font-feature-settings:'lnum'; }
   @media only screen and (max-width:620px) {
     .tk-outer { padding:0 !important; }
-    .tk-card { border-radius:0 !important; }
-    .tk-pad { padding-left:20px !important; padding-right:20px !important; }
-    .tk-h1 { font-size:30px !important; line-height:36px !important; }
-    .tk-val { font-size:17px !important; }
+    .tk-card { border-radius:0 !important; border-left:0 !important; border-right:0 !important; }
+    .tk-pad { padding-left:24px !important; padding-right:24px !important; }
+    .tk-h1 { font-size:32px !important; line-height:38px !important; }
+    .tk-val { font-size:16px !important; }
     .tk-col { display:block !important; width:100% !important; box-sizing:border-box; padding-left:0 !important; padding-right:0 !important; }
-    .tk-gap { padding-bottom:10px !important; }
+    .tk-gap { padding-bottom:18px !important; }
     .tk-hide-sm { display:none !important; }
-    .tk-price { font-size:40px !important; line-height:44px !important; }
+    .tk-trust { border-left:0 !important; padding:10px 6px !important; }
+    .tk-left { text-align:left !important; }
+    .tk-price { font-size:46px !important; line-height:50px !important; }
   }
 </style>
-<!--[if mso]><style>* { font-family:Arial,sans-serif !important; }</style><![endif]-->
+<!--[if mso]><style>.tk-serif { font-family:Georgia,serif !important; } * { font-family:Arial,sans-serif; }</style><![endif]-->
 </head>
 <body style="margin:0;padding:0;width:100%;background-color:${C.page};" bgcolor="${C.page}">
 <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">${tkEsc(preheader)}${"&#847;&zwnj;&nbsp;".repeat(40)}</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.page}" style="background-color:${C.page};">
-<tr><td align="center" class="tk-outer" style="padding:28px 12px 36px;">
+<tr><td align="center" class="tk-outer" style="padding:36px 12px 40px;">
 <!--[if mso]><table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;">
-  <tr><td class="tk-pad" style="padding:6px 8px 18px;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td valign="middle"><a href="${tkLink("/", "header")}" target="_blank" style="text-decoration:none;">${logo}</a></td>
-      <td valign="middle" align="right" class="tk-hide-sm" style="font:600 12px/16px ${TK_FONT};color:${C.muted};letter-spacing:0.3px;">${tkEsc(B.tagline)}</td>
-    </tr></table>
+  <tr><td align="center" style="padding:4px 20px 30px;">
+    <a href="${tkLink("/", "header")}" target="_blank" style="text-decoration:none;"><img src="${B.logo.src}" width="${B.logo.w}" height="${B.logo.h}" alt="${tkEsc(B.name)}" style="display:block;margin:0 auto;width:${B.logo.w}px;max-width:100%;height:auto;color:${C.head};font:600 24px ${TK_SERIF};"></a>
   </td></tr>
-  <tr><td class="tk-card" bgcolor="${C.surface}" style="background-color:${C.surface};border:1px solid ${C.line};border-radius:24px;overflow:hidden;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr><td height="6" bgcolor="${B.accent}" style="height:6px;font-size:0;line-height:0;background-color:${B.accent};background-image:linear-gradient(90deg,${B.accent},${B.accent2});">&nbsp;</td></tr>
-    </table>
+  <tr><td class="tk-card" bgcolor="${C.surface}" style="background-color:${C.surface};border:1px solid ${C.line};border-top:3px solid ${B.accent};border-radius:4px;">
     ${body}
   </td></tr>
-  <tr><td align="center" class="tk-pad" style="padding:26px 20px 4px;font:13px/21px ${TK_FONT};color:${C.muted};">
-    <a href="${tkLink("/", "footer")}" target="_blank" style="color:#ffffff;font-weight:800;text-decoration:none;">${tkEsc(B.name)}</a> &middot; ${tkEsc(B.tagline)}<br>
-    <a href="${tkWa(T.waText)}" target="_blank" style="color:${C.muted};text-decoration:underline;">WhatsApp ${tkEsc(B.waLabel)}</a> &middot;
-    <a href="mailto:${B.email}" style="color:${C.muted};text-decoration:underline;">${B.email}</a> &middot;
-    <a href="${tkLink(B.plansUrl, "footer")}" target="_blank" style="color:${C.muted};text-decoration:underline;">${T.plansLink}</a>
+  <tr><td align="center" class="tk-pad" style="padding:32px 24px 0;font:12px/20px ${TK_SANS};color:${C.muted};letter-spacing:0.2px;">
+    <a href="${tkLink("/", "footer")}" target="_blank" style="color:${C.head};text-decoration:none;font:600 15px/22px ${TK_SERIF};" class="tk-serif">${tkEsc(B.name)}</a><br>
+    <span style="font:11px/20px ${TK_SANS};letter-spacing:2px;text-transform:uppercase;color:${C.faint};">${tkEsc(B.tagline)}</span>
   </td></tr>
-  <tr><td align="center" style="padding:6px 20px 0;font:12px/18px ${TK_FONT};color:${C.faint};">${tkFmt(T.footerWhy, { domain: B.domain })}</td></tr>
+  <tr><td align="center" class="tk-pad" style="padding:14px 24px 0;font:12px/20px ${TK_SANS};color:${C.muted};">
+    <a href="${tkWa(T.waText)}" target="_blank" style="color:${C.muted};text-decoration:none;">WhatsApp ${tkEsc(B.waLabel)}</a>
+    &nbsp;&middot;&nbsp; <a href="mailto:${B.email}" style="color:${C.muted};text-decoration:none;">${B.email}</a>
+    &nbsp;&middot;&nbsp; <a href="${tkLink(B.plansUrl, "footer")}" target="_blank" style="color:${C.muted};text-decoration:none;">${T.plansLink}</a>
+  </td></tr>
+  <tr><td align="center" class="tk-pad" style="padding:14px 24px 0;font:11px/17px ${TK_SANS};color:${C.faint};">${tkFmt(T.footerWhy, { domain: B.domain })}</td></tr>
 </table>
 <!--[if mso]></td></tr></table><![endif]-->
 </td></tr>
@@ -314,39 +331,51 @@ function tkShell(preheader, body) {
 </html>`;
 }
 
+function tkEyebrow(text) {
+  const B = EMAIL_BRAND;
+  return `<div style="font:700 11px/16px ${TK_SANS};letter-spacing:3px;text-transform:uppercase;color:${B.accentText};">${text}</div>`;
+}
+
+function tkRule(width = 44) {
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td width="${width}" height="2" bgcolor="${EMAIL_BRAND.accent}" style="width:${width}px;height:2px;background-color:${EMAIL_BRAND.accent};font-size:0;line-height:0;">&nbsp;</td></tr></table>`;
+}
+
 function tkHero(eyebrow, title, lead, name) {
-  const B = EMAIL_BRAND, C = B.c;
+  const C = EMAIL_BRAND.c;
   return `
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr><td class="tk-pad" style="padding:34px 36px 6px;">
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td bgcolor="${B.accent}" style="background-color:${B.accent};border-radius:999px;padding:6px 14px;font:800 11px/14px ${TK_FONT};letter-spacing:1.6px;text-transform:uppercase;color:${B.onAccent};">${eyebrow}</td>
-        </tr></table>
-        <p style="margin:22px 0 6px;font:600 16px/22px ${TK_FONT};color:${C.soft};">${tkHi(name)}</p>
-        <h1 class="tk-h1" style="margin:0 0 14px;font:800 36px/42px ${TK_FONT};letter-spacing:-0.8px;color:#ffffff;">${title}</h1>
-        <p style="margin:0;font:16px/26px ${TK_FONT};color:${C.text};">${lead}</p>
+      <tr><td class="tk-pad" style="padding:44px 48px 0;">
+        ${tkEyebrow(eyebrow)}
+        <h1 class="tk-h1 tk-serif" style="margin:18px 0 22px;font:600 42px/48px ${TK_SERIF};letter-spacing:-0.5px;color:${C.head};">${title}</h1>
+        ${tkRule()}
+        <p style="margin:24px 0 0;font:15px/26px ${TK_SANS};color:${C.head};">${tkHi(name)}</p>
+        <p style="margin:8px 0 0;font:15px/26px ${TK_SANS};color:${C.text};">${lead}</p>
       </td></tr>
     </table>`;
 }
 
-function tkSection(inner, pad = "26px 36px 0") {
+function tkSection(inner, pad = "32px 48px 0") {
   return `
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr><td class="tk-pad" style="padding:${pad};">${inner}</td></tr>
     </table>`;
 }
 
-function tkH2(text, sub) {
-  const C = EMAIL_BRAND.c;
-  return `<h2 style="margin:0 0 ${sub ? 4 : 14}px;font:800 21px/28px ${TK_FONT};letter-spacing:-0.3px;color:#ffffff;">${text}</h2>`
-    + (sub ? `<p style="margin:0 0 16px;font:14px/21px ${TK_FONT};color:${C.muted};">${sub}</p>` : "");
+function tkHr() {
+  return tkSection(`<div style="height:1px;line-height:1px;font-size:0;background-color:${EMAIL_BRAND.c.line};">&nbsp;</div>`, "40px 48px 0");
 }
 
-function tkButton(href, label, bg, color, full) {
+function tkH2(text, sub) {
+  const C = EMAIL_BRAND.c;
+  return `<h2 class="tk-serif" style="margin:0 0 ${sub ? 6 : 20}px;font:600 26px/32px ${TK_SERIF};letter-spacing:-0.2px;color:${C.head};">${text}</h2>`
+    + (sub ? `<p style="margin:0 0 22px;font:14px/22px ${TK_SANS};color:${C.muted};">${sub}</p>` : "");
+}
+
+function tkButton(href, label, bg, color, border) {
   return `
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0" ${full ? 'width="100%"' : ""} style="margin:0 auto;"><tr>
-      <td align="center" bgcolor="${bg}" style="background-color:${bg};border-radius:999px;">
-        <a href="${href}" target="_blank" style="display:block;padding:15px 28px;font:800 16px/20px ${TK_FONT};color:${color};text-decoration:none;border-radius:999px;">${label}</a>
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td align="center" bgcolor="${bg}" style="background-color:${bg};border-radius:3px;${border ? `border:1px solid ${border};` : ""}">
+        <a href="${href}" target="_blank" style="display:block;padding:15px 30px;font:700 13px/18px ${TK_SANS};letter-spacing:1.6px;text-transform:uppercase;color:${color};text-decoration:none;border-radius:3px;">${label}</a>
       </td>
     </tr></table>`;
 }
@@ -354,32 +383,32 @@ function tkButton(href, label, bg, color, full) {
 function tkField(label, value, last) {
   const C = EMAIL_BRAND.c;
   return `
-      <tr><td style="padding:14px 20px;${last ? "" : `border-bottom:1px solid ${C.line};`}">
-        <div style="font:700 11px/14px ${TK_FONT};letter-spacing:1.4px;text-transform:uppercase;color:${C.muted};">${label}</div>
-        <div class="tk-val" style="margin-top:5px;font:700 19px/26px ${TK_MONO};color:#ffffff;word-break:break-all;">${tkEsc(value)}</div>
+      <tr><td style="padding:16px 24px;${last ? "" : `border-bottom:1px solid ${C.line};`}">
+        <div style="font:700 10px/14px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${C.muted};">${label}</div>
+        <div class="tk-val" style="margin-top:6px;font:500 18px/26px ${TK_MONO};color:${C.head};word-break:break-all;">${tkEsc(value)}</div>
       </td></tr>`;
 }
 
-// The login, styled as a ticket: the thing they keep coming back to for 24 hours.
+// The login, set like a ticket: the one thing they come back to for 24 hours.
 function tkPass(username, password, m3uUrl, compact) {
   const B = EMAIL_BRAND, C = B.c, T = EMAIL_TEXT;
   return `
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.raised}" style="background-color:${C.raised};border:2px solid ${B.accent};border-radius:18px;border-collapse:separate;">
-        <tr><td bgcolor="${B.accent}" style="background-color:${B.accent};background-image:linear-gradient(90deg,${B.accent},${B.accent2});border-radius:15px 15px 0 0;padding:13px 20px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.raised}" style="background-color:${C.raised};border:1px solid ${C.line};border-radius:4px;border-collapse:separate;">
+        <tr><td style="padding:18px 24px 16px;border-bottom:1px solid ${B.accent};">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-            <td style="font:800 13px/18px ${TK_FONT};letter-spacing:1.4px;text-transform:uppercase;color:${B.onAccent};">&#127903;&#65039;&nbsp; ${compact ? T.credsAgain : T.passLabel}</td>
-            <td align="right" style="font:800 12px/18px ${TK_MONO};letter-spacing:1px;text-transform:uppercase;color:${B.onAccent};white-space:nowrap;">${compact ? "" : T.admit}</td>
+            <td class="tk-serif" style="font:italic 500 19px/24px ${TK_SERIF};color:${C.head};">${compact ? T.credsAgain : T.passLabel}</td>
+            <td align="right" class="tk-hide-sm" style="font:700 10px/24px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${B.accentText};white-space:nowrap;">${compact ? "" : T.admit}</td>
           </tr></table>
         </td></tr>
-        <tr><td style="padding:12px 20px 0;font:700 12px/16px ${TK_FONT};color:${B.accentText};">${T.xtream}</td></tr>
+        <tr><td style="padding:16px 24px 0;font:700 10px/14px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${B.accentText};">${T.xtream}</td></tr>
         ${tkField(T.server, tkServer(m3uUrl))}
         ${tkField(T.username, username)}
         ${tkField(T.password, password, true)}
-        <tr><td style="padding:0 20px;"><div style="border-top:2px dashed ${C.line};height:0;line-height:0;font-size:0;">&nbsp;</div></td></tr>
-        <tr><td style="padding:14px 20px 18px;">
-          <div style="font:700 11px/14px ${TK_FONT};letter-spacing:1.4px;text-transform:uppercase;color:${C.muted};">${T.m3u}</div>
-          <div style="margin:2px 0 8px;font:12px/17px ${TK_FONT};color:${C.faint};">${T.m3uHint}</div>
-          <div style="padding:11px 13px;border-radius:10px;background-color:${C.page};border:1px solid ${C.line};font:12px/19px ${TK_MONO};color:${B.accentText};word-break:break-all;">${tkEsc(m3uUrl)}</div>
+        <tr><td style="padding:0 24px;"><div style="border-top:1px dashed ${C.line};height:0;line-height:0;font-size:0;">&nbsp;</div></td></tr>
+        <tr><td style="padding:16px 24px 22px;">
+          <div style="font:700 10px/14px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${C.muted};">${T.m3u}</div>
+          <div style="margin:4px 0 10px;font:12px/18px ${TK_SANS};color:${C.faint};">${T.m3uHint}</div>
+          <div style="padding:12px 14px;border-radius:3px;background-color:${C.page};border:1px solid ${C.line};font:12px/19px ${TK_MONO};color:${C.text};word-break:break-all;">${tkEsc(m3uUrl)}</div>
         </td></tr>
       </table>`;
 }
@@ -388,50 +417,50 @@ function tkSteps() {
   const B = EMAIL_BRAND, C = B.c;
   return EMAIL_TEXT.steps.map(([title, text], i) => `
         <tr>
-          <td valign="top" width="48" style="padding:0 0 16px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-              <td width="34" height="34" align="center" valign="middle" bgcolor="${B.accent}" style="width:34px;height:34px;background-color:${B.accent};border-radius:50%;font:800 16px/34px ${TK_FONT};color:${B.onAccent};">${i + 1}</td>
-            </tr></table>
-          </td>
-          <td valign="top" style="padding:3px 0 16px;">
-            <div style="font:700 16px/22px ${TK_FONT};color:#ffffff;">${title}</div>
-            <div style="margin-top:3px;font:14px/22px ${TK_FONT};color:${C.text};">${text}</div>
+          <td valign="top" width="56" class="tk-serif" style="padding:0 0 22px;font:italic 500 30px/30px ${TK_SERIF};color:${B.accentText};">0${i + 1}</td>
+          <td valign="top" style="padding:2px 0 22px;">
+            <div style="font:700 15px/22px ${TK_SANS};color:${C.head};">${title}</div>
+            <div style="margin-top:4px;font:14px/23px ${TK_SANS};color:${C.text};">${text}</div>
           </td>
         </tr>`).join("");
 }
 
 function tkTiles(items) {
-  const C = EMAIL_BRAND.c;
+  const B = EMAIL_BRAND, C = B.c;
   const w = Math.floor(100 / items.length);
   return `
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        ${items.map(([icon, text], i) => `
-        <td class="tk-col tk-gap" width="${w}%" valign="top" style="padding:0 ${i < items.length - 1 ? 5 : 0}px 0 ${i ? 5 : 0}px;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.raised}" style="background-color:${C.raised};border:1px solid ${C.line};border-radius:14px;border-collapse:separate;"><tr>
-            <td style="padding:16px 16px 15px;">
-              <div style="font-size:26px;line-height:30px;">${icon}</div>
-              <div style="margin-top:8px;font:700 14px/20px ${TK_FONT};color:#ffffff;">${text}</div>
-            </td>
-          </tr></table>
+        ${items.map(([, text], i) => `
+        <td class="tk-col tk-gap" width="${w}%" valign="top" style="padding:0 ${i < items.length - 1 ? 12 : 0}px 0 ${i ? 12 : 0}px;">
+          <div style="border-top:2px solid ${B.accent};padding-top:14px;">
+            <div style="font:700 10px/14px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${C.muted};">${EMAIL_TEXT.no} ${i + 1}</div>
+            <div class="tk-serif" style="margin-top:8px;font:500 18px/25px ${TK_SERIF};color:${C.head};">${text}</div>
+          </div>
         </td>`).join("")}
       </tr></table>`;
 }
 
-function tkHelp(label) {
-  const C = EMAIL_BRAND.c;
+function tkHelp(title) {
+  const C = EMAIL_BRAND.c, T = EMAIL_TEXT;
   return tkSection(`
-      ${tkButton(tkWa(EMAIL_TEXT.waText), label, "#25D366", "#05290f")}
-      <p style="margin:12px 0 0;text-align:center;font:14px/21px ${TK_FONT};color:${C.muted};">${EMAIL_TEXT.helpLine}</p>`, "28px 36px 0");
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td valign="middle" class="tk-col tk-gap" style="padding-right:16px;">
+          <div class="tk-serif" style="font:italic 500 19px/26px ${TK_SERIF};color:${C.head};">${title}</div>
+          <div style="margin-top:4px;font:14px/22px ${TK_SANS};color:${C.muted};">${T.helpLine}</div>
+        </td>
+        <td valign="middle" align="right" class="tk-col tk-left" style="white-space:nowrap;">${tkButton(tkWa(T.waText), T.helpBtn, "#25D366", "#062A12")}</td>
+      </tr></table>`, "36px 48px 0");
 }
 
 function tkReplyYes() {
   const B = EMAIL_BRAND, C = B.c, T = EMAIL_TEXT;
   if (!B.replyYes) return "";
   return tkSection(`
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.raised}" style="background-color:${C.raised};border-left:4px solid ${B.accent};border-radius:12px;"><tr>
-        <td style="padding:18px 20px;">
-          <div style="font:800 15px/22px ${TK_FONT};color:#ffffff;">${T.replyTitle}</div>
-          <div style="margin-top:4px;font:15px/23px ${TK_FONT};color:${C.text};">${T.replyBody}</div>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="2" bgcolor="${B.accent}" style="width:2px;background-color:${B.accent};font-size:0;line-height:0;">&nbsp;</td>
+        <td style="padding:4px 0 4px 20px;">
+          <div class="tk-serif" style="font:italic 500 20px/27px ${TK_SERIF};color:${C.head};">${T.replyTitle}</div>
+          <div style="margin-top:6px;font:15px/25px ${TK_SANS};color:${C.text};">${T.replyBody}</div>
         </td>
       </tr></table>`);
 }
@@ -439,7 +468,8 @@ function tkReplyYes() {
 function tkSign() {
   const C = EMAIL_BRAND.c, T = EMAIL_TEXT;
   return tkSection(`
-      <p style="margin:0;font:15px/24px ${TK_FONT};color:${C.text};">${T.teamSign}<br><strong style="color:#ffffff;">${tkFmt(T.team, { brand: tkEsc(EMAIL_BRAND.name) })}</strong></p>`, "28px 36px 34px");
+      <p class="tk-serif" style="margin:0;font:italic 500 19px/27px ${TK_SERIF};color:${C.head};">${T.teamSign}</p>
+      <p style="margin:6px 0 0;font:700 11px/16px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${C.muted};">${tkFmt(T.team, { brand: tkEsc(EMAIL_BRAND.name) })}</p>`, "40px 48px 46px");
 }
 
 function tkMonths(m) {
@@ -453,8 +483,12 @@ function tkBadge(p) {
   return p.badge || (p.months === 12 ? pick(B.badgeBest, EMAIL_TEXT.badgeBest) : p.months === 6 ? pick(B.badgePopular, EMAIL_TEXT.badgePopular) : "");
 }
 
-// Every plan is its own link to that plan's page: the best-value plan as a big
-// hero card, the others as full-width rows that fit any screen without media queries.
+function tkPerMonth(p, tpl) {
+  return tkFmt(tpl, { price: tkMoney(Math.round(p.price / p.months * 100) / 100) });
+}
+
+// Every plan is its own link to that plan's page: the best-value plan set large,
+// the others as a ruled list that fits any screen without media queries.
 function tkPlans(campaign) {
   const B = EMAIL_BRAND, C = B.c, T = EMAIL_TEXT;
   const plans = B.plans.slice().sort((a, b) => a.months - b.months);
@@ -464,65 +498,65 @@ function tkPlans(campaign) {
   const fBadge = tkBadge(featured);
 
   const hero = `
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${B.accent}" style="background-color:${B.accent};background-image:linear-gradient(135deg,${B.accent},${B.accent2});border-radius:18px;"><tr>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.raised}" style="background-color:${C.raised};border:1px solid ${B.accent};border-radius:4px;border-collapse:separate;"><tr>
         <td style="padding:0;">
-          <a href="${fUrl}" target="_blank" style="display:block;padding:22px 24px 24px;text-decoration:none;color:${B.onAccent};">
-            ${fBadge ? `<span style="display:inline-block;padding:5px 12px;border-radius:999px;background-color:${B.onAccent};font:800 11px/14px ${TK_FONT};letter-spacing:1.4px;text-transform:uppercase;color:${B.badgeInk};">&#9733; ${fBadge}</span>` : ""}
-            <span style="display:block;margin-top:12px;font:800 22px/28px ${TK_FONT};color:${B.onAccent};">${tkMonths(featured.months)} <span style="font-weight:600;opacity:0.85;">&middot; ${B.deviceLabel || T.device}</span></span>
-            <span style="display:block;margin-top:4px;">
-              <span class="tk-price" style="font:900 48px/54px ${TK_FONT};letter-spacing:-1.5px;color:${B.onAccent};">${tkMoney(featured.price)}</span>
-              ${featured.was ? `<span style="font:600 16px/20px ${TK_FONT};color:${B.onAccent};opacity:0.75;text-decoration:line-through;">&nbsp;${tkMoney(featured.was)}</span>` : ""}
+          <a href="${fUrl}" target="_blank" style="display:block;padding:30px 30px 32px;text-decoration:none;">
+            ${fBadge ? `<span style="display:block;font:700 10px/14px ${TK_SANS};letter-spacing:3px;text-transform:uppercase;color:${B.accentText};">${fBadge}</span>` : ""}
+            <span class="tk-serif" style="display:block;margin-top:10px;font:600 24px/30px ${TK_SERIF};color:${C.head};">${tkMonths(featured.months)} <span style="font:400 14px/30px ${TK_SANS};color:${C.muted};">&nbsp;&middot;&nbsp; ${B.deviceLabel || T.device}</span></span>
+            <span style="display:block;margin-top:14px;">
+              <span class="tk-price tk-serif" style="font:500 56px/58px ${TK_SERIF};letter-spacing:-1px;color:${C.head};">${tkMoney(featured.price)}</span>
+              ${featured.was ? `<span style="font:16px/20px ${TK_SANS};color:${C.faint};text-decoration:line-through;">&nbsp;${tkMoney(featured.was)}</span>` : ""}
             </span>
-            <span style="display:block;margin-top:2px;font:600 15px/21px ${TK_FONT};color:${B.onAccent};opacity:0.9;">${featured.months > 1 ? tkFmt(T.perMonth, { price: tkMoney(Math.round(featured.price / featured.months * 100) / 100) }) : "&nbsp;"}</span>
-            <span style="display:inline-block;margin-top:16px;padding:13px 24px;border-radius:999px;background-color:${B.onAccent};font:800 16px/20px ${TK_FONT};color:${B.badgeInk};">${T.chooseFeatured}</span>
+            <span style="display:block;margin-top:6px;font:14px/21px ${TK_SANS};color:${C.muted};">${featured.months > 1 ? tkPerMonth(featured, T.perMonth) : "&nbsp;"}</span>
+            <span style="display:inline-block;margin-top:24px;padding:15px 28px;border-radius:3px;background-color:${B.accent};font:700 13px/18px ${TK_SANS};letter-spacing:1.6px;text-transform:uppercase;color:${B.onAccent};">${T.chooseFeatured}</span>
           </a>
         </td>
       </tr></table>`;
 
-  const rows = rest.map(p => {
+  const rows = rest.map((p, i) => {
     const url = tkLink(p.url, campaign);
     const badge = tkBadge(p);
-    const per = p.months > 1 ? tkFmt(T.perMonthShort, { price: tkMoney(Math.round(p.price / p.months * 100) / 100) }) : (B.deviceLabel || T.device);
+    const per = p.months > 1 ? tkPerMonth(p, T.perMonthShort) : (B.deviceLabel || T.device);
     return `
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.raised}" style="margin-top:10px;background-color:${C.raised};border:1px solid ${badge ? B.accent : C.line};border-radius:14px;border-collapse:separate;"><tr>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-bottom:1px solid ${C.line};${i ? "" : "margin-top:10px;"}"><tr>
         <td valign="middle" style="padding:0;">
-          <a href="${url}" target="_blank" style="display:block;padding:15px 8px 15px 18px;text-decoration:none;">
-            <span style="display:block;font:800 17px/22px ${TK_FONT};color:#ffffff;">${tkMonths(p.months)}${badge ? ` <span style="display:inline-block;margin-left:4px;padding:2px 8px;border-radius:999px;background-color:${B.accent};font:800 10px/14px ${TK_FONT};letter-spacing:1px;text-transform:uppercase;color:${B.onAccent};vertical-align:2px;white-space:nowrap;">${badge}</span>` : ""}</span>
-            <span style="display:block;margin-top:2px;font:13px/18px ${TK_FONT};color:${C.muted};">${per}</span>
+          <a href="${url}" target="_blank" style="display:block;padding:20px 8px 20px 2px;text-decoration:none;">
+            <span class="tk-serif" style="display:block;font:600 20px/26px ${TK_SERIF};color:${C.head};">${tkMonths(p.months)}</span>
+            <span style="display:block;margin-top:3px;font:13px/18px ${TK_SANS};color:${C.muted};">${per}${badge ? ` &nbsp;<span style="font:700 10px/18px ${TK_SANS};letter-spacing:2px;text-transform:uppercase;color:${B.accentText};white-space:nowrap;">${badge}</span>` : ""}</span>
           </a>
         </td>
         <td valign="middle" align="right" style="padding:0;white-space:nowrap;">
-          <a href="${url}" target="_blank" style="display:block;padding:15px 18px 15px 8px;text-decoration:none;white-space:nowrap;">
-            ${p.was ? `<span style="font:600 13px/18px ${TK_FONT};color:${C.faint};text-decoration:line-through;">${tkMoney(p.was)}</span>&nbsp;` : ""}<span style="font:900 24px/28px ${TK_FONT};color:#ffffff;">${tkMoney(p.price)}</span>
-            <span style="display:inline-block;margin-left:8px;padding:7px 12px;border-radius:999px;background-color:${B.accent};font:800 13px/16px ${TK_FONT};color:${B.onAccent};vertical-align:3px;">${T.choose}&nbsp;&rarr;</span>
+          <a href="${url}" target="_blank" style="display:block;padding:20px 2px 20px 8px;text-decoration:none;white-space:nowrap;">
+            ${p.was ? `<span style="font:13px/18px ${TK_SANS};color:${C.faint};text-decoration:line-through;">${tkMoney(p.was)}</span>&nbsp;` : ""}<span class="tk-serif" style="font:500 26px/30px ${TK_SERIF};color:${C.head};">${tkMoney(p.price)}</span>
+            <span style="display:block;margin-top:4px;font:700 10px/14px ${TK_SANS};letter-spacing:2px;text-transform:uppercase;color:${B.accentText};">${T.choose}&nbsp;&rarr;</span>
           </a>
         </td>
       </tr></table>`;
   }).join("");
 
   return `${hero}${rows}
-      <p style="margin:16px 0 0;text-align:center;font:700 14px/20px ${TK_FONT};"><a href="${tkLink(B.plansUrl, campaign)}" target="_blank" style="color:${B.accentText};text-decoration:none;">${T.allPlans}</a></p>`;
+      <p style="margin:22px 0 0;font:700 11px/16px ${TK_SANS};letter-spacing:2px;text-transform:uppercase;"><a href="${tkLink(B.plansUrl, campaign)}" target="_blank" style="color:${C.muted};text-decoration:none;">${T.allPlans}</a></p>`;
 }
 
 function tkTrust() {
   const C = EMAIL_BRAND.c;
   return `
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        ${EMAIL_TEXT.trust.map((t, i) => `<td class="tk-col" align="center" width="33%" style="padding:${i ? "8px" : "0"} 4px 0;font:700 13px/19px ${TK_FONT};color:${C.soft};">${t}</td>`).join("")}
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid ${C.line};border-bottom:1px solid ${C.line};"><tr>
+        ${EMAIL_TEXT.trust.map((t, i) => `<td class="tk-col tk-trust" align="center" width="33%" style="padding:16px 6px;${i ? `border-left:1px solid ${C.line};` : ""}font:700 10px/16px ${TK_SANS};letter-spacing:1.8px;text-transform:uppercase;color:${C.soft};">${t}</td>`).join("")}
       </tr></table>`;
 }
 
-// 20 of 24 hours used, as a bar: easier to feel than a sentence.
+// 20 of 24 hours used, drawn as a hairline: easier to feel than a sentence.
 function tkProgress() {
   const B = EMAIL_BRAND, C = B.c, T = EMAIL_TEXT;
   return `
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-radius:999px;border-collapse:separate;"><tr>
-        <td width="83%" height="14" bgcolor="${B.accent}" style="height:14px;background-color:${B.accent};background-image:linear-gradient(90deg,${B.accent2},${B.accent});border-radius:999px 0 0 999px;font-size:0;line-height:0;">&nbsp;</td>
-        <td width="17%" height="14" bgcolor="${C.line}" style="height:14px;background-color:${C.line};border-radius:0 999px 999px 0;font-size:0;line-height:0;">&nbsp;</td>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td width="83%" height="3" bgcolor="${B.accent}" style="height:3px;background-color:${B.accent};font-size:0;line-height:0;">&nbsp;</td>
+        <td width="17%" height="3" bgcolor="${C.line}" style="height:3px;background-color:${C.line};font-size:0;line-height:0;">&nbsp;</td>
       </tr></table>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td style="padding-top:8px;font:700 13px/18px ${TK_FONT};color:${C.muted};">${T.r_used}</td>
-        <td align="right" style="padding-top:8px;font:800 13px/18px ${TK_FONT};color:${B.accentText};">&#9203; ${T.r_left}</td>
+        <td style="padding-top:10px;font:700 10px/14px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${C.muted};">${T.r_used}</td>
+        <td align="right" style="padding-top:10px;font:700 10px/14px ${TK_SANS};letter-spacing:2.4px;text-transform:uppercase;color:${B.accentText};">${T.r_left}</td>
       </tr></table>`;
 }
 
@@ -532,23 +566,26 @@ function welcomeEmail(name, username, password, m3uUrl) {
   const T = EMAIL_TEXT, C = EMAIL_BRAND.c;
   return tkShell(T.w_pre, `
     ${tkHero(T.w_eyebrow, T.w_title, T.w_lead, name)}
-    ${tkSection(tkPass(username, password, m3uUrl))}
-    ${tkSection(`<p style="margin:0;font:italic 14px/21px ${TK_FONT};color:${C.muted};">${T.w_note}</p>`, "14px 36px 0")}
-    ${tkSection(`${tkH2(T.stepsTitle)}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${tkSteps()}</table>`, "30px 36px 0")}
-    ${tkSection(`${tkH2(T.tryTitle)}${tkTiles(EMAIL_BRAND.highlights)}`, "14px 36px 0")}
-    ${tkHelp(T.helpBtn)}
+    ${tkSection(tkPass(username, password, m3uUrl), "36px 48px 0")}
+    ${tkSection(`<p style="margin:0;font:13px/21px ${TK_SANS};color:${C.muted};">${T.w_note}</p>`, "16px 48px 0")}
+    ${tkHr()}
+    ${tkSection(`${tkH2(T.stepsTitle)}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${tkSteps()}</table>`, "40px 48px 0")}
+    ${tkSection(`${tkH2(T.tryTitle)}${tkTiles(EMAIL_BRAND.highlights)}`, "18px 48px 0")}
+    ${tkHr()}
+    ${tkHelp(T.helpTitle)}
     ${tkSign()}`);
 }
 
 function reminderEmail(name, username, password, m3uUrl) {
   const T = EMAIL_TEXT;
   return tkShell(T.r_pre, `
-    ${tkHero("&#9203; " + T.r_eyebrow, T.r_title, T.r_lead, name)}
-    ${tkSection(tkProgress(), "22px 36px 0")}
+    ${tkHero(T.r_eyebrow, T.r_title, T.r_lead, name)}
+    ${tkSection(tkProgress(), "30px 48px 0")}
     ${tkReplyYes()}
-    ${tkSection(`${tkH2(T.plansTitle, T.plansSub)}${tkPlans("trial_reminder")}`, "30px 36px 0")}
-    ${tkSection(tkPass(username, password, m3uUrl, true), "30px 36px 0")}
-    ${tkHelp(T.helpBtn)}
+    ${tkHr()}
+    ${tkSection(`${tkH2(T.plansTitle, T.plansSub)}${tkPlans("trial_reminder")}`, "40px 48px 0")}
+    ${tkSection(tkPass(username, password, m3uUrl, true), "44px 48px 0")}
+    ${tkHelp(T.helpTitle)}
     ${tkSign()}`);
 }
 
@@ -557,10 +594,11 @@ function followupEmail(name) {
   return tkShell(T.f_pre, `
     ${tkHero(T.f_eyebrow, T.f_title, T.f_lead, name)}
     ${tkReplyYes()}
-    ${tkSection(`${tkH2(T.plansTitle, T.plansSub)}${tkPlans("trial_followup")}`, "30px 36px 0")}
-    ${tkSection(tkTrust(), "24px 36px 0")}
-    ${tkHelp(T.f_help)}
-    ${tkSection(`<p style="margin:0;font:15px/24px ${TK_FONT};color:${C.text};">${T.ps}</p>`, "26px 36px 0")}
+    ${tkHr()}
+    ${tkSection(`${tkH2(T.plansTitle, T.plansSub)}${tkPlans("trial_followup")}`, "40px 48px 0")}
+    ${tkSection(tkTrust(), "36px 48px 0")}
+    ${tkHelp(T.f_helpTitle)}
+    ${tkSection(`<p style="margin:0;font:15px/25px ${TK_SANS};color:${C.text};"><span class="tk-serif" style="font:italic 500 17px/25px ${TK_SERIF};color:${C.head};">P.S.</span>&nbsp; ${T.ps}</p>`, "32px 48px 0")}
     ${tkSign()}`);
 }
 
@@ -743,6 +781,6 @@ async function handleScheduled(env) {
 }
 
 export default {
-  async fetch(request, env) { return handleFetch(request, env); },
+  async fetch(request, env) { return tkLogoResponse(request) || handleFetch(request, env); },
   async scheduled(event, env, ctx) { ctx.waitUntil(handleScheduled(env)); },
 };
