@@ -8,6 +8,7 @@
   "use strict";
   var me = document.currentScript;
   var KIND = (me && me.getAttribute("data-kind")) || "free-trial";
+  var HOME = "/de/";
 
   var CELEBRATE = {
     "free-trial": {
@@ -32,19 +33,16 @@
 
   var CSS =
     ".sd-cel-lock,.sd-cel-lock body{overflow:hidden!important}" +
-    ".sd-cel{position:fixed;inset:0;z-index:10050;display:grid;place-items:center;padding:16px;overflow-y:auto;font-family:inherit;" +
+    ".sd-cel{position:fixed;inset:0;z-index:10050;display:flex;box-sizing:border-box;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;font-family:inherit;" +
     "background:radial-gradient(circle at 50% 35%,rgba(34,197,94,.22),transparent 60%),rgba(6,8,14,.93);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);animation:sd-cel-in .3s ease both}" +
-    ".sd-cel.is-out{animation:sd-cel-out .25s ease forwards}" +
-    ".sd-cel-box{position:relative;box-sizing:border-box;width:min(560px,100%);text-align:center;padding:clamp(28px,6vw,48px) clamp(18px,5vw,40px);" +
+        ".sd-cel-box{position:relative;z-index:1;box-sizing:border-box;margin:auto;width:min(560px,100%);text-align:center;padding:clamp(28px,6vw,48px) clamp(18px,5vw,40px);" +
     "background:#0f172a;border:1px solid rgba(34,197,94,.45);border-radius:20px;box-shadow:0 0 0 1px rgba(34,197,94,.2),0 40px 120px -30px rgba(34,197,94,.45);" +
     "animation:sd-cel-pop .55s .05s cubic-bezier(.2,.9,.3,1.3) both}" +
-    ".sd-cel-x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.06);color:#94a3b8;font-size:28px;line-height:1;cursor:pointer}" +
-    ".sd-cel-x:hover,.sd-cel-x:focus-visible{color:#fff;background:rgba(255,255,255,.12)}" +
     ".sd-cel-mark{display:block;width:clamp(130px,38vw,180px);height:auto;margin:0 auto 22px;fill:none;stroke:#4ade80;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 24px rgba(74,222,128,.5))}" +
     ".sd-cel-mark circle{stroke-width:6;stroke-dasharray:340;stroke-dashoffset:340;fill:rgba(34,197,94,.1);animation:sd-cel-draw .7s .2s ease forwards}" +
     ".sd-cel-mark path{stroke-width:9;stroke-dasharray:80;stroke-dashoffset:80;transform-origin:center;animation:sd-cel-draw .45s .8s ease forwards,sd-cel-bounce .5s 1.2s ease}" +
-    ".sd-cel h2{font-size:clamp(28px,6vw,40px);line-height:1.15;font-weight:800;margin:0 0 16px;color:#4ade80}" +
-    ".sd-cel p{color:#cbd5e1;font-size:clamp(16px,2.2vw,18px);line-height:1.55;margin:0 auto 12px;max-width:460px}" +
+    ".sd-cel h2{font-size:clamp(24px,6vw,40px);overflow-wrap:break-word;line-height:1.15;font-weight:800;margin:0 0 16px;color:#4ade80}" +
+    ".sd-cel p{color:#cbd5e1;font-size:clamp(15px,2.2vw,18px);line-height:1.55;margin:0 auto 12px;max-width:460px}" +
     ".sd-cel p b{color:#fff;word-break:break-word}" +
     ".sd-cel-go{display:block;margin:22px auto 0;width:100%;max-width:360px;min-height:52px;padding:14px 22px;border:0;border-radius:12px;cursor:pointer;" +
     "background:#22c55e;color:#04140a;font:inherit;font-size:17px;font-weight:800;box-shadow:0 10px 30px -10px rgba(34,197,94,.7)}" +
@@ -56,7 +54,9 @@
     "animation:sd-cel-fall var(--t) var(--d) linear infinite}" +
     ".sd-cel-bits i:nth-child(4n+1){background:#ffce00}.sd-cel-bits i:nth-child(4n+2){background:#22c55e}.sd-cel-bits i:nth-child(4n+3){background:#f8fafc}" +
     ".sd-cel-bits i.e{width:auto;height:auto;background:none}" +
-    "@keyframes sd-cel-in{from{opacity:0}}@keyframes sd-cel-out{to{opacity:0}}" +
+    "@media (max-height:560px){.sd-cel-box{padding:20px 24px}.sd-cel-mark{width:84px;margin-bottom:12px}.sd-cel h2{font-size:24px;margin-bottom:10px}.sd-cel p{font-size:15px;margin-bottom:8px}.sd-cel-go{margin-top:14px}}" +
+    "@media (max-width:360px){.sd-cel-box{padding:24px 16px}.sd-cel-mark{width:110px}}" +
+    "@keyframes sd-cel-in{from{opacity:0}}" +
     "@keyframes sd-cel-pop{from{opacity:0;transform:scale(.85) translateY(20px)}}" +
     "@keyframes sd-cel-draw{to{stroke-dashoffset:0}}@keyframes sd-cel-bounce{50%{transform:scale(1.15)}}" +
     "@keyframes sd-cel-fall{from{transform:translateY(0) rotate(var(--r))}to{transform:translateY(110vh) rotate(calc(var(--r) + 540deg))}}" +
@@ -77,7 +77,6 @@
     addCss();
     var old = document.querySelector(".sd-cel");
     if (old) old.remove();
-    var back = document.activeElement;
     var el = document.createElement("div");
     el.className = "sd-cel";
     el.setAttribute("role", "dialog");
@@ -92,7 +91,6 @@
     el.innerHTML =
       '<div class="sd-cel-bits" aria-hidden="true">' + bits + "</div>" +
       '<div class="sd-cel-box">' +
-      '<button class="sd-cel-x" type="button" aria-label="Schließen">×</button>' +
       '<svg class="sd-cel-mark" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="54"/><path d="M36 62 53 79 86 44"/></svg>' +
       '<h2 id="sd-cel-title">' + c.title + "</h2>" +
       c.lines.map(function (l) { return "<p>" + l + "</p>"; }).join("") +
@@ -100,22 +98,14 @@
       '<p class="sd-cel-help">Probleme? <a href="/go/wa" target="_blank" rel="noopener nofollow">WhatsApp Support</a></p>' +
       "</div>";
     el.querySelectorAll("[data-c-email]").forEach(function (b) { b.textContent = email || "Ihre E-Mail-Adresse"; });
-    var go = el.querySelector(".sd-cel-go"), x = el.querySelector(".sd-cel-x");
-    function close() {
-      document.removeEventListener("keydown", onKey);
-      el.classList.add("is-out");
-      document.documentElement.classList.remove("sd-cel-lock");
-      document.body.style.overflow = "";
-      setTimeout(function () { el.remove(); }, 250);
-      if (back && back.focus) try { back.focus({ preventScroll: true }); } catch (e) {}
-    }
-    function onKey(e) {
-      if (e.key === "Escape") close();
-      if (e.key === "Tab") { e.preventDefault(); (document.activeElement === go ? x : go).focus(); }
-    }
-    document.addEventListener("keydown", onKey);
-    x.addEventListener("click", close);
-    go.addEventListener("click", close);
+    var go = el.querySelector(".sd-cel-go");
+    // no close button, no Escape, no backdrop click: the only way out is the button, which goes to the homepage
+    go.addEventListener("click", function () { location.href = HOME; });
+    document.addEventListener("keydown", function (e) {
+      if (!document.body.contains(el)) return;
+      if (e.key === "Escape") e.preventDefault();
+      if (e.key === "Tab") { e.preventDefault(); (document.activeElement === go ? el.querySelector(".sd-cel-help a") : go).focus(); }
+    });
     document.body.appendChild(el);
     document.documentElement.classList.add("sd-cel-lock");
     try { go.focus({ preventScroll: true }); } catch (e) { go.focus(); }
@@ -128,7 +118,7 @@
     if (panel && "MutationObserver" in window) {
       new MutationObserver(function () {
         if (panel.style.display && panel.style.display !== "none") {
-          panel.style.display = "none";
+          panel.remove(); // the old plain confirmation can never come back underneath
           var em = document.getElementById("confirmedEmail");
           celebrate(KIND, em ? em.textContent.trim() : "");
         }
