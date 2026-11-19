@@ -28,7 +28,7 @@ jobs:
           RESULT=$(curl -s -X PUT \
             "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/workers/scripts/iptv-trial-streamdeutschland" \
             -H "Authorization: Bearer ${{ secrets.CF_API_TOKEN }}" \
-            -F 'metadata={"main_module":"worker.js","compatibility_date":"2024-01-01","bindings":[{"type":"kv_namespace","name":"TRIALS","namespace_id":"5dfc9e7a50564e3aaec17738095a4565"}]};type=application/json' \
+            -F 'metadata={"main_module":"worker.js","compatibility_date":"2024-01-01","keep_bindings": ["secret_text", "secret_key"],"bindings":[{"type":"kv_namespace","name":"TRIALS","namespace_id":"5dfc9e7a50564e3aaec17738095a4565"}]};type=application/json' \
             -F "worker.js=@worker/worker.js;type=application/javascript+module")
           echo "$RESULT" | python3 -c "
           import sys,json
