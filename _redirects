@@ -1,3 +1,11 @@
+# Excluded-market pages removed (SEO market filter, 2026-11-25)
+/iptv-arabisch /de/ 301
+/iptv-arabisch/ /de/ 301
+/iptv-arabisch.html /de/ 301
+/iptv-tuerkisch /de/ 301
+/iptv-tuerkisch/ /de/ 301
+/iptv-tuerkisch.html /de/ 301
+
 # ═══════════════════════════════════════════════════════════
 # Cloudflare Pages _redirects
 # ═══════════════════════════════════════════════════════════
